@@ -18,4 +18,4 @@ jobs:
     - name: Package
       run: dotnet pack --configuration Release
     - name: Publish
-      run: dotnet nuget push src/Dofusdude.Api/bin/Release/Dofusdude.Api.0.9.0.nupkg
+      run: dotnet nuget push -k $NUGET_AUTH_TOKEN -s https://api.nuget.org/v3/index.json src/Dofusdude.Api/bin/Release/Dofusdude.Api.0.9.0.nupkg
