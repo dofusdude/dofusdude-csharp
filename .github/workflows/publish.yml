@@ -1,4 +1,4 @@
-name: Build
+name: Publish
 on:
   release:
     types: [ created ]
@@ -11,11 +11,11 @@ jobs:
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: "8.x"
-      env:
-        NUGET_AUTH_TOKEN: ${{secrets.NUGET_TOKEN}}
     - name: Build
       run: dotnet build --configuration Release
     - name: Package
       run: dotnet pack --configuration Release
     - name: Publish
-      run: dotnet nuget push -k $NUGET_AUTH_TOKEN -s https://api.nuget.org/v3/index.json src/Dofusdude.Api/bin/Release/Dofusdude.Api.0.9.0.nupkg
+      env:
+        NUGET_AUTH_TOKEN: ${{secrets.NUGET_TOKEN}}
+      run: dotnet nuget push --api-key "$NUGET_AUTH_TOKEN" --source https://api.nuget.org/v3/index.json src/Dofusdude.Api/bin/Release/Dofusdude.Api.0.9.0.nupkg
