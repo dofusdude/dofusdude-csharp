@@ -6,15 +6,15 @@
     <AssemblyName>Dofusdude.Api</AssemblyName>
     <PackageId>Dofusdude.Api</PackageId>
     <OutputType>Library</OutputType>
-    <Authors>OpenAPI</Authors>
+    <Authors>stelzo</Authors>
     <Company>OpenAPI</Company>
-    <AssemblyTitle>OpenAPI Library</AssemblyTitle>
-    <Description>A library generated from a OpenAPI doc</Description>
+    <AssemblyTitle>Dofusdude API</AssemblyTitle>
+    <Description>A project for you - the developer.</Description>
     <Copyright>No Copyright</Copyright>
     <RootNamespace>Dofusdude.Api</RootNamespace>
-    <Version>packageVersion&#x3D;0.9.0</Version>
+    <Version>0.9.0</Version>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\Dofusdude.Api.xml</DocumentationFile>
-    <RepositoryUrl>https://github.com/GIT_USER_ID/GIT_REPO_ID.git</RepositoryUrl>
+    <RepositoryUrl>https://github.com/dofusdude/dofusdude-csharp.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageReleaseNotes>Minor update</PackageReleaseNotes>
     <Nullable>annotations</Nullable>
