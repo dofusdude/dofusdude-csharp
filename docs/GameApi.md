@@ -9,7 +9,7 @@ All URIs are relative to *https://api.dofusdu.de*
 
 <a id="getgamesearch"></a>
 # **GetGameSearch**
-> List&lt;GetGameSearch200ResponseInner&gt; GetGameSearch (string language, string game, string query, List<string>? filterType = null, int? limit = null, List<string>? fieldsItem = null)
+> List&lt;GetGameSearch200ResponseInner&gt; GetGameSearch (string language, string game, string query, List<string>? filterType = null, int? limit = null, List<string>? fieldsItem = null, List<string>? filterTypeEnum = null)
 
 Game Search
 
@@ -38,11 +38,12 @@ namespace Example
             var filterType = new List<string>?(); // List<string>? | only results with all specific type (optional) 
             var limit = 8;  // int? | maximum number of returned results (optional)  (default to 8)
             var fieldsItem = new List<string>?(); // List<string>? | adds fields from the item search to the list entries if the hit is a item. Multiple comma separated values allowed. (optional) 
+            var filterTypeEnum = new List<string>?(); // List<string>? | multi-filter results with the english item type name, including \"mount\" and \"set\" from filter[type]. Add with \"wood\" or \"+wood\" and exclude with \"-wood\". (optional) 
 
             try
             {
                 // Game Search
-                List<GetGameSearch200ResponseInner> result = apiInstance.GetGameSearch(language, game, query, filterType, limit, fieldsItem);
+                List<GetGameSearch200ResponseInner> result = apiInstance.GetGameSearch(language, game, query, filterType, limit, fieldsItem, filterTypeEnum);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -63,7 +64,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Game Search
-    ApiResponse<List<GetGameSearch200ResponseInner>> response = apiInstance.GetGameSearchWithHttpInfo(language, game, query, filterType, limit, fieldsItem);
+    ApiResponse<List<GetGameSearch200ResponseInner>> response = apiInstance.GetGameSearchWithHttpInfo(language, game, query, filterType, limit, fieldsItem, filterTypeEnum);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -86,6 +87,7 @@ catch (ApiException e)
 | **filterType** | [**List&lt;string&gt;?**](string.md) | only results with all specific type | [optional]  |
 | **limit** | **int?** | maximum number of returned results | [optional] [default to 8] |
 | **fieldsItem** | [**List&lt;string&gt;?**](string.md) | adds fields from the item search to the list entries if the hit is a item. Multiple comma separated values allowed. | [optional]  |
+| **filterTypeEnum** | [**List&lt;string&gt;?**](string.md) | multi-filter results with the english item type name, including \&quot;mount\&quot; and \&quot;set\&quot; from filter[type]. Add with \&quot;wood\&quot; or \&quot;+wood\&quot; and exclude with \&quot;-wood\&quot;. | [optional]  |
 
 ### Return type
 
@@ -112,7 +114,7 @@ No authorization required
 
 <a id="getitemsallsearch"></a>
 # **GetItemsAllSearch**
-> List&lt;ItemsListEntryTyped&gt; GetItemsAllSearch (string language, string game, string query, string? filterTypeName = null, int? filterMinLevel = null, int? filterMaxLevel = null, int? limit = null)
+> List&lt;ItemsListEntryTyped&gt; GetItemsAllSearch (string language, string game, string query, string? filterTypeName = null, int? filterMinLevel = null, int? filterMaxLevel = null, int? limit = null, List<string>? filterTypeEnum = null)
 
 Search All Items
 
@@ -142,11 +144,12 @@ namespace Example
             var filterMinLevel = 190;  // int? | only results which level is equal or above this value (optional) 
             var filterMaxLevel = 200;  // int? | only results which level is equal or below this value (optional) 
             var limit = 8;  // int? | maximum number of returned results (optional)  (default to 8)
+            var filterTypeEnum = new List<string>?(); // List<string>? | multi-filter results with the english type name. Add with \"wood\" or \"+wood\" and exclude with \"-wood\". (optional) 
 
             try
             {
                 // Search All Items
-                List<ItemsListEntryTyped> result = apiInstance.GetItemsAllSearch(language, game, query, filterTypeName, filterMinLevel, filterMaxLevel, limit);
+                List<ItemsListEntryTyped> result = apiInstance.GetItemsAllSearch(language, game, query, filterTypeName, filterMinLevel, filterMaxLevel, limit, filterTypeEnum);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -167,7 +170,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Search All Items
-    ApiResponse<List<ItemsListEntryTyped>> response = apiInstance.GetItemsAllSearchWithHttpInfo(language, game, query, filterTypeName, filterMinLevel, filterMaxLevel, limit);
+    ApiResponse<List<ItemsListEntryTyped>> response = apiInstance.GetItemsAllSearchWithHttpInfo(language, game, query, filterTypeName, filterMinLevel, filterMaxLevel, limit, filterTypeEnum);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -191,6 +194,7 @@ catch (ApiException e)
 | **filterMinLevel** | **int?** | only results which level is equal or above this value | [optional]  |
 | **filterMaxLevel** | **int?** | only results which level is equal or below this value | [optional]  |
 | **limit** | **int?** | maximum number of returned results | [optional] [default to 8] |
+| **filterTypeEnum** | [**List&lt;string&gt;?**](string.md) | multi-filter results with the english type name. Add with \&quot;wood\&quot; or \&quot;+wood\&quot; and exclude with \&quot;-wood\&quot;. | [optional]  |
 
 ### Return type
 

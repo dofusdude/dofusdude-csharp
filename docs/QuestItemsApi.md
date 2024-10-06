@@ -213,7 +213,7 @@ No authorization required
 
 <a id="getitemsquestlist"></a>
 # **GetItemsQuestList**
-> ItemsListPaged GetItemsQuestList (string language, string game, string? sortLevel = null, string? filterTypeName = null, int? filterMinLevel = null, int? filterMaxLevel = null, int? pageSize = null, int? pageNumber = null, List<string>? fieldsItem = null)
+> ItemsListPaged GetItemsQuestList (string language, string game, string? sortLevel = null, string? filterTypeName = null, int? filterMinLevel = null, int? filterMaxLevel = null, int? pageSize = null, int? pageNumber = null, List<string>? fieldsItem = null, List<string>? filterTypeEnum = null)
 
 List Quest Items
 
@@ -245,11 +245,12 @@ namespace Example
             var pageSize = 5;  // int? | size of the results from the list. -1 disables pagination and gets all in one response. (optional) 
             var pageNumber = 1;  // int? | page number based on the current page[size]. So you could get page 1 with 8 entrys and page 2 would have entries 8 to 16. (optional) 
             var fieldsItem = new List<string>?(); // List<string>? | adds fields from their detail endpoint to the item list entries. Multiple comma separated values allowed. (optional) 
+            var filterTypeEnum = new List<string>?(); // List<string>? | multi-filter results with the english type name. Add with \"wood\" or \"+wood\" and exclude with \"-wood\". (optional) 
 
             try
             {
                 // List Quest Items
-                ItemsListPaged result = apiInstance.GetItemsQuestList(language, game, sortLevel, filterTypeName, filterMinLevel, filterMaxLevel, pageSize, pageNumber, fieldsItem);
+                ItemsListPaged result = apiInstance.GetItemsQuestList(language, game, sortLevel, filterTypeName, filterMinLevel, filterMaxLevel, pageSize, pageNumber, fieldsItem, filterTypeEnum);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -270,7 +271,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // List Quest Items
-    ApiResponse<ItemsListPaged> response = apiInstance.GetItemsQuestListWithHttpInfo(language, game, sortLevel, filterTypeName, filterMinLevel, filterMaxLevel, pageSize, pageNumber, fieldsItem);
+    ApiResponse<ItemsListPaged> response = apiInstance.GetItemsQuestListWithHttpInfo(language, game, sortLevel, filterTypeName, filterMinLevel, filterMaxLevel, pageSize, pageNumber, fieldsItem, filterTypeEnum);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -296,6 +297,7 @@ catch (ApiException e)
 | **pageSize** | **int?** | size of the results from the list. -1 disables pagination and gets all in one response. | [optional]  |
 | **pageNumber** | **int?** | page number based on the current page[size]. So you could get page 1 with 8 entrys and page 2 would have entries 8 to 16. | [optional]  |
 | **fieldsItem** | [**List&lt;string&gt;?**](string.md) | adds fields from their detail endpoint to the item list entries. Multiple comma separated values allowed. | [optional]  |
+| **filterTypeEnum** | [**List&lt;string&gt;?**](string.md) | multi-filter results with the english type name. Add with \&quot;wood\&quot; or \&quot;+wood\&quot; and exclude with \&quot;-wood\&quot;. | [optional]  |
 
 ### Return type
 
@@ -322,7 +324,7 @@ No authorization required
 
 <a id="getitemsquestsearch"></a>
 # **GetItemsQuestSearch**
-> List&lt;ItemListEntry&gt; GetItemsQuestSearch (string language, string game, string query, string? filterTypeName = null, int? filterMinLevel = null, int? filterMaxLevel = null, int? limit = null)
+> List&lt;ItemListEntry&gt; GetItemsQuestSearch (string language, string game, string query, string? filterTypeName = null, int? filterMinLevel = null, int? filterMaxLevel = null, int? limit = null, List<string>? filterTypeEnum = null)
 
 Search Quest Items
 
@@ -352,11 +354,12 @@ namespace Example
             var filterMinLevel = 60;  // int? | only results which level is equal or above this value (optional) 
             var filterMaxLevel = 70;  // int? | only results which level is equal or below this value (optional) 
             var limit = 8;  // int? | maximum number of returned results (optional)  (default to 8)
+            var filterTypeEnum = new List<string>?(); // List<string>? | multi-filter results with the english type name. Add with \"wood\" or \"+wood\" and exclude with \"-wood\". (optional) 
 
             try
             {
                 // Search Quest Items
-                List<ItemListEntry> result = apiInstance.GetItemsQuestSearch(language, game, query, filterTypeName, filterMinLevel, filterMaxLevel, limit);
+                List<ItemListEntry> result = apiInstance.GetItemsQuestSearch(language, game, query, filterTypeName, filterMinLevel, filterMaxLevel, limit, filterTypeEnum);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -377,7 +380,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Search Quest Items
-    ApiResponse<List<ItemListEntry>> response = apiInstance.GetItemsQuestSearchWithHttpInfo(language, game, query, filterTypeName, filterMinLevel, filterMaxLevel, limit);
+    ApiResponse<List<ItemListEntry>> response = apiInstance.GetItemsQuestSearchWithHttpInfo(language, game, query, filterTypeName, filterMinLevel, filterMaxLevel, limit, filterTypeEnum);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -401,6 +404,7 @@ catch (ApiException e)
 | **filterMinLevel** | **int?** | only results which level is equal or above this value | [optional]  |
 | **filterMaxLevel** | **int?** | only results which level is equal or below this value | [optional]  |
 | **limit** | **int?** | maximum number of returned results | [optional] [default to 8] |
+| **filterTypeEnum** | [**List&lt;string&gt;?**](string.md) | multi-filter results with the english type name. Add with \&quot;wood\&quot; or \&quot;+wood\&quot; and exclude with \&quot;-wood\&quot;. | [optional]  |
 
 ### Return type
 

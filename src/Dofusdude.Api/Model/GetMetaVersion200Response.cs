@@ -27,33 +27,41 @@ using OpenAPIDateConverter = Dofusdude.Api.Client.OpenAPIDateConverter;
 namespace Dofusdude.Api.Model
 {
     /// <summary>
-    /// AlmanaxEntryTribute
+    /// GetMetaVersion200Response
     /// </summary>
-    [DataContract(Name = "Almanax_Entry_tribute")]
-    public partial class AlmanaxEntryTribute : IValidatableObject
+    [DataContract(Name = "get_meta_version_200_response")]
+    public partial class GetMetaVersion200Response : IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="AlmanaxEntryTribute" /> class.
+        /// Initializes a new instance of the <see cref="GetMetaVersion200Response" /> class.
         /// </summary>
-        /// <param name="item">item.</param>
-        /// <param name="quantity">quantity.</param>
-        public AlmanaxEntryTribute(AlmanaxEntryTributeItem item = default(AlmanaxEntryTributeItem), int quantity = default(int))
+        /// <param name="varVersion">varVersion.</param>
+        /// <param name="release">release.</param>
+        /// <param name="updateStamp">updateStamp.</param>
+        public GetMetaVersion200Response(string varVersion = default(string), string release = default(string), string updateStamp = default(string))
         {
-            this.Item = item;
-            this.Quantity = quantity;
+            this.VarVersion = varVersion;
+            this.Release = release;
+            this.UpdateStamp = updateStamp;
         }
 
         /// <summary>
-        /// Gets or Sets Item
+        /// Gets or Sets VarVersion
         /// </summary>
-        [DataMember(Name = "item", EmitDefaultValue = false)]
-        public AlmanaxEntryTributeItem Item { get; set; }
+        [DataMember(Name = "version", EmitDefaultValue = false)]
+        public string VarVersion { get; set; }
 
         /// <summary>
-        /// Gets or Sets Quantity
+        /// Gets or Sets Release
         /// </summary>
-        [DataMember(Name = "quantity", EmitDefaultValue = false)]
-        public int Quantity { get; set; }
+        [DataMember(Name = "release", EmitDefaultValue = false)]
+        public string Release { get; set; }
+
+        /// <summary>
+        /// Gets or Sets UpdateStamp
+        /// </summary>
+        [DataMember(Name = "update_stamp", EmitDefaultValue = false)]
+        public string UpdateStamp { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -62,9 +70,10 @@ namespace Dofusdude.Api.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class AlmanaxEntryTribute {\n");
-            sb.Append("  Item: ").Append(Item).Append("\n");
-            sb.Append("  Quantity: ").Append(Quantity).Append("\n");
+            sb.Append("class GetMetaVersion200Response {\n");
+            sb.Append("  VarVersion: ").Append(VarVersion).Append("\n");
+            sb.Append("  Release: ").Append(Release).Append("\n");
+            sb.Append("  UpdateStamp: ").Append(UpdateStamp).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

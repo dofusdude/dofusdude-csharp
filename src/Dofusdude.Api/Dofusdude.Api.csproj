@@ -12,25 +12,24 @@
     <Description>A project for you - the developer.</Description>
     <Copyright>No Copyright</Copyright>
     <RootNamespace>Dofusdude.Api</RootNamespace>
-    <Version>0.9.0</Version>
+    <Version>0.9.1</Version>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\Dofusdude.Api.xml</DocumentationFile>
     <RepositoryUrl>https://github.com/dofusdude/dofusdude-csharp.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageReleaseNotes>Minor update</PackageReleaseNotes>
     <Nullable>annotations</Nullable>
+    <ManagePackageVersionsCentrally>false</ManagePackageVersionsCentrally>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="JsonSubTypes" Version="2.0.1" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-    <PackageReference Include="RestSharp" Version="110.2.0" />
+    <PackageReference Include="RestSharp" Version="112.0.0" />
     <PackageReference Include="Polly" Version="8.1.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Remove="System.Web" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="System.Web" />
   </ItemGroup>
 </Project>

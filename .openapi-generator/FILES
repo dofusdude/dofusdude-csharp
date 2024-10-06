@@ -31,6 +31,7 @@ docs/EquipmentSet.md
 docs/GameApi.md
 docs/GetGameSearch200ResponseInner.md
 docs/GetMetaAlmanaxBonuses200ResponseInner.md
+docs/GetMetaVersion200Response.md
 docs/GetMetaWebhooksTwitter200Response.md
 docs/ImageUrls.md
 docs/ItemListEntry.md
@@ -97,6 +98,7 @@ src/Dofusdude.Api.Test/Model/EquipmentSetTests.cs
 src/Dofusdude.Api.Test/Model/EquipmentTests.cs
 src/Dofusdude.Api.Test/Model/GetGameSearch200ResponseInnerTests.cs
 src/Dofusdude.Api.Test/Model/GetMetaAlmanaxBonuses200ResponseInnerTests.cs
+src/Dofusdude.Api.Test/Model/GetMetaVersion200ResponseTests.cs
 src/Dofusdude.Api.Test/Model/GetMetaWebhooksTwitter200ResponseTests.cs
 src/Dofusdude.Api.Test/Model/ImageUrlsTests.cs
 src/Dofusdude.Api.Test/Model/ItemListEntryParentSetTests.cs
@@ -173,6 +175,7 @@ src/Dofusdude.Api/Model/Equipment.cs
 src/Dofusdude.Api/Model/EquipmentSet.cs
 src/Dofusdude.Api/Model/GetGameSearch200ResponseInner.cs
 src/Dofusdude.Api/Model/GetMetaAlmanaxBonuses200ResponseInner.cs
+src/Dofusdude.Api/Model/GetMetaVersion200Response.cs
 src/Dofusdude.Api/Model/GetMetaWebhooksTwitter200Response.cs
 src/Dofusdude.Api/Model/ImageUrls.cs
 src/Dofusdude.Api/Model/ItemListEntry.cs

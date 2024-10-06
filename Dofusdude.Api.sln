@@ -2,7 +2,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 VisualStudioVersion = 12.0.0.0
 MinimumVisualStudioVersion = 10.0.0.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dofusdude.Api", "src\Dofusdude.Api\Dofusdude.Api.csproj", "{CA798195-8044-416B-8CD9-FC91CD50979A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dofusdude.Api", "src\Dofusdude.Api\Dofusdude.Api.csproj", "{E04A354F-80AA-4729-B77C-6A730E113F7E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dofusdude.Api.Test", "src\Dofusdude.Api.Test\Dofusdude.Api.Test.csproj", "{19F1DEBC-DE5E-4517-8062-F000CD499087}"
 EndProject
@@ -12,10 +12,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{CA798195-8044-416B-8CD9-FC91CD50979A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CA798195-8044-416B-8CD9-FC91CD50979A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CA798195-8044-416B-8CD9-FC91CD50979A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CA798195-8044-416B-8CD9-FC91CD50979A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E04A354F-80AA-4729-B77C-6A730E113F7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E04A354F-80AA-4729-B77C-6A730E113F7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E04A354F-80AA-4729-B77C-6A730E113F7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E04A354F-80AA-4729-B77C-6A730E113F7E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{19F1DEBC-DE5E-4517-8062-F000CD499087}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{19F1DEBC-DE5E-4517-8062-F000CD499087}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{19F1DEBC-DE5E-4517-8062-F000CD499087}.Release|Any CPU.ActiveCfg = Release|Any CPU
