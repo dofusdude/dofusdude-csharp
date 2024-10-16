@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **Level** | **int** |  | [optional] 
 **Effects** | **List&lt;List&lt;SetEffectsEntry&gt;&gt;** |  | [optional] 
 **EquipmentIds** | **List&lt;int&gt;** |  | [optional] 
+**IsCosmetic** | **bool** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

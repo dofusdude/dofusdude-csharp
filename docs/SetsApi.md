@@ -11,7 +11,7 @@ All URIs are relative to *https://api.dofusdu.de*
 
 <a id="getallsetslist"></a>
 # **GetAllSetsList**
-> SetsListPaged GetAllSetsList (string language, string game, string? sortLevel = null, int? filterMinHighestEquipmentLevel = null, int? filterMaxHighestEquipmentLevel = null, string? acceptEncoding = null)
+> SetsListPaged GetAllSetsList (string language, string game, string? sortLevel = null, int? filterMinHighestEquipmentLevel = null, int? filterMaxHighestEquipmentLevel = null, string? acceptEncoding = null, bool? filterIsCosmetic = null)
 
 List All Sets
 
@@ -40,11 +40,12 @@ namespace Example
             var filterMinHighestEquipmentLevel = 190;  // int? | only results where the equipment with the highest level is above or equal to this value (optional) 
             var filterMaxHighestEquipmentLevel = 200;  // int? | only results where the equipment with the highest level is below or equal to this value (optional) 
             var acceptEncoding = "gzip";  // string? | optional compression for saving bandwidth (optional) 
+            var filterIsCosmetic = true;  // bool? | filter sets based on if they only got cosmetic items in it. If true, the item ids are for the cosmetic endpoints instead of equipment. (optional) 
 
             try
             {
                 // List All Sets
-                SetsListPaged result = apiInstance.GetAllSetsList(language, game, sortLevel, filterMinHighestEquipmentLevel, filterMaxHighestEquipmentLevel, acceptEncoding);
+                SetsListPaged result = apiInstance.GetAllSetsList(language, game, sortLevel, filterMinHighestEquipmentLevel, filterMaxHighestEquipmentLevel, acceptEncoding, filterIsCosmetic);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -65,7 +66,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // List All Sets
-    ApiResponse<SetsListPaged> response = apiInstance.GetAllSetsListWithHttpInfo(language, game, sortLevel, filterMinHighestEquipmentLevel, filterMaxHighestEquipmentLevel, acceptEncoding);
+    ApiResponse<SetsListPaged> response = apiInstance.GetAllSetsListWithHttpInfo(language, game, sortLevel, filterMinHighestEquipmentLevel, filterMaxHighestEquipmentLevel, acceptEncoding, filterIsCosmetic);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -88,6 +89,7 @@ catch (ApiException e)
 | **filterMinHighestEquipmentLevel** | **int?** | only results where the equipment with the highest level is above or equal to this value | [optional]  |
 | **filterMaxHighestEquipmentLevel** | **int?** | only results where the equipment with the highest level is below or equal to this value | [optional]  |
 | **acceptEncoding** | **string?** | optional compression for saving bandwidth | [optional]  |
+| **filterIsCosmetic** | **bool?** | filter sets based on if they only got cosmetic items in it. If true, the item ids are for the cosmetic endpoints instead of equipment. | [optional]  |
 
 ### Return type
 
@@ -114,7 +116,7 @@ No authorization required
 
 <a id="getsetslist"></a>
 # **GetSetsList**
-> SetsListPaged GetSetsList (string language, string game, string? sortLevel = null, int? filterMinHighestEquipmentLevel = null, int? filterMaxHighestEquipmentLevel = null, int? pageSize = null, int? pageNumber = null, List<string>? fieldsSet = null)
+> SetsListPaged GetSetsList (string language, string game, string? sortLevel = null, int? filterMinHighestEquipmentLevel = null, int? filterMaxHighestEquipmentLevel = null, int? pageSize = null, int? pageNumber = null, List<string>? fieldsSet = null, bool? filterIsCosmetic = null)
 
 List Sets
 
@@ -145,11 +147,12 @@ namespace Example
             var pageSize = 20;  // int? | size of the results from the list. -1 disables pagination and gets all in one response. (optional) 
             var pageNumber = 1;  // int? | page number based on the current page[size]. So you could get page 1 with 8 entrys and page 2 would have entries 8 to 16. (optional) 
             var fieldsSet = new List<string>?(); // List<string>? | adds fields from their detail endpoint to the item list entries. Multiple comma separated values allowed. (optional) 
+            var filterIsCosmetic = true;  // bool? | filter sets based on if they only got cosmetic items in it. If true, the item ids are for the cosmetic endpoints instead of equipment. (optional) 
 
             try
             {
                 // List Sets
-                SetsListPaged result = apiInstance.GetSetsList(language, game, sortLevel, filterMinHighestEquipmentLevel, filterMaxHighestEquipmentLevel, pageSize, pageNumber, fieldsSet);
+                SetsListPaged result = apiInstance.GetSetsList(language, game, sortLevel, filterMinHighestEquipmentLevel, filterMaxHighestEquipmentLevel, pageSize, pageNumber, fieldsSet, filterIsCosmetic);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -170,7 +173,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // List Sets
-    ApiResponse<SetsListPaged> response = apiInstance.GetSetsListWithHttpInfo(language, game, sortLevel, filterMinHighestEquipmentLevel, filterMaxHighestEquipmentLevel, pageSize, pageNumber, fieldsSet);
+    ApiResponse<SetsListPaged> response = apiInstance.GetSetsListWithHttpInfo(language, game, sortLevel, filterMinHighestEquipmentLevel, filterMaxHighestEquipmentLevel, pageSize, pageNumber, fieldsSet, filterIsCosmetic);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -195,6 +198,7 @@ catch (ApiException e)
 | **pageSize** | **int?** | size of the results from the list. -1 disables pagination and gets all in one response. | [optional]  |
 | **pageNumber** | **int?** | page number based on the current page[size]. So you could get page 1 with 8 entrys and page 2 would have entries 8 to 16. | [optional]  |
 | **fieldsSet** | [**List&lt;string&gt;?**](string.md) | adds fields from their detail endpoint to the item list entries. Multiple comma separated values allowed. | [optional]  |
+| **filterIsCosmetic** | **bool?** | filter sets based on if they only got cosmetic items in it. If true, the item ids are for the cosmetic endpoints instead of equipment. | [optional]  |
 
 ### Return type
 
@@ -221,7 +225,7 @@ No authorization required
 
 <a id="getsetssearch"></a>
 # **GetSetsSearch**
-> List&lt;SetListEntry&gt; GetSetsSearch (string language, string game, string query, int? filterMinHighestEquipmentLevel = null, int? filterMaxHighestEquipmentLevel = null, int? limit = null)
+> List&lt;SetListEntry&gt; GetSetsSearch (string language, string game, string query, int? filterMinHighestEquipmentLevel = null, int? filterMaxHighestEquipmentLevel = null, int? limit = null, bool? filterIsCosmetic = null)
 
 Search Sets
 
@@ -250,11 +254,12 @@ namespace Example
             var filterMinHighestEquipmentLevel = 195;  // int? | only results where the equipment with the highest level is above or equal to this value (optional) 
             var filterMaxHighestEquipmentLevel = 200;  // int? | only results where the equipment with the highest level is below or equal to this value (optional) 
             var limit = 8;  // int? | maximum number of returned results (optional)  (default to 8)
+            var filterIsCosmetic = true;  // bool? | filter sets based on if they only got cosmetic items in it. If true, the item ids are for the cosmetic endpoints instead of equipment. (optional) 
 
             try
             {
                 // Search Sets
-                List<SetListEntry> result = apiInstance.GetSetsSearch(language, game, query, filterMinHighestEquipmentLevel, filterMaxHighestEquipmentLevel, limit);
+                List<SetListEntry> result = apiInstance.GetSetsSearch(language, game, query, filterMinHighestEquipmentLevel, filterMaxHighestEquipmentLevel, limit, filterIsCosmetic);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -275,7 +280,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Search Sets
-    ApiResponse<List<SetListEntry>> response = apiInstance.GetSetsSearchWithHttpInfo(language, game, query, filterMinHighestEquipmentLevel, filterMaxHighestEquipmentLevel, limit);
+    ApiResponse<List<SetListEntry>> response = apiInstance.GetSetsSearchWithHttpInfo(language, game, query, filterMinHighestEquipmentLevel, filterMaxHighestEquipmentLevel, limit, filterIsCosmetic);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -298,6 +303,7 @@ catch (ApiException e)
 | **filterMinHighestEquipmentLevel** | **int?** | only results where the equipment with the highest level is above or equal to this value | [optional]  |
 | **filterMaxHighestEquipmentLevel** | **int?** | only results where the equipment with the highest level is below or equal to this value | [optional]  |
 | **limit** | **int?** | maximum number of returned results | [optional] [default to 8] |
+| **filterIsCosmetic** | **bool?** | filter sets based on if they only got cosmetic items in it. If true, the item ids are for the cosmetic endpoints instead of equipment. | [optional]  |
 
 ### Return type
 

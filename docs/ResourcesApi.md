@@ -11,7 +11,7 @@ All URIs are relative to *https://api.dofusdu.de*
 
 <a id="getallitemsresourceslist"></a>
 # **GetAllItemsResourcesList**
-> ItemsListPaged GetAllItemsResourcesList (string language, string game, string? sortLevel = null, string? filterTypeName = null, int? filterMinLevel = null, int? filterMaxLevel = null, string? acceptEncoding = null)
+> ItemsListPaged GetAllItemsResourcesList (string language, string game, string? sortLevel = null, string? filterTypeName = null, int? filterMinLevel = null, int? filterMaxLevel = null, string? acceptEncoding = null, List<string>? filterTypeEnum = null)
 
 List All Resources
 
@@ -41,11 +41,12 @@ namespace Example
             var filterMinLevel = 160;  // int? | only results which level is equal or above this value (optional) 
             var filterMaxLevel = 190;  // int? | only results which level is equal or below this value (optional) 
             var acceptEncoding = "gzip";  // string? | optional compression for saving bandwidth (optional) 
+            var filterTypeEnum = new List<string>?(); // List<string>? | multi-filter results with the english type name. Add with \"wood\" or \"+wood\" and exclude with \"-wood\". (optional) 
 
             try
             {
                 // List All Resources
-                ItemsListPaged result = apiInstance.GetAllItemsResourcesList(language, game, sortLevel, filterTypeName, filterMinLevel, filterMaxLevel, acceptEncoding);
+                ItemsListPaged result = apiInstance.GetAllItemsResourcesList(language, game, sortLevel, filterTypeName, filterMinLevel, filterMaxLevel, acceptEncoding, filterTypeEnum);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -66,7 +67,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // List All Resources
-    ApiResponse<ItemsListPaged> response = apiInstance.GetAllItemsResourcesListWithHttpInfo(language, game, sortLevel, filterTypeName, filterMinLevel, filterMaxLevel, acceptEncoding);
+    ApiResponse<ItemsListPaged> response = apiInstance.GetAllItemsResourcesListWithHttpInfo(language, game, sortLevel, filterTypeName, filterMinLevel, filterMaxLevel, acceptEncoding, filterTypeEnum);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -90,6 +91,7 @@ catch (ApiException e)
 | **filterMinLevel** | **int?** | only results which level is equal or above this value | [optional]  |
 | **filterMaxLevel** | **int?** | only results which level is equal or below this value | [optional]  |
 | **acceptEncoding** | **string?** | optional compression for saving bandwidth | [optional]  |
+| **filterTypeEnum** | [**List&lt;string&gt;?**](string.md) | multi-filter results with the english type name. Add with \&quot;wood\&quot; or \&quot;+wood\&quot; and exclude with \&quot;-wood\&quot;. | [optional]  |
 
 ### Return type
 
