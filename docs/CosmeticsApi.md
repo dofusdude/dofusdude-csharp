@@ -336,7 +336,7 @@ No authorization required
 
 <a id="getcosmeticssingle"></a>
 # **GetCosmeticsSingle**
-> Cosmetic GetCosmeticsSingle (string language, int ankamaId, string game)
+> Equipment GetCosmeticsSingle (string language, int ankamaId, string game)
 
 Single Cosmetics
 
@@ -366,7 +366,7 @@ namespace Example
             try
             {
                 // Single Cosmetics
-                Cosmetic result = apiInstance.GetCosmeticsSingle(language, ankamaId, game);
+                Equipment result = apiInstance.GetCosmeticsSingle(language, ankamaId, game);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -387,7 +387,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Single Cosmetics
-    ApiResponse<Cosmetic> response = apiInstance.GetCosmeticsSingleWithHttpInfo(language, ankamaId, game);
+    ApiResponse<Equipment> response = apiInstance.GetCosmeticsSingleWithHttpInfo(language, ankamaId, game);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -410,7 +410,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**Cosmetic**](Cosmetic.md)
+[**Equipment**](Equipment.md)
 
 ### Authorization
 

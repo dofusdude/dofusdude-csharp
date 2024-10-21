@@ -16,8 +16,6 @@ docs/ConditionTreeLeaf.md
 docs/ConditionTreeNode.md
 docs/ConditionTreeRelation.md
 docs/ConsumablesApi.md
-docs/Cosmetic.md
-docs/CosmeticType.md
 docs/CosmeticsApi.md
 docs/CreateAlmanaxWebhook.md
 docs/CreateAlmanaxWebhookDailySettings.md
@@ -52,6 +50,7 @@ docs/PutTwitterWebhook.md
 docs/QuestItemsApi.md
 docs/RecipeEntry.md
 docs/Resource.md
+docs/ResourceType.md
 docs/ResourcesApi.md
 docs/RssWebhook.md
 docs/SetEffectsEntry.md
@@ -86,8 +85,6 @@ src/Dofusdude.Api.Test/Model/ConditionEntryTests.cs
 src/Dofusdude.Api.Test/Model/ConditionTreeLeafTests.cs
 src/Dofusdude.Api.Test/Model/ConditionTreeNodeTests.cs
 src/Dofusdude.Api.Test/Model/ConditionTreeRelationTests.cs
-src/Dofusdude.Api.Test/Model/CosmeticTests.cs
-src/Dofusdude.Api.Test/Model/CosmeticTypeTests.cs
 src/Dofusdude.Api.Test/Model/CreateAlmanaxWebhookDailySettingsTests.cs
 src/Dofusdude.Api.Test/Model/CreateAlmanaxWebhookMentionsValueInnerTests.cs
 src/Dofusdude.Api.Test/Model/CreateAlmanaxWebhookTests.cs
@@ -116,6 +113,7 @@ src/Dofusdude.Api.Test/Model/PutRSSWebhookTests.cs
 src/Dofusdude.Api.Test/Model/PutTwitterWebhookTests.cs
 src/Dofusdude.Api.Test/Model/RecipeEntryTests.cs
 src/Dofusdude.Api.Test/Model/ResourceTests.cs
+src/Dofusdude.Api.Test/Model/ResourceTypeTests.cs
 src/Dofusdude.Api.Test/Model/RssWebhookTests.cs
 src/Dofusdude.Api.Test/Model/SetEffectsEntryTests.cs
 src/Dofusdude.Api.Test/Model/SetEffectsEntryTypeTests.cs
@@ -163,8 +161,6 @@ src/Dofusdude.Api/Model/ConditionEntry.cs
 src/Dofusdude.Api/Model/ConditionTreeLeaf.cs
 src/Dofusdude.Api/Model/ConditionTreeNode.cs
 src/Dofusdude.Api/Model/ConditionTreeRelation.cs
-src/Dofusdude.Api/Model/Cosmetic.cs
-src/Dofusdude.Api/Model/CosmeticType.cs
 src/Dofusdude.Api/Model/CreateAlmanaxWebhook.cs
 src/Dofusdude.Api/Model/CreateAlmanaxWebhookDailySettings.cs
 src/Dofusdude.Api/Model/CreateAlmanaxWebhookMentionsValueInner.cs
@@ -193,6 +189,7 @@ src/Dofusdude.Api/Model/PutRSSWebhook.cs
 src/Dofusdude.Api/Model/PutTwitterWebhook.cs
 src/Dofusdude.Api/Model/RecipeEntry.cs
 src/Dofusdude.Api/Model/Resource.cs
+src/Dofusdude.Api/Model/ResourceType.cs
 src/Dofusdude.Api/Model/RssWebhook.cs
 src/Dofusdude.Api/Model/SetEffectsEntry.cs
 src/Dofusdude.Api/Model/SetEffectsEntryType.cs

@@ -1,4 +1,4 @@
-# Dofusdude.Api.Model.CosmeticType
+# Dofusdude.Api.Model.ResourceType
 
 ## Properties
 

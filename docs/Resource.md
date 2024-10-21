@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **AnkamaId** | **int** |  | [optional] 
 **Name** | **string** |  | [optional] 
 **Description** | **string** |  | [optional] 
-**Type** | [**CosmeticType**](CosmeticType.md) |  | [optional] 
+**Type** | [**ResourceType**](ResourceType.md) |  | [optional] 
 **Level** | **int** |  | [optional] 
 **Pods** | **int** |  | [optional] 
 **ImageUrls** | [**ImageUrls**](ImageUrls.md) |  | [optional] 
