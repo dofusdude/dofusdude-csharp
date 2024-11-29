@@ -4,12 +4,12 @@ All URIs are relative to *https://api.dofusdu.de*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**GetAlmanaxDate**](AlmanaxApi.md#getalmanaxdate) | **GET** /dofus2/{language}/almanax/{date} | Single Almanax Date |
-| [**GetAlmanaxRange**](AlmanaxApi.md#getalmanaxrange) | **GET** /dofus2/{language}/almanax | Almanax Range |
+| [**GetAlmanaxDate**](AlmanaxApi.md#getalmanaxdate) | **GET** /dofus3/{language}/almanax/{date} | Single Almanax Date |
+| [**GetAlmanaxRange**](AlmanaxApi.md#getalmanaxrange) | **GET** /dofus3/{language}/almanax | Almanax Range |
 
 <a id="getalmanaxdate"></a>
 # **GetAlmanaxDate**
-> AlmanaxEntry GetAlmanaxDate (string language, DateOnly date)
+> Almanax GetAlmanaxDate (string language, DateOnly date)
 
 Single Almanax Date
 
@@ -38,7 +38,7 @@ namespace Example
             try
             {
                 // Single Almanax Date
-                AlmanaxEntry result = apiInstance.GetAlmanaxDate(language, date);
+                Almanax result = apiInstance.GetAlmanaxDate(language, date);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -59,7 +59,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Single Almanax Date
-    ApiResponse<AlmanaxEntry> response = apiInstance.GetAlmanaxDateWithHttpInfo(language, date);
+    ApiResponse<Almanax> response = apiInstance.GetAlmanaxDateWithHttpInfo(language, date);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -81,7 +81,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**AlmanaxEntry**](AlmanaxEntry.md)
+[**Almanax**](Almanax.md)
 
 ### Authorization
 
@@ -96,13 +96,13 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | OK |  -  |
+| **200** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="getalmanaxrange"></a>
 # **GetAlmanaxRange**
-> List&lt;AlmanaxEntry&gt; GetAlmanaxRange (string language, string? filterBonusType = null, DateOnly? rangeFrom = null, DateOnly? rangeTo = null, int? rangeSize = null, string? timezone = null)
+> List&lt;Almanax&gt; GetAlmanaxRange (string language, string? filterBonusType = null, DateOnly? rangeFrom = null, DateOnly? rangeTo = null, int? rangeSize = null, string? timezone = null)
 
 Almanax Range
 
@@ -135,7 +135,7 @@ namespace Example
             try
             {
                 // Almanax Range
-                List<AlmanaxEntry> result = apiInstance.GetAlmanaxRange(language, filterBonusType, rangeFrom, rangeTo, rangeSize, timezone);
+                List<Almanax> result = apiInstance.GetAlmanaxRange(language, filterBonusType, rangeFrom, rangeTo, rangeSize, timezone);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -156,7 +156,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Almanax Range
-    ApiResponse<List<AlmanaxEntry>> response = apiInstance.GetAlmanaxRangeWithHttpInfo(language, filterBonusType, rangeFrom, rangeTo, rangeSize, timezone);
+    ApiResponse<List<Almanax>> response = apiInstance.GetAlmanaxRangeWithHttpInfo(language, filterBonusType, rangeFrom, rangeTo, rangeSize, timezone);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -182,7 +182,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**List&lt;AlmanaxEntry&gt;**](AlmanaxEntry.md)
+[**List&lt;Almanax&gt;**](Almanax.md)
 
 ### Authorization
 
@@ -197,7 +197,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | OK |  -  |
+| **200** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

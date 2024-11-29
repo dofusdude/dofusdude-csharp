@@ -4,14 +4,14 @@ All URIs are relative to *https://api.dofusdu.de*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**GetAllMountsList**](MountsApi.md#getallmountslist) | **GET** /{game}/{language}/mounts/all | List All Mounts |
-| [**GetMountsList**](MountsApi.md#getmountslist) | **GET** /{game}/{language}/mounts | List Mounts |
-| [**GetMountsSearch**](MountsApi.md#getmountssearch) | **GET** /{game}/{language}/mounts/search | Search Mounts |
-| [**GetMountsSingle**](MountsApi.md#getmountssingle) | **GET** /{game}/{language}/mounts/{ankama_id} | Single Mounts |
+| [**GetAllMountsList**](MountsApi.md#getallmountslist) | **GET** /{game}/v1/{language}/mounts/all | List All Mounts |
+| [**GetMountsList**](MountsApi.md#getmountslist) | **GET** /{game}/v1/{language}/mounts | List Mounts |
+| [**GetMountsSearch**](MountsApi.md#getmountssearch) | **GET** /{game}/v1/{language}/mounts/search | Search Mounts |
+| [**GetMountsSingle**](MountsApi.md#getmountssingle) | **GET** /{game}/v1/{language}/mounts/{ankama_id} | Single Mounts |
 
 <a id="getallmountslist"></a>
 # **GetAllMountsList**
-> MountsListPaged GetAllMountsList (string language, string game, string? filterFamilyName = null, string? acceptEncoding = null)
+> ListMounts GetAllMountsList (string language, string game, string? filterFamilyName = null, string? acceptEncoding = null, int? filterFamilyId = null)
 
 List All Mounts
 
@@ -35,14 +35,15 @@ namespace Example
             config.BasePath = "https://api.dofusdu.de";
             var apiInstance = new MountsApi(config);
             var language = "en";  // string | a valid language code
-            var game = dofus2;  // string | 
+            var game = dofus3;  // string | dofus3 | dofus3beta
             var filterFamilyName = Dragoturkey;  // string? | only results with the translated family name (optional) 
             var acceptEncoding = "gzip";  // string? | optional compression for saving bandwidth (optional) 
+            var filterFamilyId = 56;  // int? | only results with the unique family id (optional) 
 
             try
             {
                 // List All Mounts
-                MountsListPaged result = apiInstance.GetAllMountsList(language, game, filterFamilyName, acceptEncoding);
+                ListMounts result = apiInstance.GetAllMountsList(language, game, filterFamilyName, acceptEncoding, filterFamilyId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -63,7 +64,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // List All Mounts
-    ApiResponse<MountsListPaged> response = apiInstance.GetAllMountsListWithHttpInfo(language, game, filterFamilyName, acceptEncoding);
+    ApiResponse<ListMounts> response = apiInstance.GetAllMountsListWithHttpInfo(language, game, filterFamilyName, acceptEncoding, filterFamilyId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -81,13 +82,14 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **language** | **string** | a valid language code |  |
-| **game** | **string** |  |  |
+| **game** | **string** | dofus3 | dofus3beta |  |
 | **filterFamilyName** | **string?** | only results with the translated family name | [optional]  |
 | **acceptEncoding** | **string?** | optional compression for saving bandwidth | [optional]  |
+| **filterFamilyId** | **int?** | only results with the unique family id | [optional]  |
 
 ### Return type
 
-[**MountsListPaged**](MountsListPaged.md)
+[**ListMounts**](ListMounts.md)
 
 ### Authorization
 
@@ -102,15 +104,15 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Mounts Found |  -  |
-| **400** | Bad Request  |  -  |
-| **404** | Not Found |  -  |
+| **200** |  |  -  |
+| **400** |  |  -  |
+| **404** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="getmountslist"></a>
 # **GetMountsList**
-> MountsListPaged GetMountsList (string language, string game, string? filterFamilyName = null, int? pageSize = null, int? pageNumber = null, List<string>? fieldsMount = null)
+> ListMounts GetMountsList (string language, string game, string? filterFamilyName = null, int? pageSize = null, int? pageNumber = null, List<string>? fieldsMount = null, int? filterFamilyId = null)
 
 List Mounts
 
@@ -134,16 +136,17 @@ namespace Example
             config.BasePath = "https://api.dofusdu.de";
             var apiInstance = new MountsApi(config);
             var language = "en";  // string | a valid language code
-            var game = dofus2;  // string | 
+            var game = dofus3;  // string | dofus3 | dofus3beta
             var filterFamilyName = Dragoturkey;  // string? | only results with the translated family name (optional) 
             var pageSize = 10;  // int? | size of the results from the list. -1 disables pagination and gets all in one response. (optional) 
             var pageNumber = 1;  // int? | page number based on the current page[size]. So you could get page 1 with 8 entrys and page 2 would have entries 8 to 16. (optional) 
             var fieldsMount = new List<string>?(); // List<string>? | adds fields from their detail endpoint to the item list entries. Multiple comma separated values allowed. (optional) 
+            var filterFamilyId = 56;  // int? | only results with the unique family id (optional) 
 
             try
             {
                 // List Mounts
-                MountsListPaged result = apiInstance.GetMountsList(language, game, filterFamilyName, pageSize, pageNumber, fieldsMount);
+                ListMounts result = apiInstance.GetMountsList(language, game, filterFamilyName, pageSize, pageNumber, fieldsMount, filterFamilyId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -164,7 +167,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // List Mounts
-    ApiResponse<MountsListPaged> response = apiInstance.GetMountsListWithHttpInfo(language, game, filterFamilyName, pageSize, pageNumber, fieldsMount);
+    ApiResponse<ListMounts> response = apiInstance.GetMountsListWithHttpInfo(language, game, filterFamilyName, pageSize, pageNumber, fieldsMount, filterFamilyId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -182,15 +185,16 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **language** | **string** | a valid language code |  |
-| **game** | **string** |  |  |
+| **game** | **string** | dofus3 | dofus3beta |  |
 | **filterFamilyName** | **string?** | only results with the translated family name | [optional]  |
 | **pageSize** | **int?** | size of the results from the list. -1 disables pagination and gets all in one response. | [optional]  |
 | **pageNumber** | **int?** | page number based on the current page[size]. So you could get page 1 with 8 entrys and page 2 would have entries 8 to 16. | [optional]  |
 | **fieldsMount** | [**List&lt;string&gt;?**](string.md) | adds fields from their detail endpoint to the item list entries. Multiple comma separated values allowed. | [optional]  |
+| **filterFamilyId** | **int?** | only results with the unique family id | [optional]  |
 
 ### Return type
 
-[**MountsListPaged**](MountsListPaged.md)
+[**ListMounts**](ListMounts.md)
 
 ### Authorization
 
@@ -205,15 +209,15 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Mounts Found |  -  |
-| **400** | Bad Request  |  -  |
-| **404** | Not Found |  -  |
+| **200** |  |  -  |
+| **400** |  |  -  |
+| **404** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="getmountssearch"></a>
 # **GetMountsSearch**
-> List&lt;MountListEntry&gt; GetMountsSearch (string language, string game, string query, string? filterFamilyName = null, int? limit = null)
+> List&lt;Mount&gt; GetMountsSearch (string language, string game, string query, string? filterFamilyName = null, int? limit = null)
 
 Search Mounts
 
@@ -237,7 +241,7 @@ namespace Example
             config.BasePath = "https://api.dofusdu.de";
             var apiInstance = new MountsApi(config);
             var language = fr;  // string | a valid language code
-            var game = dofus2;  // string | 
+            var game = dofus3;  // string | dofus3 | dofus3beta
             var query = Dorée;  // string | case sensitive search query
             var filterFamilyName = Dragodinde;  // string? | only results with the translated family name (optional) 
             var limit = 8;  // int? | maximum number of returned results (optional)  (default to 8)
@@ -245,7 +249,7 @@ namespace Example
             try
             {
                 // Search Mounts
-                List<MountListEntry> result = apiInstance.GetMountsSearch(language, game, query, filterFamilyName, limit);
+                List<Mount> result = apiInstance.GetMountsSearch(language, game, query, filterFamilyName, limit);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -266,7 +270,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Search Mounts
-    ApiResponse<List<MountListEntry>> response = apiInstance.GetMountsSearchWithHttpInfo(language, game, query, filterFamilyName, limit);
+    ApiResponse<List<Mount>> response = apiInstance.GetMountsSearchWithHttpInfo(language, game, query, filterFamilyName, limit);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -284,14 +288,14 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **language** | **string** | a valid language code |  |
-| **game** | **string** |  |  |
+| **game** | **string** | dofus3 | dofus3beta |  |
 | **query** | **string** | case sensitive search query |  |
 | **filterFamilyName** | **string?** | only results with the translated family name | [optional]  |
 | **limit** | **int?** | maximum number of returned results | [optional] [default to 8] |
 
 ### Return type
 
-[**List&lt;MountListEntry&gt;**](MountListEntry.md)
+[**List&lt;Mount&gt;**](Mount.md)
 
 ### Authorization
 
@@ -306,9 +310,9 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Mounts Found |  -  |
-| **400** | Bad Request  Possibilities: - empty or no query  |  -  |
-| **404** | Not Found  Possibilities: - no hits for query |  -  |
+| **200** |  |  -  |
+| **400** |  |  -  |
+| **404** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -339,7 +343,7 @@ namespace Example
             var apiInstance = new MountsApi(config);
             var language = "en";  // string | a valid language code
             var ankamaId = 180;  // int | identifier
-            var game = dofus2;  // string | 
+            var game = dofus3;  // string | dofus3 | dofus3beta
 
             try
             {
@@ -384,7 +388,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **language** | **string** | a valid language code |  |
 | **ankamaId** | **int** | identifier |  |
-| **game** | **string** |  |  |
+| **game** | **string** | dofus3 | dofus3beta |  |
 
 ### Return type
 
@@ -403,9 +407,9 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | Mount Found |  -  |
-| **400** | Bad Request  Possibilities: - invalid ankama id format  |  -  |
-| **404** | Not Found  Possibilities: - nothing found for this ankama_id |  -  |
+| **200** |  |  -  |
+| **400** |  |  -  |
+| **404** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

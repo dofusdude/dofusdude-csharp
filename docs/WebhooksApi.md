@@ -45,7 +45,7 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://api.dofusdu.de";
             var apiInstance = new WebhooksApi(config);
-            var id = "id_example";  // string | 
+            var id = "id_example";  // string | the ID returned from the API when creating the webhook
 
             try
             {
@@ -84,7 +84,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **string** |  |  |
+| **id** | **string** | the ID returned from the API when creating the webhook |  |
 
 ### Return type
 
@@ -132,7 +132,7 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://api.dofusdu.de";
             var apiInstance = new WebhooksApi(config);
-            var id = "id_example";  // string | 
+            var id = "id_example";  // string | the ID returned from the API when creating the webhook
 
             try
             {
@@ -171,7 +171,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **string** |  |  |
+| **id** | **string** | the ID returned from the API when creating the webhook |  |
 
 ### Return type
 
@@ -219,7 +219,7 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://api.dofusdu.de";
             var apiInstance = new WebhooksApi(config);
-            var id = "id_example";  // string | 
+            var id = "id_example";  // string | the ID returned from the API when creating the webhook
 
             try
             {
@@ -258,7 +258,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **string** |  |  |
+| **id** | **string** | the ID returned from the API when creating the webhook |  |
 
 ### Return type
 
@@ -564,7 +564,7 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://api.dofusdu.de";
             var apiInstance = new WebhooksApi(config);
-            var id = "id_example";  // string | 
+            var id = "id_example";  // string | the ID returned from the API when creating the webhook
 
             try
             {
@@ -607,7 +607,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **string** |  |  |
+| **id** | **string** | the ID returned from the API when creating the webhook |  |
 
 ### Return type
 
@@ -655,7 +655,7 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://api.dofusdu.de";
             var apiInstance = new WebhooksApi(config);
-            var id = "id_example";  // string | 
+            var id = "id_example";  // string | the ID returned from the API when creating the webhook
 
             try
             {
@@ -698,7 +698,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **string** |  |  |
+| **id** | **string** | the ID returned from the API when creating the webhook |  |
 
 ### Return type
 
@@ -746,7 +746,7 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://api.dofusdu.de";
             var apiInstance = new WebhooksApi(config);
-            var id = "id_example";  // string | 
+            var id = "id_example";  // string | the ID returned from the API when creating the webhook
 
             try
             {
@@ -789,7 +789,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **string** |  |  |
+| **id** | **string** | the ID returned from the API when creating the webhook |  |
 
 ### Return type
 
@@ -1098,7 +1098,7 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://api.dofusdu.de";
             var apiInstance = new WebhooksApi(config);
-            var id = "id_example";  // string | 
+            var id = "id_example";  // string | the ID returned from the API when creating the webhook
             var putAlmanaxWebhook = new PutAlmanaxWebhook?(); // PutAlmanaxWebhook? |  (optional) 
 
             try
@@ -1142,7 +1142,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **string** |  |  |
+| **id** | **string** | the ID returned from the API when creating the webhook |  |
 | **putAlmanaxWebhook** | [**PutAlmanaxWebhook?**](PutAlmanaxWebhook?.md) |  | [optional]  |
 
 ### Return type
@@ -1191,7 +1191,7 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://api.dofusdu.de";
             var apiInstance = new WebhooksApi(config);
-            var id = "id_example";  // string | 
+            var id = "id_example";  // string | the ID returned from the API when creating the webhook
             var putRSSWebhook = new PutRSSWebhook?(); // PutRSSWebhook? |  (optional) 
 
             try
@@ -1235,7 +1235,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **string** |  |  |
+| **id** | **string** | the ID returned from the API when creating the webhook |  |
 | **putRSSWebhook** | [**PutRSSWebhook?**](PutRSSWebhook?.md) |  | [optional]  |
 
 ### Return type
@@ -1284,7 +1284,7 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://api.dofusdu.de";
             var apiInstance = new WebhooksApi(config);
-            var id = "id_example";  // string | 
+            var id = "id_example";  // string | the ID returned from the API when creating the webhook
             var putTwitterWebhook = new PutTwitterWebhook?(); // PutTwitterWebhook? |  (optional) 
 
             try
@@ -1328,7 +1328,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **string** |  |  |
+| **id** | **string** | the ID returned from the API when creating the webhook |  |
 | **putTwitterWebhook** | [**PutTwitterWebhook?**](PutTwitterWebhook?.md) |  | [optional]  |
 
 ### Return type

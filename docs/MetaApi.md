@@ -4,12 +4,12 @@ All URIs are relative to *https://api.dofusdu.de*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**GetGameSearchTypes**](MetaApi.md#getgamesearchtypes) | **GET** /dofus2/meta/search/types | Available Game Search Types |
-| [**GetItemTypes**](MetaApi.md#getitemtypes) | **GET** /dofus2/meta/items/types | Available Item Types |
-| [**GetMetaAlmanaxBonuses**](MetaApi.md#getmetaalmanaxbonuses) | **GET** /dofus2/meta/{language}/almanax/bonuses | Available Almanax Bonuses |
-| [**GetMetaAlmanaxBonusesSearch**](MetaApi.md#getmetaalmanaxbonusessearch) | **GET** /dofus2/meta/{language}/almanax/bonuses/search | Search Available Almanax Bonuses |
-| [**GetMetaElements**](MetaApi.md#getmetaelements) | **GET** /dofus2/meta/elements | Effects and Condition Elements |
-| [**GetMetaVersion**](MetaApi.md#getmetaversion) | **GET** /dofus2/meta/version | Game Version |
+| [**GetGameSearchTypes**](MetaApi.md#getgamesearchtypes) | **GET** /dofus3/meta/search/types | Available Game Search Types |
+| [**GetItemTypes**](MetaApi.md#getitemtypes) | **GET** /dofus3/meta/items/types | Available Item Types |
+| [**GetMetaAlmanaxBonuses**](MetaApi.md#getmetaalmanaxbonuses) | **GET** /dofus3/meta/{language}/almanax/bonuses | Available Almanax Bonuses |
+| [**GetMetaAlmanaxBonusesSearch**](MetaApi.md#getmetaalmanaxbonusessearch) | **GET** /dofus3/meta/{language}/almanax/bonuses/search | Search Available Almanax Bonuses |
+| [**GetMetaElements**](MetaApi.md#getmetaelements) | **GET** /dofus3/meta/elements | Effects and Condition Elements |
+| [**GetMetaVersion**](MetaApi.md#getmetaversion) | **GET** /dofus3/meta/version | Game Version |
 
 <a id="getgamesearchtypes"></a>
 # **GetGameSearchTypes**
@@ -17,7 +17,7 @@ All URIs are relative to *https://api.dofusdu.de*
 
 Available Game Search Types
 
-Get all types for /{game}/{lang}/search available for filtering. All names are english for comparing them inside applications. Order is fixed so you can compare indices instead of strings.
+Get all types for /{game}/v1/{lang}/search available for filtering. All names are english for comparing them inside applications. Order is fixed so you can compare indices instead of strings.
 
 ### Example
 ```csharp
@@ -208,7 +208,7 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://api.dofusdu.de";
             var apiInstance = new MetaApi(config);
-            var language = fr;  // string | 
+            var language = fr;  // string | a valid language code
 
             try
             {
@@ -251,7 +251,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **language** | **string** |  |  |
+| **language** | **string** | a valid language code |  |
 
 ### Return type
 
@@ -457,7 +457,7 @@ No authorization required
 
 <a id="getmetaversion"></a>
 # **GetMetaVersion**
-> GetMetaVersion200Response GetMetaVersion ()
+> ModelVersion GetMetaVersion ()
 
 Game Version
 
@@ -484,7 +484,7 @@ namespace Example
             try
             {
                 // Game Version
-                GetMetaVersion200Response result = apiInstance.GetMetaVersion();
+                ModelVersion result = apiInstance.GetMetaVersion();
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -505,7 +505,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Game Version
-    ApiResponse<GetMetaVersion200Response> response = apiInstance.GetMetaVersionWithHttpInfo();
+    ApiResponse<ModelVersion> response = apiInstance.GetMetaVersionWithHttpInfo();
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -522,7 +522,7 @@ catch (ApiException e)
 This endpoint does not need any parameter.
 ### Return type
 
-[**GetMetaVersion200Response**](GetMetaVersion200Response.md)
+[**ModelVersion**](ModelVersion.md)
 
 ### Authorization
 
@@ -537,7 +537,7 @@ No authorization required
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-| **200** | OK |  -  |
+| **200** |  |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
