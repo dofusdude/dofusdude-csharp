@@ -43,8 +43,8 @@ namespace Dofusdude.Api.Api
         /// <param name="filterContainsCosmeticsOnly">filter sets based on if they only got cosmetic items in it. If true, the item ids are for the cosmetic endpoints instead of equipment. (optional)</param>
         /// <param name="filterContainsCosmetics">filter sets based on if they got cosmetic items in it. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ListSets</returns>
-        ListSets GetAllSetsList(string language, string game, string? sortLevel = default(string?), int? filterMinHighestEquipmentLevel = default(int?), int? filterMaxHighestEquipmentLevel = default(int?), string? acceptEncoding = default(string?), bool? filterContainsCosmeticsOnly = default(bool?), bool? filterContainsCosmetics = default(bool?), int operationIndex = 0);
+        /// <returns>ListEquipmentSets</returns>
+        ListEquipmentSets GetAllSetsList(string language, string game, string? sortLevel = default(string?), int? filterMinHighestEquipmentLevel = default(int?), int? filterMaxHighestEquipmentLevel = default(int?), string? acceptEncoding = default(string?), bool? filterContainsCosmeticsOnly = default(bool?), bool? filterContainsCosmetics = default(bool?), int operationIndex = 0);
 
         /// <summary>
         /// List All Sets
@@ -62,8 +62,8 @@ namespace Dofusdude.Api.Api
         /// <param name="filterContainsCosmeticsOnly">filter sets based on if they only got cosmetic items in it. If true, the item ids are for the cosmetic endpoints instead of equipment. (optional)</param>
         /// <param name="filterContainsCosmetics">filter sets based on if they got cosmetic items in it. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of ListSets</returns>
-        ApiResponse<ListSets> GetAllSetsListWithHttpInfo(string language, string game, string? sortLevel = default(string?), int? filterMinHighestEquipmentLevel = default(int?), int? filterMaxHighestEquipmentLevel = default(int?), string? acceptEncoding = default(string?), bool? filterContainsCosmeticsOnly = default(bool?), bool? filterContainsCosmetics = default(bool?), int operationIndex = 0);
+        /// <returns>ApiResponse of ListEquipmentSets</returns>
+        ApiResponse<ListEquipmentSets> GetAllSetsListWithHttpInfo(string language, string game, string? sortLevel = default(string?), int? filterMinHighestEquipmentLevel = default(int?), int? filterMaxHighestEquipmentLevel = default(int?), string? acceptEncoding = default(string?), bool? filterContainsCosmeticsOnly = default(bool?), bool? filterContainsCosmetics = default(bool?), int operationIndex = 0);
         /// <summary>
         /// List Sets
         /// </summary>
@@ -82,8 +82,8 @@ namespace Dofusdude.Api.Api
         /// <param name="filterContainsCosmeticsOnly">filter sets based on if they only got cosmetic items in it. If true, the item ids are for the cosmetic endpoints instead of equipment. (optional)</param>
         /// <param name="filterContainsCosmetics">filter sets based on if they got cosmetic items in it. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ListSets</returns>
-        ListSets GetSetsList(string language, string game, string? sortLevel = default(string?), int? filterMinHighestEquipmentLevel = default(int?), int? filterMaxHighestEquipmentLevel = default(int?), int? pageSize = default(int?), int? pageNumber = default(int?), List<string>? fieldsSet = default(List<string>?), bool? filterContainsCosmeticsOnly = default(bool?), bool? filterContainsCosmetics = default(bool?), int operationIndex = 0);
+        /// <returns>ListEquipmentSet</returns>
+        ListEquipmentSet GetSetsList(string language, string game, string? sortLevel = default(string?), int? filterMinHighestEquipmentLevel = default(int?), int? filterMaxHighestEquipmentLevel = default(int?), int? pageSize = default(int?), int? pageNumber = default(int?), List<string>? fieldsSet = default(List<string>?), bool? filterContainsCosmeticsOnly = default(bool?), bool? filterContainsCosmetics = default(bool?), int operationIndex = 0);
 
         /// <summary>
         /// List Sets
@@ -103,8 +103,8 @@ namespace Dofusdude.Api.Api
         /// <param name="filterContainsCosmeticsOnly">filter sets based on if they only got cosmetic items in it. If true, the item ids are for the cosmetic endpoints instead of equipment. (optional)</param>
         /// <param name="filterContainsCosmetics">filter sets based on if they got cosmetic items in it. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of ListSets</returns>
-        ApiResponse<ListSets> GetSetsListWithHttpInfo(string language, string game, string? sortLevel = default(string?), int? filterMinHighestEquipmentLevel = default(int?), int? filterMaxHighestEquipmentLevel = default(int?), int? pageSize = default(int?), int? pageNumber = default(int?), List<string>? fieldsSet = default(List<string>?), bool? filterContainsCosmeticsOnly = default(bool?), bool? filterContainsCosmetics = default(bool?), int operationIndex = 0);
+        /// <returns>ApiResponse of ListEquipmentSet</returns>
+        ApiResponse<ListEquipmentSet> GetSetsListWithHttpInfo(string language, string game, string? sortLevel = default(string?), int? filterMinHighestEquipmentLevel = default(int?), int? filterMaxHighestEquipmentLevel = default(int?), int? pageSize = default(int?), int? pageNumber = default(int?), List<string>? fieldsSet = default(List<string>?), bool? filterContainsCosmeticsOnly = default(bool?), bool? filterContainsCosmetics = default(bool?), int operationIndex = 0);
         /// <summary>
         /// Search Sets
         /// </summary>
@@ -120,8 +120,8 @@ namespace Dofusdude.Api.Api
         /// <param name="limit">maximum number of returned results (optional, default to 8)</param>
         /// <param name="filterIsCosmetic">filter sets based on if they only got cosmetic items in it. If true, the item ids are for the cosmetic endpoints instead of equipment. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>List&lt;ListSet&gt;</returns>
-        List<ListSet> GetSetsSearch(string language, string game, string query, int? filterMinHighestEquipmentLevel = default(int?), int? filterMaxHighestEquipmentLevel = default(int?), int? limit = default(int?), bool? filterIsCosmetic = default(bool?), int operationIndex = 0);
+        /// <returns>List&lt;ListEquipmentSet&gt;</returns>
+        List<ListEquipmentSet> GetSetsSearch(string language, string game, string query, int? filterMinHighestEquipmentLevel = default(int?), int? filterMaxHighestEquipmentLevel = default(int?), int? limit = default(int?), bool? filterIsCosmetic = default(bool?), int operationIndex = 0);
 
         /// <summary>
         /// Search Sets
@@ -138,8 +138,8 @@ namespace Dofusdude.Api.Api
         /// <param name="limit">maximum number of returned results (optional, default to 8)</param>
         /// <param name="filterIsCosmetic">filter sets based on if they only got cosmetic items in it. If true, the item ids are for the cosmetic endpoints instead of equipment. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of List&lt;ListSet&gt;</returns>
-        ApiResponse<List<ListSet>> GetSetsSearchWithHttpInfo(string language, string game, string query, int? filterMinHighestEquipmentLevel = default(int?), int? filterMaxHighestEquipmentLevel = default(int?), int? limit = default(int?), bool? filterIsCosmetic = default(bool?), int operationIndex = 0);
+        /// <returns>ApiResponse of List&lt;ListEquipmentSet&gt;</returns>
+        ApiResponse<List<ListEquipmentSet>> GetSetsSearchWithHttpInfo(string language, string game, string query, int? filterMinHighestEquipmentLevel = default(int?), int? filterMaxHighestEquipmentLevel = default(int?), int? limit = default(int?), bool? filterIsCosmetic = default(bool?), int operationIndex = 0);
         /// <summary>
         /// Single Sets
         /// </summary>
@@ -151,8 +151,8 @@ namespace Dofusdude.Api.Api
         /// <param name="ankamaId">identifier</param>
         /// <param name="game">dofus3 | dofus3beta</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>Set</returns>
-        Set GetSetsSingle(string language, int ankamaId, string game, int operationIndex = 0);
+        /// <returns>EquipmentSet</returns>
+        EquipmentSet GetSetsSingle(string language, int ankamaId, string game, int operationIndex = 0);
 
         /// <summary>
         /// Single Sets
@@ -165,8 +165,8 @@ namespace Dofusdude.Api.Api
         /// <param name="ankamaId">identifier</param>
         /// <param name="game">dofus3 | dofus3beta</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of Set</returns>
-        ApiResponse<Set> GetSetsSingleWithHttpInfo(string language, int ankamaId, string game, int operationIndex = 0);
+        /// <returns>ApiResponse of EquipmentSet</returns>
+        ApiResponse<EquipmentSet> GetSetsSingleWithHttpInfo(string language, int ankamaId, string game, int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -193,8 +193,8 @@ namespace Dofusdude.Api.Api
         /// <param name="filterContainsCosmetics">filter sets based on if they got cosmetic items in it. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ListSets</returns>
-        System.Threading.Tasks.Task<ListSets> GetAllSetsListAsync(string language, string game, string? sortLevel = default(string?), int? filterMinHighestEquipmentLevel = default(int?), int? filterMaxHighestEquipmentLevel = default(int?), string? acceptEncoding = default(string?), bool? filterContainsCosmeticsOnly = default(bool?), bool? filterContainsCosmetics = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of ListEquipmentSets</returns>
+        System.Threading.Tasks.Task<ListEquipmentSets> GetAllSetsListAsync(string language, string game, string? sortLevel = default(string?), int? filterMinHighestEquipmentLevel = default(int?), int? filterMaxHighestEquipmentLevel = default(int?), string? acceptEncoding = default(string?), bool? filterContainsCosmeticsOnly = default(bool?), bool? filterContainsCosmetics = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// List All Sets
@@ -213,8 +213,8 @@ namespace Dofusdude.Api.Api
         /// <param name="filterContainsCosmetics">filter sets based on if they got cosmetic items in it. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (ListSets)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ListSets>> GetAllSetsListWithHttpInfoAsync(string language, string game, string? sortLevel = default(string?), int? filterMinHighestEquipmentLevel = default(int?), int? filterMaxHighestEquipmentLevel = default(int?), string? acceptEncoding = default(string?), bool? filterContainsCosmeticsOnly = default(bool?), bool? filterContainsCosmetics = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (ListEquipmentSets)</returns>
+        System.Threading.Tasks.Task<ApiResponse<ListEquipmentSets>> GetAllSetsListWithHttpInfoAsync(string language, string game, string? sortLevel = default(string?), int? filterMinHighestEquipmentLevel = default(int?), int? filterMaxHighestEquipmentLevel = default(int?), string? acceptEncoding = default(string?), bool? filterContainsCosmeticsOnly = default(bool?), bool? filterContainsCosmetics = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// List Sets
         /// </summary>
@@ -234,8 +234,8 @@ namespace Dofusdude.Api.Api
         /// <param name="filterContainsCosmetics">filter sets based on if they got cosmetic items in it. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ListSets</returns>
-        System.Threading.Tasks.Task<ListSets> GetSetsListAsync(string language, string game, string? sortLevel = default(string?), int? filterMinHighestEquipmentLevel = default(int?), int? filterMaxHighestEquipmentLevel = default(int?), int? pageSize = default(int?), int? pageNumber = default(int?), List<string>? fieldsSet = default(List<string>?), bool? filterContainsCosmeticsOnly = default(bool?), bool? filterContainsCosmetics = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of ListEquipmentSet</returns>
+        System.Threading.Tasks.Task<ListEquipmentSet> GetSetsListAsync(string language, string game, string? sortLevel = default(string?), int? filterMinHighestEquipmentLevel = default(int?), int? filterMaxHighestEquipmentLevel = default(int?), int? pageSize = default(int?), int? pageNumber = default(int?), List<string>? fieldsSet = default(List<string>?), bool? filterContainsCosmeticsOnly = default(bool?), bool? filterContainsCosmetics = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// List Sets
@@ -256,8 +256,8 @@ namespace Dofusdude.Api.Api
         /// <param name="filterContainsCosmetics">filter sets based on if they got cosmetic items in it. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (ListSets)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ListSets>> GetSetsListWithHttpInfoAsync(string language, string game, string? sortLevel = default(string?), int? filterMinHighestEquipmentLevel = default(int?), int? filterMaxHighestEquipmentLevel = default(int?), int? pageSize = default(int?), int? pageNumber = default(int?), List<string>? fieldsSet = default(List<string>?), bool? filterContainsCosmeticsOnly = default(bool?), bool? filterContainsCosmetics = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (ListEquipmentSet)</returns>
+        System.Threading.Tasks.Task<ApiResponse<ListEquipmentSet>> GetSetsListWithHttpInfoAsync(string language, string game, string? sortLevel = default(string?), int? filterMinHighestEquipmentLevel = default(int?), int? filterMaxHighestEquipmentLevel = default(int?), int? pageSize = default(int?), int? pageNumber = default(int?), List<string>? fieldsSet = default(List<string>?), bool? filterContainsCosmeticsOnly = default(bool?), bool? filterContainsCosmetics = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Search Sets
         /// </summary>
@@ -274,8 +274,8 @@ namespace Dofusdude.Api.Api
         /// <param name="filterIsCosmetic">filter sets based on if they only got cosmetic items in it. If true, the item ids are for the cosmetic endpoints instead of equipment. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;ListSet&gt;</returns>
-        System.Threading.Tasks.Task<List<ListSet>> GetSetsSearchAsync(string language, string game, string query, int? filterMinHighestEquipmentLevel = default(int?), int? filterMaxHighestEquipmentLevel = default(int?), int? limit = default(int?), bool? filterIsCosmetic = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of List&lt;ListEquipmentSet&gt;</returns>
+        System.Threading.Tasks.Task<List<ListEquipmentSet>> GetSetsSearchAsync(string language, string game, string query, int? filterMinHighestEquipmentLevel = default(int?), int? filterMaxHighestEquipmentLevel = default(int?), int? limit = default(int?), bool? filterIsCosmetic = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Search Sets
@@ -293,8 +293,8 @@ namespace Dofusdude.Api.Api
         /// <param name="filterIsCosmetic">filter sets based on if they only got cosmetic items in it. If true, the item ids are for the cosmetic endpoints instead of equipment. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;ListSet&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<ListSet>>> GetSetsSearchWithHttpInfoAsync(string language, string game, string query, int? filterMinHighestEquipmentLevel = default(int?), int? filterMaxHighestEquipmentLevel = default(int?), int? limit = default(int?), bool? filterIsCosmetic = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (List&lt;ListEquipmentSet&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<ListEquipmentSet>>> GetSetsSearchWithHttpInfoAsync(string language, string game, string query, int? filterMinHighestEquipmentLevel = default(int?), int? filterMaxHighestEquipmentLevel = default(int?), int? limit = default(int?), bool? filterIsCosmetic = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         /// <summary>
         /// Single Sets
         /// </summary>
@@ -307,8 +307,8 @@ namespace Dofusdude.Api.Api
         /// <param name="game">dofus3 | dofus3beta</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of Set</returns>
-        System.Threading.Tasks.Task<Set> GetSetsSingleAsync(string language, int ankamaId, string game, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of EquipmentSet</returns>
+        System.Threading.Tasks.Task<EquipmentSet> GetSetsSingleAsync(string language, int ankamaId, string game, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
 
         /// <summary>
         /// Single Sets
@@ -322,8 +322,8 @@ namespace Dofusdude.Api.Api
         /// <param name="game">dofus3 | dofus3beta</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (Set)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Set>> GetSetsSingleWithHttpInfoAsync(string language, int ankamaId, string game, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (EquipmentSet)</returns>
+        System.Threading.Tasks.Task<ApiResponse<EquipmentSet>> GetSetsSingleWithHttpInfoAsync(string language, int ankamaId, string game, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -457,10 +457,10 @@ namespace Dofusdude.Api.Api
         /// <param name="filterContainsCosmeticsOnly">filter sets based on if they only got cosmetic items in it. If true, the item ids are for the cosmetic endpoints instead of equipment. (optional)</param>
         /// <param name="filterContainsCosmetics">filter sets based on if they got cosmetic items in it. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ListSets</returns>
-        public ListSets GetAllSetsList(string language, string game, string? sortLevel = default(string?), int? filterMinHighestEquipmentLevel = default(int?), int? filterMaxHighestEquipmentLevel = default(int?), string? acceptEncoding = default(string?), bool? filterContainsCosmeticsOnly = default(bool?), bool? filterContainsCosmetics = default(bool?), int operationIndex = 0)
+        /// <returns>ListEquipmentSets</returns>
+        public ListEquipmentSets GetAllSetsList(string language, string game, string? sortLevel = default(string?), int? filterMinHighestEquipmentLevel = default(int?), int? filterMaxHighestEquipmentLevel = default(int?), string? acceptEncoding = default(string?), bool? filterContainsCosmeticsOnly = default(bool?), bool? filterContainsCosmetics = default(bool?), int operationIndex = 0)
         {
-            Dofusdude.Api.Client.ApiResponse<ListSets> localVarResponse = GetAllSetsListWithHttpInfo(language, game, sortLevel, filterMinHighestEquipmentLevel, filterMaxHighestEquipmentLevel, acceptEncoding, filterContainsCosmeticsOnly, filterContainsCosmetics);
+            Dofusdude.Api.Client.ApiResponse<ListEquipmentSets> localVarResponse = GetAllSetsListWithHttpInfo(language, game, sortLevel, filterMinHighestEquipmentLevel, filterMaxHighestEquipmentLevel, acceptEncoding, filterContainsCosmeticsOnly, filterContainsCosmetics);
             return localVarResponse.Data;
         }
 
@@ -477,8 +477,8 @@ namespace Dofusdude.Api.Api
         /// <param name="filterContainsCosmeticsOnly">filter sets based on if they only got cosmetic items in it. If true, the item ids are for the cosmetic endpoints instead of equipment. (optional)</param>
         /// <param name="filterContainsCosmetics">filter sets based on if they got cosmetic items in it. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of ListSets</returns>
-        public Dofusdude.Api.Client.ApiResponse<ListSets> GetAllSetsListWithHttpInfo(string language, string game, string? sortLevel = default(string?), int? filterMinHighestEquipmentLevel = default(int?), int? filterMaxHighestEquipmentLevel = default(int?), string? acceptEncoding = default(string?), bool? filterContainsCosmeticsOnly = default(bool?), bool? filterContainsCosmetics = default(bool?), int operationIndex = 0)
+        /// <returns>ApiResponse of ListEquipmentSets</returns>
+        public Dofusdude.Api.Client.ApiResponse<ListEquipmentSets> GetAllSetsListWithHttpInfo(string language, string game, string? sortLevel = default(string?), int? filterMinHighestEquipmentLevel = default(int?), int? filterMaxHighestEquipmentLevel = default(int?), string? acceptEncoding = default(string?), bool? filterContainsCosmeticsOnly = default(bool?), bool? filterContainsCosmetics = default(bool?), int operationIndex = 0)
         {
             // verify the required parameter 'language' is set
             if (language == null)
@@ -546,7 +546,7 @@ namespace Dofusdude.Api.Api
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<ListSets>("/{game}/v1/{language}/sets/all", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<ListEquipmentSets>("/{game}/v1/{language}/sets/all", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("GetAllSetsList", localVarResponse);
@@ -573,10 +573,10 @@ namespace Dofusdude.Api.Api
         /// <param name="filterContainsCosmetics">filter sets based on if they got cosmetic items in it. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ListSets</returns>
-        public async System.Threading.Tasks.Task<ListSets> GetAllSetsListAsync(string language, string game, string? sortLevel = default(string?), int? filterMinHighestEquipmentLevel = default(int?), int? filterMaxHighestEquipmentLevel = default(int?), string? acceptEncoding = default(string?), bool? filterContainsCosmeticsOnly = default(bool?), bool? filterContainsCosmetics = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of ListEquipmentSets</returns>
+        public async System.Threading.Tasks.Task<ListEquipmentSets> GetAllSetsListAsync(string language, string game, string? sortLevel = default(string?), int? filterMinHighestEquipmentLevel = default(int?), int? filterMaxHighestEquipmentLevel = default(int?), string? acceptEncoding = default(string?), bool? filterContainsCosmeticsOnly = default(bool?), bool? filterContainsCosmetics = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            Dofusdude.Api.Client.ApiResponse<ListSets> localVarResponse = await GetAllSetsListWithHttpInfoAsync(language, game, sortLevel, filterMinHighestEquipmentLevel, filterMaxHighestEquipmentLevel, acceptEncoding, filterContainsCosmeticsOnly, filterContainsCosmetics, operationIndex, cancellationToken).ConfigureAwait(false);
+            Dofusdude.Api.Client.ApiResponse<ListEquipmentSets> localVarResponse = await GetAllSetsListWithHttpInfoAsync(language, game, sortLevel, filterMinHighestEquipmentLevel, filterMaxHighestEquipmentLevel, acceptEncoding, filterContainsCosmeticsOnly, filterContainsCosmetics, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -594,8 +594,8 @@ namespace Dofusdude.Api.Api
         /// <param name="filterContainsCosmetics">filter sets based on if they got cosmetic items in it. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (ListSets)</returns>
-        public async System.Threading.Tasks.Task<Dofusdude.Api.Client.ApiResponse<ListSets>> GetAllSetsListWithHttpInfoAsync(string language, string game, string? sortLevel = default(string?), int? filterMinHighestEquipmentLevel = default(int?), int? filterMaxHighestEquipmentLevel = default(int?), string? acceptEncoding = default(string?), bool? filterContainsCosmeticsOnly = default(bool?), bool? filterContainsCosmetics = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (ListEquipmentSets)</returns>
+        public async System.Threading.Tasks.Task<Dofusdude.Api.Client.ApiResponse<ListEquipmentSets>> GetAllSetsListWithHttpInfoAsync(string language, string game, string? sortLevel = default(string?), int? filterMinHighestEquipmentLevel = default(int?), int? filterMaxHighestEquipmentLevel = default(int?), string? acceptEncoding = default(string?), bool? filterContainsCosmeticsOnly = default(bool?), bool? filterContainsCosmetics = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'language' is set
             if (language == null)
@@ -664,7 +664,7 @@ namespace Dofusdude.Api.Api
 
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<ListSets>("/{game}/v1/{language}/sets/all", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<ListEquipmentSets>("/{game}/v1/{language}/sets/all", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -693,10 +693,10 @@ namespace Dofusdude.Api.Api
         /// <param name="filterContainsCosmeticsOnly">filter sets based on if they only got cosmetic items in it. If true, the item ids are for the cosmetic endpoints instead of equipment. (optional)</param>
         /// <param name="filterContainsCosmetics">filter sets based on if they got cosmetic items in it. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ListSets</returns>
-        public ListSets GetSetsList(string language, string game, string? sortLevel = default(string?), int? filterMinHighestEquipmentLevel = default(int?), int? filterMaxHighestEquipmentLevel = default(int?), int? pageSize = default(int?), int? pageNumber = default(int?), List<string>? fieldsSet = default(List<string>?), bool? filterContainsCosmeticsOnly = default(bool?), bool? filterContainsCosmetics = default(bool?), int operationIndex = 0)
+        /// <returns>ListEquipmentSet</returns>
+        public ListEquipmentSet GetSetsList(string language, string game, string? sortLevel = default(string?), int? filterMinHighestEquipmentLevel = default(int?), int? filterMaxHighestEquipmentLevel = default(int?), int? pageSize = default(int?), int? pageNumber = default(int?), List<string>? fieldsSet = default(List<string>?), bool? filterContainsCosmeticsOnly = default(bool?), bool? filterContainsCosmetics = default(bool?), int operationIndex = 0)
         {
-            Dofusdude.Api.Client.ApiResponse<ListSets> localVarResponse = GetSetsListWithHttpInfo(language, game, sortLevel, filterMinHighestEquipmentLevel, filterMaxHighestEquipmentLevel, pageSize, pageNumber, fieldsSet, filterContainsCosmeticsOnly, filterContainsCosmetics);
+            Dofusdude.Api.Client.ApiResponse<ListEquipmentSet> localVarResponse = GetSetsListWithHttpInfo(language, game, sortLevel, filterMinHighestEquipmentLevel, filterMaxHighestEquipmentLevel, pageSize, pageNumber, fieldsSet, filterContainsCosmeticsOnly, filterContainsCosmetics);
             return localVarResponse.Data;
         }
 
@@ -715,8 +715,8 @@ namespace Dofusdude.Api.Api
         /// <param name="filterContainsCosmeticsOnly">filter sets based on if they only got cosmetic items in it. If true, the item ids are for the cosmetic endpoints instead of equipment. (optional)</param>
         /// <param name="filterContainsCosmetics">filter sets based on if they got cosmetic items in it. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of ListSets</returns>
-        public Dofusdude.Api.Client.ApiResponse<ListSets> GetSetsListWithHttpInfo(string language, string game, string? sortLevel = default(string?), int? filterMinHighestEquipmentLevel = default(int?), int? filterMaxHighestEquipmentLevel = default(int?), int? pageSize = default(int?), int? pageNumber = default(int?), List<string>? fieldsSet = default(List<string>?), bool? filterContainsCosmeticsOnly = default(bool?), bool? filterContainsCosmetics = default(bool?), int operationIndex = 0)
+        /// <returns>ApiResponse of ListEquipmentSet</returns>
+        public Dofusdude.Api.Client.ApiResponse<ListEquipmentSet> GetSetsListWithHttpInfo(string language, string game, string? sortLevel = default(string?), int? filterMinHighestEquipmentLevel = default(int?), int? filterMaxHighestEquipmentLevel = default(int?), int? pageSize = default(int?), int? pageNumber = default(int?), List<string>? fieldsSet = default(List<string>?), bool? filterContainsCosmeticsOnly = default(bool?), bool? filterContainsCosmetics = default(bool?), int operationIndex = 0)
         {
             // verify the required parameter 'language' is set
             if (language == null)
@@ -792,7 +792,7 @@ namespace Dofusdude.Api.Api
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<ListSets>("/{game}/v1/{language}/sets", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<ListEquipmentSet>("/{game}/v1/{language}/sets", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("GetSetsList", localVarResponse);
@@ -821,10 +821,10 @@ namespace Dofusdude.Api.Api
         /// <param name="filterContainsCosmetics">filter sets based on if they got cosmetic items in it. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ListSets</returns>
-        public async System.Threading.Tasks.Task<ListSets> GetSetsListAsync(string language, string game, string? sortLevel = default(string?), int? filterMinHighestEquipmentLevel = default(int?), int? filterMaxHighestEquipmentLevel = default(int?), int? pageSize = default(int?), int? pageNumber = default(int?), List<string>? fieldsSet = default(List<string>?), bool? filterContainsCosmeticsOnly = default(bool?), bool? filterContainsCosmetics = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of ListEquipmentSet</returns>
+        public async System.Threading.Tasks.Task<ListEquipmentSet> GetSetsListAsync(string language, string game, string? sortLevel = default(string?), int? filterMinHighestEquipmentLevel = default(int?), int? filterMaxHighestEquipmentLevel = default(int?), int? pageSize = default(int?), int? pageNumber = default(int?), List<string>? fieldsSet = default(List<string>?), bool? filterContainsCosmeticsOnly = default(bool?), bool? filterContainsCosmetics = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            Dofusdude.Api.Client.ApiResponse<ListSets> localVarResponse = await GetSetsListWithHttpInfoAsync(language, game, sortLevel, filterMinHighestEquipmentLevel, filterMaxHighestEquipmentLevel, pageSize, pageNumber, fieldsSet, filterContainsCosmeticsOnly, filterContainsCosmetics, operationIndex, cancellationToken).ConfigureAwait(false);
+            Dofusdude.Api.Client.ApiResponse<ListEquipmentSet> localVarResponse = await GetSetsListWithHttpInfoAsync(language, game, sortLevel, filterMinHighestEquipmentLevel, filterMaxHighestEquipmentLevel, pageSize, pageNumber, fieldsSet, filterContainsCosmeticsOnly, filterContainsCosmetics, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -844,8 +844,8 @@ namespace Dofusdude.Api.Api
         /// <param name="filterContainsCosmetics">filter sets based on if they got cosmetic items in it. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (ListSets)</returns>
-        public async System.Threading.Tasks.Task<Dofusdude.Api.Client.ApiResponse<ListSets>> GetSetsListWithHttpInfoAsync(string language, string game, string? sortLevel = default(string?), int? filterMinHighestEquipmentLevel = default(int?), int? filterMaxHighestEquipmentLevel = default(int?), int? pageSize = default(int?), int? pageNumber = default(int?), List<string>? fieldsSet = default(List<string>?), bool? filterContainsCosmeticsOnly = default(bool?), bool? filterContainsCosmetics = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (ListEquipmentSet)</returns>
+        public async System.Threading.Tasks.Task<Dofusdude.Api.Client.ApiResponse<ListEquipmentSet>> GetSetsListWithHttpInfoAsync(string language, string game, string? sortLevel = default(string?), int? filterMinHighestEquipmentLevel = default(int?), int? filterMaxHighestEquipmentLevel = default(int?), int? pageSize = default(int?), int? pageNumber = default(int?), List<string>? fieldsSet = default(List<string>?), bool? filterContainsCosmeticsOnly = default(bool?), bool? filterContainsCosmetics = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'language' is set
             if (language == null)
@@ -922,7 +922,7 @@ namespace Dofusdude.Api.Api
 
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<ListSets>("/{game}/v1/{language}/sets", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<ListEquipmentSet>("/{game}/v1/{language}/sets", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -948,10 +948,10 @@ namespace Dofusdude.Api.Api
         /// <param name="limit">maximum number of returned results (optional, default to 8)</param>
         /// <param name="filterIsCosmetic">filter sets based on if they only got cosmetic items in it. If true, the item ids are for the cosmetic endpoints instead of equipment. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>List&lt;ListSet&gt;</returns>
-        public List<ListSet> GetSetsSearch(string language, string game, string query, int? filterMinHighestEquipmentLevel = default(int?), int? filterMaxHighestEquipmentLevel = default(int?), int? limit = default(int?), bool? filterIsCosmetic = default(bool?), int operationIndex = 0)
+        /// <returns>List&lt;ListEquipmentSet&gt;</returns>
+        public List<ListEquipmentSet> GetSetsSearch(string language, string game, string query, int? filterMinHighestEquipmentLevel = default(int?), int? filterMaxHighestEquipmentLevel = default(int?), int? limit = default(int?), bool? filterIsCosmetic = default(bool?), int operationIndex = 0)
         {
-            Dofusdude.Api.Client.ApiResponse<List<ListSet>> localVarResponse = GetSetsSearchWithHttpInfo(language, game, query, filterMinHighestEquipmentLevel, filterMaxHighestEquipmentLevel, limit, filterIsCosmetic);
+            Dofusdude.Api.Client.ApiResponse<List<ListEquipmentSet>> localVarResponse = GetSetsSearchWithHttpInfo(language, game, query, filterMinHighestEquipmentLevel, filterMaxHighestEquipmentLevel, limit, filterIsCosmetic);
             return localVarResponse.Data;
         }
 
@@ -967,8 +967,8 @@ namespace Dofusdude.Api.Api
         /// <param name="limit">maximum number of returned results (optional, default to 8)</param>
         /// <param name="filterIsCosmetic">filter sets based on if they only got cosmetic items in it. If true, the item ids are for the cosmetic endpoints instead of equipment. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of List&lt;ListSet&gt;</returns>
-        public Dofusdude.Api.Client.ApiResponse<List<ListSet>> GetSetsSearchWithHttpInfo(string language, string game, string query, int? filterMinHighestEquipmentLevel = default(int?), int? filterMaxHighestEquipmentLevel = default(int?), int? limit = default(int?), bool? filterIsCosmetic = default(bool?), int operationIndex = 0)
+        /// <returns>ApiResponse of List&lt;ListEquipmentSet&gt;</returns>
+        public Dofusdude.Api.Client.ApiResponse<List<ListEquipmentSet>> GetSetsSearchWithHttpInfo(string language, string game, string query, int? filterMinHighestEquipmentLevel = default(int?), int? filterMaxHighestEquipmentLevel = default(int?), int? limit = default(int?), bool? filterIsCosmetic = default(bool?), int operationIndex = 0)
         {
             // verify the required parameter 'language' is set
             if (language == null)
@@ -1035,7 +1035,7 @@ namespace Dofusdude.Api.Api
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<List<ListSet>>("/{game}/v1/{language}/sets/search", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<List<ListEquipmentSet>>("/{game}/v1/{language}/sets/search", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("GetSetsSearch", localVarResponse);
@@ -1061,10 +1061,10 @@ namespace Dofusdude.Api.Api
         /// <param name="filterIsCosmetic">filter sets based on if they only got cosmetic items in it. If true, the item ids are for the cosmetic endpoints instead of equipment. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;ListSet&gt;</returns>
-        public async System.Threading.Tasks.Task<List<ListSet>> GetSetsSearchAsync(string language, string game, string query, int? filterMinHighestEquipmentLevel = default(int?), int? filterMaxHighestEquipmentLevel = default(int?), int? limit = default(int?), bool? filterIsCosmetic = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of List&lt;ListEquipmentSet&gt;</returns>
+        public async System.Threading.Tasks.Task<List<ListEquipmentSet>> GetSetsSearchAsync(string language, string game, string query, int? filterMinHighestEquipmentLevel = default(int?), int? filterMaxHighestEquipmentLevel = default(int?), int? limit = default(int?), bool? filterIsCosmetic = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            Dofusdude.Api.Client.ApiResponse<List<ListSet>> localVarResponse = await GetSetsSearchWithHttpInfoAsync(language, game, query, filterMinHighestEquipmentLevel, filterMaxHighestEquipmentLevel, limit, filterIsCosmetic, operationIndex, cancellationToken).ConfigureAwait(false);
+            Dofusdude.Api.Client.ApiResponse<List<ListEquipmentSet>> localVarResponse = await GetSetsSearchWithHttpInfoAsync(language, game, query, filterMinHighestEquipmentLevel, filterMaxHighestEquipmentLevel, limit, filterIsCosmetic, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1081,8 +1081,8 @@ namespace Dofusdude.Api.Api
         /// <param name="filterIsCosmetic">filter sets based on if they only got cosmetic items in it. If true, the item ids are for the cosmetic endpoints instead of equipment. (optional)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;ListSet&gt;)</returns>
-        public async System.Threading.Tasks.Task<Dofusdude.Api.Client.ApiResponse<List<ListSet>>> GetSetsSearchWithHttpInfoAsync(string language, string game, string query, int? filterMinHighestEquipmentLevel = default(int?), int? filterMaxHighestEquipmentLevel = default(int?), int? limit = default(int?), bool? filterIsCosmetic = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (List&lt;ListEquipmentSet&gt;)</returns>
+        public async System.Threading.Tasks.Task<Dofusdude.Api.Client.ApiResponse<List<ListEquipmentSet>>> GetSetsSearchWithHttpInfoAsync(string language, string game, string query, int? filterMinHighestEquipmentLevel = default(int?), int? filterMaxHighestEquipmentLevel = default(int?), int? limit = default(int?), bool? filterIsCosmetic = default(bool?), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'language' is set
             if (language == null)
@@ -1150,7 +1150,7 @@ namespace Dofusdude.Api.Api
 
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<List<ListSet>>("/{game}/v1/{language}/sets/search", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<ListEquipmentSet>>("/{game}/v1/{language}/sets/search", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -1172,10 +1172,10 @@ namespace Dofusdude.Api.Api
         /// <param name="ankamaId">identifier</param>
         /// <param name="game">dofus3 | dofus3beta</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>Set</returns>
-        public Set GetSetsSingle(string language, int ankamaId, string game, int operationIndex = 0)
+        /// <returns>EquipmentSet</returns>
+        public EquipmentSet GetSetsSingle(string language, int ankamaId, string game, int operationIndex = 0)
         {
-            Dofusdude.Api.Client.ApiResponse<Set> localVarResponse = GetSetsSingleWithHttpInfo(language, ankamaId, game);
+            Dofusdude.Api.Client.ApiResponse<EquipmentSet> localVarResponse = GetSetsSingleWithHttpInfo(language, ankamaId, game);
             return localVarResponse.Data;
         }
 
@@ -1187,8 +1187,8 @@ namespace Dofusdude.Api.Api
         /// <param name="ankamaId">identifier</param>
         /// <param name="game">dofus3 | dofus3beta</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
-        /// <returns>ApiResponse of Set</returns>
-        public Dofusdude.Api.Client.ApiResponse<Set> GetSetsSingleWithHttpInfo(string language, int ankamaId, string game, int operationIndex = 0)
+        /// <returns>ApiResponse of EquipmentSet</returns>
+        public Dofusdude.Api.Client.ApiResponse<EquipmentSet> GetSetsSingleWithHttpInfo(string language, int ankamaId, string game, int operationIndex = 0)
         {
             // verify the required parameter 'language' is set
             if (language == null)
@@ -1233,7 +1233,7 @@ namespace Dofusdude.Api.Api
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<Set>("/{game}/v1/{language}/sets/{ankama_id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<EquipmentSet>("/{game}/v1/{language}/sets/{ankama_id}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("GetSetsSingle", localVarResponse);
@@ -1255,10 +1255,10 @@ namespace Dofusdude.Api.Api
         /// <param name="game">dofus3 | dofus3beta</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of Set</returns>
-        public async System.Threading.Tasks.Task<Set> GetSetsSingleAsync(string language, int ankamaId, string game, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of EquipmentSet</returns>
+        public async System.Threading.Tasks.Task<EquipmentSet> GetSetsSingleAsync(string language, int ankamaId, string game, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
-            Dofusdude.Api.Client.ApiResponse<Set> localVarResponse = await GetSetsSingleWithHttpInfoAsync(language, ankamaId, game, operationIndex, cancellationToken).ConfigureAwait(false);
+            Dofusdude.Api.Client.ApiResponse<EquipmentSet> localVarResponse = await GetSetsSingleWithHttpInfoAsync(language, ankamaId, game, operationIndex, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1271,8 +1271,8 @@ namespace Dofusdude.Api.Api
         /// <param name="game">dofus3 | dofus3beta</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (Set)</returns>
-        public async System.Threading.Tasks.Task<Dofusdude.Api.Client.ApiResponse<Set>> GetSetsSingleWithHttpInfoAsync(string language, int ankamaId, string game, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (EquipmentSet)</returns>
+        public async System.Threading.Tasks.Task<Dofusdude.Api.Client.ApiResponse<EquipmentSet>> GetSetsSingleWithHttpInfoAsync(string language, int ankamaId, string game, int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
         {
             // verify the required parameter 'language' is set
             if (language == null)
@@ -1318,7 +1318,7 @@ namespace Dofusdude.Api.Api
 
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<Set>("/{game}/v1/{language}/sets/{ankama_id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<EquipmentSet>("/{game}/v1/{language}/sets/{ankama_id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {

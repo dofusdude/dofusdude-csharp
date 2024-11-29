@@ -11,7 +11,7 @@ All URIs are relative to *https://api.dofusdu.de*
 
 <a id="getallsetslist"></a>
 # **GetAllSetsList**
-> ListSets GetAllSetsList (string language, string game, string? sortLevel = null, int? filterMinHighestEquipmentLevel = null, int? filterMaxHighestEquipmentLevel = null, string? acceptEncoding = null, bool? filterContainsCosmeticsOnly = null, bool? filterContainsCosmetics = null)
+> ListEquipmentSets GetAllSetsList (string language, string game, string? sortLevel = null, int? filterMinHighestEquipmentLevel = null, int? filterMaxHighestEquipmentLevel = null, string? acceptEncoding = null, bool? filterContainsCosmeticsOnly = null, bool? filterContainsCosmetics = null)
 
 List All Sets
 
@@ -46,7 +46,7 @@ namespace Example
             try
             {
                 // List All Sets
-                ListSets result = apiInstance.GetAllSetsList(language, game, sortLevel, filterMinHighestEquipmentLevel, filterMaxHighestEquipmentLevel, acceptEncoding, filterContainsCosmeticsOnly, filterContainsCosmetics);
+                ListEquipmentSets result = apiInstance.GetAllSetsList(language, game, sortLevel, filterMinHighestEquipmentLevel, filterMaxHighestEquipmentLevel, acceptEncoding, filterContainsCosmeticsOnly, filterContainsCosmetics);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -67,7 +67,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // List All Sets
-    ApiResponse<ListSets> response = apiInstance.GetAllSetsListWithHttpInfo(language, game, sortLevel, filterMinHighestEquipmentLevel, filterMaxHighestEquipmentLevel, acceptEncoding, filterContainsCosmeticsOnly, filterContainsCosmetics);
+    ApiResponse<ListEquipmentSets> response = apiInstance.GetAllSetsListWithHttpInfo(language, game, sortLevel, filterMinHighestEquipmentLevel, filterMaxHighestEquipmentLevel, acceptEncoding, filterContainsCosmeticsOnly, filterContainsCosmetics);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -95,7 +95,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**ListSets**](ListSets.md)
+[**ListEquipmentSets**](ListEquipmentSets.md)
 
 ### Authorization
 
@@ -118,7 +118,7 @@ No authorization required
 
 <a id="getsetslist"></a>
 # **GetSetsList**
-> ListSets GetSetsList (string language, string game, string? sortLevel = null, int? filterMinHighestEquipmentLevel = null, int? filterMaxHighestEquipmentLevel = null, int? pageSize = null, int? pageNumber = null, List<string>? fieldsSet = null, bool? filterContainsCosmeticsOnly = null, bool? filterContainsCosmetics = null)
+> ListEquipmentSet GetSetsList (string language, string game, string? sortLevel = null, int? filterMinHighestEquipmentLevel = null, int? filterMaxHighestEquipmentLevel = null, int? pageSize = null, int? pageNumber = null, List<string>? fieldsSet = null, bool? filterContainsCosmeticsOnly = null, bool? filterContainsCosmetics = null)
 
 List Sets
 
@@ -155,7 +155,7 @@ namespace Example
             try
             {
                 // List Sets
-                ListSets result = apiInstance.GetSetsList(language, game, sortLevel, filterMinHighestEquipmentLevel, filterMaxHighestEquipmentLevel, pageSize, pageNumber, fieldsSet, filterContainsCosmeticsOnly, filterContainsCosmetics);
+                ListEquipmentSet result = apiInstance.GetSetsList(language, game, sortLevel, filterMinHighestEquipmentLevel, filterMaxHighestEquipmentLevel, pageSize, pageNumber, fieldsSet, filterContainsCosmeticsOnly, filterContainsCosmetics);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -176,7 +176,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // List Sets
-    ApiResponse<ListSets> response = apiInstance.GetSetsListWithHttpInfo(language, game, sortLevel, filterMinHighestEquipmentLevel, filterMaxHighestEquipmentLevel, pageSize, pageNumber, fieldsSet, filterContainsCosmeticsOnly, filterContainsCosmetics);
+    ApiResponse<ListEquipmentSet> response = apiInstance.GetSetsListWithHttpInfo(language, game, sortLevel, filterMinHighestEquipmentLevel, filterMaxHighestEquipmentLevel, pageSize, pageNumber, fieldsSet, filterContainsCosmeticsOnly, filterContainsCosmetics);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -206,7 +206,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**ListSets**](ListSets.md)
+[**ListEquipmentSet**](ListEquipmentSet.md)
 
 ### Authorization
 
@@ -229,7 +229,7 @@ No authorization required
 
 <a id="getsetssearch"></a>
 # **GetSetsSearch**
-> List&lt;ListSet&gt; GetSetsSearch (string language, string game, string query, int? filterMinHighestEquipmentLevel = null, int? filterMaxHighestEquipmentLevel = null, int? limit = null, bool? filterIsCosmetic = null)
+> List&lt;ListEquipmentSet&gt; GetSetsSearch (string language, string game, string query, int? filterMinHighestEquipmentLevel = null, int? filterMaxHighestEquipmentLevel = null, int? limit = null, bool? filterIsCosmetic = null)
 
 Search Sets
 
@@ -263,7 +263,7 @@ namespace Example
             try
             {
                 // Search Sets
-                List<ListSet> result = apiInstance.GetSetsSearch(language, game, query, filterMinHighestEquipmentLevel, filterMaxHighestEquipmentLevel, limit, filterIsCosmetic);
+                List<ListEquipmentSet> result = apiInstance.GetSetsSearch(language, game, query, filterMinHighestEquipmentLevel, filterMaxHighestEquipmentLevel, limit, filterIsCosmetic);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -284,7 +284,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Search Sets
-    ApiResponse<List<ListSet>> response = apiInstance.GetSetsSearchWithHttpInfo(language, game, query, filterMinHighestEquipmentLevel, filterMaxHighestEquipmentLevel, limit, filterIsCosmetic);
+    ApiResponse<List<ListEquipmentSet>> response = apiInstance.GetSetsSearchWithHttpInfo(language, game, query, filterMinHighestEquipmentLevel, filterMaxHighestEquipmentLevel, limit, filterIsCosmetic);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -311,7 +311,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**List&lt;ListSet&gt;**](ListSet.md)
+[**List&lt;ListEquipmentSet&gt;**](ListEquipmentSet.md)
 
 ### Authorization
 
@@ -334,7 +334,7 @@ No authorization required
 
 <a id="getsetssingle"></a>
 # **GetSetsSingle**
-> Set GetSetsSingle (string language, int ankamaId, string game)
+> EquipmentSet GetSetsSingle (string language, int ankamaId, string game)
 
 Single Sets
 
@@ -364,7 +364,7 @@ namespace Example
             try
             {
                 // Single Sets
-                Set result = apiInstance.GetSetsSingle(language, ankamaId, game);
+                EquipmentSet result = apiInstance.GetSetsSingle(language, ankamaId, game);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -385,7 +385,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Single Sets
-    ApiResponse<Set> response = apiInstance.GetSetsSingleWithHttpInfo(language, ankamaId, game);
+    ApiResponse<EquipmentSet> response = apiInstance.GetSetsSingleWithHttpInfo(language, ankamaId, game);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -408,7 +408,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**Set**](Set.md)
+[**EquipmentSet**](EquipmentSet.md)
 
 ### Authorization
 

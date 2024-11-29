@@ -1,4 +1,4 @@
-# Dofusdude.Api.Model.ListSet
+# Dofusdude.Api.Model.ListEquipmentSet
 
 ## Properties
 

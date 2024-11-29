@@ -71,7 +71,7 @@ namespace Dofusdude.Api.Test.Api
             //bool? filterContainsCosmeticsOnly = null;
             //bool? filterContainsCosmetics = null;
             //var response = instance.GetAllSetsList(language, game, sortLevel, filterMinHighestEquipmentLevel, filterMaxHighestEquipmentLevel, acceptEncoding, filterContainsCosmeticsOnly, filterContainsCosmetics);
-            //Assert.IsType<ListSets>(response);
+            //Assert.IsType<ListEquipmentSets>(response);
         }
 
         /// <summary>
@@ -92,7 +92,7 @@ namespace Dofusdude.Api.Test.Api
             //bool? filterContainsCosmeticsOnly = null;
             //bool? filterContainsCosmetics = null;
             //var response = instance.GetSetsList(language, game, sortLevel, filterMinHighestEquipmentLevel, filterMaxHighestEquipmentLevel, pageSize, pageNumber, fieldsSet, filterContainsCosmeticsOnly, filterContainsCosmetics);
-            //Assert.IsType<ListSets>(response);
+            //Assert.IsType<ListEquipmentSet>(response);
         }
 
         /// <summary>
@@ -110,7 +110,7 @@ namespace Dofusdude.Api.Test.Api
             //int? limit = null;
             //bool? filterIsCosmetic = null;
             //var response = instance.GetSetsSearch(language, game, query, filterMinHighestEquipmentLevel, filterMaxHighestEquipmentLevel, limit, filterIsCosmetic);
-            //Assert.IsType<List<ListSet>>(response);
+            //Assert.IsType<List<ListEquipmentSet>>(response);
         }
 
         /// <summary>
@@ -124,7 +124,7 @@ namespace Dofusdude.Api.Test.Api
             //int ankamaId = null;
             //string game = null;
             //var response = instance.GetSetsSingle(language, ankamaId, game);
-            //Assert.IsType<Set>(response);
+            //Assert.IsType<EquipmentSet>(response);
         }
     }
 }

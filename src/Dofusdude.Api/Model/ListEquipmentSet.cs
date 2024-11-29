@@ -27,13 +27,13 @@ using OpenAPIDateConverter = Dofusdude.Api.Client.OpenAPIDateConverter;
 namespace Dofusdude.Api.Model
 {
     /// <summary>
-    /// ListSet
+    /// ListEquipmentSet
     /// </summary>
-    [DataContract(Name = "ListSet")]
-    public partial class ListSet : IValidatableObject
+    [DataContract(Name = "ListEquipmentSet")]
+    public partial class ListEquipmentSet : IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ListSet" /> class.
+        /// Initializes a new instance of the <see cref="ListEquipmentSet" /> class.
         /// </summary>
         /// <param name="ankamaId">ankamaId.</param>
         /// <param name="name">name.</param>
@@ -42,7 +42,7 @@ namespace Dofusdude.Api.Model
         /// <param name="effects">effects.</param>
         /// <param name="equipmentIds">equipmentIds.</param>
         /// <param name="isCosmetic">isCosmetic.</param>
-        public ListSet(int ankamaId = default(int), string name = default(string), int items = default(int), int level = default(int), Dictionary<string, List<Effect>> effects = default(Dictionary<string, List<Effect>>), List<int> equipmentIds = default(List<int>), bool isCosmetic = default(bool))
+        public ListEquipmentSet(int ankamaId = default(int), string name = default(string), int items = default(int), int level = default(int), Dictionary<string, List<Effect>> effects = default(Dictionary<string, List<Effect>>), List<int> equipmentIds = default(List<int>), bool isCosmetic = default(bool))
         {
             this.AnkamaId = ankamaId;
             this.Name = name;
@@ -103,7 +103,7 @@ namespace Dofusdude.Api.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class ListSet {\n");
+            sb.Append("class ListEquipmentSet {\n");
             sb.Append("  AnkamaId: ").Append(AnkamaId).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Items: ").Append(Items).Append("\n");

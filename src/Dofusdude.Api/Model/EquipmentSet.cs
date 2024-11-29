@@ -27,33 +27,65 @@ using OpenAPIDateConverter = Dofusdude.Api.Client.OpenAPIDateConverter;
 namespace Dofusdude.Api.Model
 {
     /// <summary>
-    /// ListSets
+    /// EquipmentSet
     /// </summary>
-    [DataContract(Name = "ListSets")]
-    public partial class ListSets : IValidatableObject
+    [DataContract(Name = "EquipmentSet")]
+    public partial class EquipmentSet : IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ListSets" /> class.
+        /// Initializes a new instance of the <see cref="EquipmentSet" /> class.
         /// </summary>
-        /// <param name="links">links.</param>
-        /// <param name="sets">sets.</param>
-        public ListSets(PagedLinks links = default(PagedLinks), List<ListSet> sets = default(List<ListSet>))
+        /// <param name="ankamaId">ankamaId.</param>
+        /// <param name="name">name.</param>
+        /// <param name="equipmentIds">equipmentIds.</param>
+        /// <param name="effects">effects.</param>
+        /// <param name="highestEquipmentLevel">highestEquipmentLevel.</param>
+        /// <param name="isCosmetic">isCosmetic.</param>
+        public EquipmentSet(int ankamaId = default(int), string name = default(string), List<int> equipmentIds = default(List<int>), Dictionary<string, List<Effect>> effects = default(Dictionary<string, List<Effect>>), int highestEquipmentLevel = default(int), bool isCosmetic = default(bool))
         {
-            this.Links = links;
-            this.Sets = sets;
+            this.AnkamaId = ankamaId;
+            this.Name = name;
+            this.EquipmentIds = equipmentIds;
+            this.Effects = effects;
+            this.HighestEquipmentLevel = highestEquipmentLevel;
+            this.IsCosmetic = isCosmetic;
         }
 
         /// <summary>
-        /// Gets or Sets Links
+        /// Gets or Sets AnkamaId
         /// </summary>
-        [DataMember(Name = "_links", EmitDefaultValue = false)]
-        public PagedLinks Links { get; set; }
+        [DataMember(Name = "ankama_id", EmitDefaultValue = false)]
+        public int AnkamaId { get; set; }
 
         /// <summary>
-        /// Gets or Sets Sets
+        /// Gets or Sets Name
         /// </summary>
-        [DataMember(Name = "sets", EmitDefaultValue = false)]
-        public List<ListSet> Sets { get; set; }
+        [DataMember(Name = "name", EmitDefaultValue = false)]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// Gets or Sets EquipmentIds
+        /// </summary>
+        [DataMember(Name = "equipment_ids", EmitDefaultValue = false)]
+        public List<int> EquipmentIds { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Effects
+        /// </summary>
+        [DataMember(Name = "effects", EmitDefaultValue = false)]
+        public Dictionary<string, List<Effect>> Effects { get; set; }
+
+        /// <summary>
+        /// Gets or Sets HighestEquipmentLevel
+        /// </summary>
+        [DataMember(Name = "highest_equipment_level", EmitDefaultValue = false)]
+        public int HighestEquipmentLevel { get; set; }
+
+        /// <summary>
+        /// Gets or Sets IsCosmetic
+        /// </summary>
+        [DataMember(Name = "is_cosmetic", EmitDefaultValue = true)]
+        public bool IsCosmetic { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -62,9 +94,13 @@ namespace Dofusdude.Api.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class ListSets {\n");
-            sb.Append("  Links: ").Append(Links).Append("\n");
-            sb.Append("  Sets: ").Append(Sets).Append("\n");
+            sb.Append("class EquipmentSet {\n");
+            sb.Append("  AnkamaId: ").Append(AnkamaId).Append("\n");
+            sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  EquipmentIds: ").Append(EquipmentIds).Append("\n");
+            sb.Append("  Effects: ").Append(Effects).Append("\n");
+            sb.Append("  HighestEquipmentLevel: ").Append(HighestEquipmentLevel).Append("\n");
+            sb.Append("  IsCosmetic: ").Append(IsCosmetic).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

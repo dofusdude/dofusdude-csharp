@@ -26,6 +26,7 @@ docs/Effect.md
 docs/EffectType.md
 docs/Equipment.md
 docs/EquipmentApi.md
+docs/EquipmentSet.md
 docs/Error.md
 docs/GameApi.md
 docs/GameSearch.md
@@ -35,12 +36,12 @@ docs/GetMetaAlmanaxBonuses200ResponseInner.md
 docs/GetMetaWebhooksTwitter200Response.md
 docs/Images.md
 docs/ItemSubtype.md
+docs/ListEquipmentSet.md
+docs/ListEquipmentSets.md
 docs/ListItem.md
 docs/ListItemGeneral.md
 docs/ListItems.md
 docs/ListMounts.md
-docs/ListSet.md
-docs/ListSets.md
 docs/MetaApi.md
 docs/ModelVersion.md
 docs/Mount.md
@@ -56,7 +57,6 @@ docs/Recipe.md
 docs/Resource.md
 docs/ResourcesApi.md
 docs/RssWebhook.md
-docs/Set.md
 docs/SetsApi.md
 docs/TranslatedId.md
 docs/TwitterWebhook.md
@@ -92,6 +92,7 @@ src/Dofusdude.Api.Test/Model/CreateRSSWebhookTests.cs
 src/Dofusdude.Api.Test/Model/CreateTwitterWebhookTests.cs
 src/Dofusdude.Api.Test/Model/EffectTests.cs
 src/Dofusdude.Api.Test/Model/EffectTypeTests.cs
+src/Dofusdude.Api.Test/Model/EquipmentSetTests.cs
 src/Dofusdude.Api.Test/Model/EquipmentTests.cs
 src/Dofusdude.Api.Test/Model/ErrorTests.cs
 src/Dofusdude.Api.Test/Model/GameSearchItemTests.cs
@@ -101,12 +102,12 @@ src/Dofusdude.Api.Test/Model/GetMetaAlmanaxBonuses200ResponseInnerTests.cs
 src/Dofusdude.Api.Test/Model/GetMetaWebhooksTwitter200ResponseTests.cs
 src/Dofusdude.Api.Test/Model/ImagesTests.cs
 src/Dofusdude.Api.Test/Model/ItemSubtypeTests.cs
+src/Dofusdude.Api.Test/Model/ListEquipmentSetTests.cs
+src/Dofusdude.Api.Test/Model/ListEquipmentSetsTests.cs
 src/Dofusdude.Api.Test/Model/ListItemGeneralTests.cs
 src/Dofusdude.Api.Test/Model/ListItemTests.cs
 src/Dofusdude.Api.Test/Model/ListItemsTests.cs
 src/Dofusdude.Api.Test/Model/ListMountsTests.cs
-src/Dofusdude.Api.Test/Model/ListSetTests.cs
-src/Dofusdude.Api.Test/Model/ListSetsTests.cs
 src/Dofusdude.Api.Test/Model/ModelVersionTests.cs
 src/Dofusdude.Api.Test/Model/MountFamilyTests.cs
 src/Dofusdude.Api.Test/Model/MountTests.cs
@@ -118,7 +119,6 @@ src/Dofusdude.Api.Test/Model/RangeTests.cs
 src/Dofusdude.Api.Test/Model/RecipeTests.cs
 src/Dofusdude.Api.Test/Model/ResourceTests.cs
 src/Dofusdude.Api.Test/Model/RssWebhookTests.cs
-src/Dofusdude.Api.Test/Model/SetTests.cs
 src/Dofusdude.Api.Test/Model/TranslatedIdTests.cs
 src/Dofusdude.Api.Test/Model/TwitterWebhookTests.cs
 src/Dofusdude.Api.Test/Model/WeaponTests.cs
@@ -169,6 +169,7 @@ src/Dofusdude.Api/Model/CreateTwitterWebhook.cs
 src/Dofusdude.Api/Model/Effect.cs
 src/Dofusdude.Api/Model/EffectType.cs
 src/Dofusdude.Api/Model/Equipment.cs
+src/Dofusdude.Api/Model/EquipmentSet.cs
 src/Dofusdude.Api/Model/Error.cs
 src/Dofusdude.Api/Model/GameSearch.cs
 src/Dofusdude.Api/Model/GameSearchItem.cs
@@ -177,12 +178,12 @@ src/Dofusdude.Api/Model/GetMetaAlmanaxBonuses200ResponseInner.cs
 src/Dofusdude.Api/Model/GetMetaWebhooksTwitter200Response.cs
 src/Dofusdude.Api/Model/Images.cs
 src/Dofusdude.Api/Model/ItemSubtype.cs
+src/Dofusdude.Api/Model/ListEquipmentSet.cs
+src/Dofusdude.Api/Model/ListEquipmentSets.cs
 src/Dofusdude.Api/Model/ListItem.cs
 src/Dofusdude.Api/Model/ListItemGeneral.cs
 src/Dofusdude.Api/Model/ListItems.cs
 src/Dofusdude.Api/Model/ListMounts.cs
-src/Dofusdude.Api/Model/ListSet.cs
-src/Dofusdude.Api/Model/ListSets.cs
 src/Dofusdude.Api/Model/ModelVersion.cs
 src/Dofusdude.Api/Model/Mount.cs
 src/Dofusdude.Api/Model/MountFamily.cs
@@ -194,7 +195,6 @@ src/Dofusdude.Api/Model/Range.cs
 src/Dofusdude.Api/Model/Recipe.cs
 src/Dofusdude.Api/Model/Resource.cs
 src/Dofusdude.Api/Model/RssWebhook.cs
-src/Dofusdude.Api/Model/Set.cs
 src/Dofusdude.Api/Model/TranslatedId.cs
 src/Dofusdude.Api/Model/TwitterWebhook.cs
 src/Dofusdude.Api/Model/Weapon.cs
