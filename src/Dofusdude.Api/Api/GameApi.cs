@@ -35,7 +35,7 @@ namespace Dofusdude.Api.Api
         /// </remarks>
         /// <exception cref="Dofusdude.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="language">a valid language code</param>
-        /// <param name="game">dofus3 | dofus3beta</param>
+        /// <param name="game">game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39;</param>
         /// <param name="query">search query</param>
         /// <param name="filterSearchIndex">only results with all specific type (optional)</param>
         /// <param name="limit">maximum number of returned results (optional, default to 8)</param>
@@ -53,7 +53,7 @@ namespace Dofusdude.Api.Api
         /// </remarks>
         /// <exception cref="Dofusdude.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="language">a valid language code</param>
-        /// <param name="game">dofus3 | dofus3beta</param>
+        /// <param name="game">game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39;</param>
         /// <param name="query">search query</param>
         /// <param name="filterSearchIndex">only results with all specific type (optional)</param>
         /// <param name="limit">maximum number of returned results (optional, default to 8)</param>
@@ -70,7 +70,7 @@ namespace Dofusdude.Api.Api
         /// </remarks>
         /// <exception cref="Dofusdude.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="language">a valid language code</param>
-        /// <param name="game">dofus3 | dofus3beta</param>
+        /// <param name="game">game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39;</param>
         /// <param name="query">case sensitive search query</param>
         /// <param name="filterMinLevel">only results which level is equal or above this value (optional)</param>
         /// <param name="filterMaxLevel">only results which level is equal or below this value (optional)</param>
@@ -88,7 +88,7 @@ namespace Dofusdude.Api.Api
         /// </remarks>
         /// <exception cref="Dofusdude.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="language">a valid language code</param>
-        /// <param name="game">dofus3 | dofus3beta</param>
+        /// <param name="game">game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39;</param>
         /// <param name="query">case sensitive search query</param>
         /// <param name="filterMinLevel">only results which level is equal or above this value (optional)</param>
         /// <param name="filterMaxLevel">only results which level is equal or below this value (optional)</param>
@@ -114,7 +114,7 @@ namespace Dofusdude.Api.Api
         /// </remarks>
         /// <exception cref="Dofusdude.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="language">a valid language code</param>
-        /// <param name="game">dofus3 | dofus3beta</param>
+        /// <param name="game">game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39;</param>
         /// <param name="query">search query</param>
         /// <param name="filterSearchIndex">only results with all specific type (optional)</param>
         /// <param name="limit">maximum number of returned results (optional, default to 8)</param>
@@ -133,7 +133,7 @@ namespace Dofusdude.Api.Api
         /// </remarks>
         /// <exception cref="Dofusdude.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="language">a valid language code</param>
-        /// <param name="game">dofus3 | dofus3beta</param>
+        /// <param name="game">game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39;</param>
         /// <param name="query">search query</param>
         /// <param name="filterSearchIndex">only results with all specific type (optional)</param>
         /// <param name="limit">maximum number of returned results (optional, default to 8)</param>
@@ -151,7 +151,7 @@ namespace Dofusdude.Api.Api
         /// </remarks>
         /// <exception cref="Dofusdude.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="language">a valid language code</param>
-        /// <param name="game">dofus3 | dofus3beta</param>
+        /// <param name="game">game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39;</param>
         /// <param name="query">case sensitive search query</param>
         /// <param name="filterMinLevel">only results which level is equal or above this value (optional)</param>
         /// <param name="filterMaxLevel">only results which level is equal or below this value (optional)</param>
@@ -170,7 +170,7 @@ namespace Dofusdude.Api.Api
         /// </remarks>
         /// <exception cref="Dofusdude.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="language">a valid language code</param>
-        /// <param name="game">dofus3 | dofus3beta</param>
+        /// <param name="game">game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39;</param>
         /// <param name="query">case sensitive search query</param>
         /// <param name="filterMinLevel">only results which level is equal or above this value (optional)</param>
         /// <param name="filterMaxLevel">only results which level is equal or below this value (optional)</param>
@@ -305,7 +305,7 @@ namespace Dofusdude.Api.Api
         /// </summary>
         /// <exception cref="Dofusdude.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="language">a valid language code</param>
-        /// <param name="game">dofus3 | dofus3beta</param>
+        /// <param name="game">game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39;</param>
         /// <param name="query">search query</param>
         /// <param name="filterSearchIndex">only results with all specific type (optional)</param>
         /// <param name="limit">maximum number of returned results (optional, default to 8)</param>
@@ -324,7 +324,7 @@ namespace Dofusdude.Api.Api
         /// </summary>
         /// <exception cref="Dofusdude.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="language">a valid language code</param>
-        /// <param name="game">dofus3 | dofus3beta</param>
+        /// <param name="game">game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39;</param>
         /// <param name="query">search query</param>
         /// <param name="filterSearchIndex">only results with all specific type (optional)</param>
         /// <param name="limit">maximum number of returned results (optional, default to 8)</param>
@@ -417,7 +417,7 @@ namespace Dofusdude.Api.Api
         /// </summary>
         /// <exception cref="Dofusdude.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="language">a valid language code</param>
-        /// <param name="game">dofus3 | dofus3beta</param>
+        /// <param name="game">game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39;</param>
         /// <param name="query">search query</param>
         /// <param name="filterSearchIndex">only results with all specific type (optional)</param>
         /// <param name="limit">maximum number of returned results (optional, default to 8)</param>
@@ -437,7 +437,7 @@ namespace Dofusdude.Api.Api
         /// </summary>
         /// <exception cref="Dofusdude.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="language">a valid language code</param>
-        /// <param name="game">dofus3 | dofus3beta</param>
+        /// <param name="game">game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39;</param>
         /// <param name="query">search query</param>
         /// <param name="filterSearchIndex">only results with all specific type (optional)</param>
         /// <param name="limit">maximum number of returned results (optional, default to 8)</param>
@@ -533,7 +533,7 @@ namespace Dofusdude.Api.Api
         /// </summary>
         /// <exception cref="Dofusdude.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="language">a valid language code</param>
-        /// <param name="game">dofus3 | dofus3beta</param>
+        /// <param name="game">game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39;</param>
         /// <param name="query">case sensitive search query</param>
         /// <param name="filterMinLevel">only results which level is equal or above this value (optional)</param>
         /// <param name="filterMaxLevel">only results which level is equal or below this value (optional)</param>
@@ -552,7 +552,7 @@ namespace Dofusdude.Api.Api
         /// </summary>
         /// <exception cref="Dofusdude.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="language">a valid language code</param>
-        /// <param name="game">dofus3 | dofus3beta</param>
+        /// <param name="game">game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39;</param>
         /// <param name="query">case sensitive search query</param>
         /// <param name="filterMinLevel">only results which level is equal or above this value (optional)</param>
         /// <param name="filterMaxLevel">only results which level is equal or below this value (optional)</param>
@@ -645,7 +645,7 @@ namespace Dofusdude.Api.Api
         /// </summary>
         /// <exception cref="Dofusdude.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="language">a valid language code</param>
-        /// <param name="game">dofus3 | dofus3beta</param>
+        /// <param name="game">game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39;</param>
         /// <param name="query">case sensitive search query</param>
         /// <param name="filterMinLevel">only results which level is equal or above this value (optional)</param>
         /// <param name="filterMaxLevel">only results which level is equal or below this value (optional)</param>
@@ -665,7 +665,7 @@ namespace Dofusdude.Api.Api
         /// </summary>
         /// <exception cref="Dofusdude.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="language">a valid language code</param>
-        /// <param name="game">dofus3 | dofus3beta</param>
+        /// <param name="game">game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39;</param>
         /// <param name="query">case sensitive search query</param>
         /// <param name="filterMinLevel">only results which level is equal or above this value (optional)</param>
         /// <param name="filterMaxLevel">only results which level is equal or below this value (optional)</param>

@@ -33,7 +33,7 @@ namespace Example
             config.BasePath = "https://api.dofusdu.de";
             var apiInstance = new GameApi(config);
             var language = "en";  // string | a valid language code
-            var game = dofus3;  // string | dofus3 | dofus3beta
+            var game = dofus3;  // string | game main 'dofus3' or beta channel 'dofus3beta'
             var query = paztek;  // string | search query
             var filterSearchIndex = new List<string>?(); // List<string>? | only results with all specific type (optional) 
             var limit = 8;  // int? | maximum number of returned results (optional)  (default to 8)
@@ -82,7 +82,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **language** | **string** | a valid language code |  |
-| **game** | **string** | dofus3 | dofus3beta |  |
+| **game** | **string** | game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; |  |
 | **query** | **string** | search query |  |
 | **filterSearchIndex** | [**List&lt;string&gt;?**](string.md) | only results with all specific type | [optional]  |
 | **limit** | **int?** | maximum number of returned results | [optional] [default to 8] |
@@ -138,7 +138,7 @@ namespace Example
             config.BasePath = "https://api.dofusdu.de";
             var apiInstance = new GameApi(config);
             var language = fr;  // string | a valid language code
-            var game = dofus3;  // string | dofus3 | dofus3beta
+            var game = dofus3;  // string | game main 'dofus3' or beta channel 'dofus3beta'
             var query = atcham;  // string | case sensitive search query
             var filterMinLevel = 190;  // int? | only results which level is equal or above this value (optional) 
             var filterMaxLevel = 200;  // int? | only results which level is equal or below this value (optional) 
@@ -187,7 +187,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **language** | **string** | a valid language code |  |
-| **game** | **string** | dofus3 | dofus3beta |  |
+| **game** | **string** | game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; |  |
 | **query** | **string** | case sensitive search query |  |
 | **filterMinLevel** | **int?** | only results which level is equal or above this value | [optional]  |
 | **filterMaxLevel** | **int?** | only results which level is equal or below this value | [optional]  |

@@ -35,7 +35,7 @@ namespace Example
             config.BasePath = "https://api.dofusdu.de";
             var apiInstance = new MountsApi(config);
             var language = "en";  // string | a valid language code
-            var game = dofus3;  // string | dofus3 | dofus3beta
+            var game = dofus3;  // string | game main 'dofus3' or beta channel 'dofus3beta'
             var filterFamilyName = Dragoturkey;  // string? | only results with the translated family name (optional) 
             var acceptEncoding = "gzip";  // string? | optional compression for saving bandwidth (optional) 
             var filterFamilyId = 56;  // int? | only results with the unique family id (optional) 
@@ -82,7 +82,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **language** | **string** | a valid language code |  |
-| **game** | **string** | dofus3 | dofus3beta |  |
+| **game** | **string** | game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; |  |
 | **filterFamilyName** | **string?** | only results with the translated family name | [optional]  |
 | **acceptEncoding** | **string?** | optional compression for saving bandwidth | [optional]  |
 | **filterFamilyId** | **int?** | only results with the unique family id | [optional]  |
@@ -136,7 +136,7 @@ namespace Example
             config.BasePath = "https://api.dofusdu.de";
             var apiInstance = new MountsApi(config);
             var language = "en";  // string | a valid language code
-            var game = dofus3;  // string | dofus3 | dofus3beta
+            var game = dofus3;  // string | game main 'dofus3' or beta channel 'dofus3beta'
             var filterFamilyName = Dragoturkey;  // string? | only results with the translated family name (optional) 
             var pageSize = 10;  // int? | size of the results from the list. -1 disables pagination and gets all in one response. (optional) 
             var pageNumber = 1;  // int? | page number based on the current page[size]. So you could get page 1 with 8 entrys and page 2 would have entries 8 to 16. (optional) 
@@ -185,7 +185,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **language** | **string** | a valid language code |  |
-| **game** | **string** | dofus3 | dofus3beta |  |
+| **game** | **string** | game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; |  |
 | **filterFamilyName** | **string?** | only results with the translated family name | [optional]  |
 | **pageSize** | **int?** | size of the results from the list. -1 disables pagination and gets all in one response. | [optional]  |
 | **pageNumber** | **int?** | page number based on the current page[size]. So you could get page 1 with 8 entrys and page 2 would have entries 8 to 16. | [optional]  |
@@ -241,7 +241,7 @@ namespace Example
             config.BasePath = "https://api.dofusdu.de";
             var apiInstance = new MountsApi(config);
             var language = fr;  // string | a valid language code
-            var game = dofus3;  // string | dofus3 | dofus3beta
+            var game = dofus3;  // string | game main 'dofus3' or beta channel 'dofus3beta'
             var query = Dorée;  // string | case sensitive search query
             var filterFamilyName = Dragodinde;  // string? | only results with the translated family name (optional) 
             var limit = 8;  // int? | maximum number of returned results (optional)  (default to 8)
@@ -288,7 +288,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **language** | **string** | a valid language code |  |
-| **game** | **string** | dofus3 | dofus3beta |  |
+| **game** | **string** | game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; |  |
 | **query** | **string** | case sensitive search query |  |
 | **filterFamilyName** | **string?** | only results with the translated family name | [optional]  |
 | **limit** | **int?** | maximum number of returned results | [optional] [default to 8] |
@@ -343,7 +343,7 @@ namespace Example
             var apiInstance = new MountsApi(config);
             var language = "en";  // string | a valid language code
             var ankamaId = 180;  // int | identifier
-            var game = dofus3;  // string | dofus3 | dofus3beta
+            var game = dofus3;  // string | game main 'dofus3' or beta channel 'dofus3beta'
 
             try
             {
@@ -388,7 +388,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **language** | **string** | a valid language code |  |
 | **ankamaId** | **int** | identifier |  |
-| **game** | **string** | dofus3 | dofus3beta |  |
+| **game** | **string** | game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; |  |
 
 ### Return type
 

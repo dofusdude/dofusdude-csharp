@@ -35,7 +35,7 @@ namespace Dofusdude.Api.Api
         /// </remarks>
         /// <exception cref="Dofusdude.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="language">a valid language code</param>
-        /// <param name="game">dofus3 | dofus3beta</param>
+        /// <param name="game">game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39;</param>
         /// <param name="filterFamilyName">only results with the translated family name (optional)</param>
         /// <param name="acceptEncoding">optional compression for saving bandwidth (optional)</param>
         /// <param name="filterFamilyId">only results with the unique family id (optional)</param>
@@ -51,7 +51,7 @@ namespace Dofusdude.Api.Api
         /// </remarks>
         /// <exception cref="Dofusdude.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="language">a valid language code</param>
-        /// <param name="game">dofus3 | dofus3beta</param>
+        /// <param name="game">game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39;</param>
         /// <param name="filterFamilyName">only results with the translated family name (optional)</param>
         /// <param name="acceptEncoding">optional compression for saving bandwidth (optional)</param>
         /// <param name="filterFamilyId">only results with the unique family id (optional)</param>
@@ -66,7 +66,7 @@ namespace Dofusdude.Api.Api
         /// </remarks>
         /// <exception cref="Dofusdude.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="language">a valid language code</param>
-        /// <param name="game">dofus3 | dofus3beta</param>
+        /// <param name="game">game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39;</param>
         /// <param name="filterFamilyName">only results with the translated family name (optional)</param>
         /// <param name="pageSize">size of the results from the list. -1 disables pagination and gets all in one response. (optional)</param>
         /// <param name="pageNumber">page number based on the current page[size]. So you could get page 1 with 8 entrys and page 2 would have entries 8 to 16. (optional)</param>
@@ -84,7 +84,7 @@ namespace Dofusdude.Api.Api
         /// </remarks>
         /// <exception cref="Dofusdude.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="language">a valid language code</param>
-        /// <param name="game">dofus3 | dofus3beta</param>
+        /// <param name="game">game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39;</param>
         /// <param name="filterFamilyName">only results with the translated family name (optional)</param>
         /// <param name="pageSize">size of the results from the list. -1 disables pagination and gets all in one response. (optional)</param>
         /// <param name="pageNumber">page number based on the current page[size]. So you could get page 1 with 8 entrys and page 2 would have entries 8 to 16. (optional)</param>
@@ -101,7 +101,7 @@ namespace Dofusdude.Api.Api
         /// </remarks>
         /// <exception cref="Dofusdude.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="language">a valid language code</param>
-        /// <param name="game">dofus3 | dofus3beta</param>
+        /// <param name="game">game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39;</param>
         /// <param name="query">case sensitive search query</param>
         /// <param name="filterFamilyName">only results with the translated family name (optional)</param>
         /// <param name="limit">maximum number of returned results (optional, default to 8)</param>
@@ -117,7 +117,7 @@ namespace Dofusdude.Api.Api
         /// </remarks>
         /// <exception cref="Dofusdude.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="language">a valid language code</param>
-        /// <param name="game">dofus3 | dofus3beta</param>
+        /// <param name="game">game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39;</param>
         /// <param name="query">case sensitive search query</param>
         /// <param name="filterFamilyName">only results with the translated family name (optional)</param>
         /// <param name="limit">maximum number of returned results (optional, default to 8)</param>
@@ -133,7 +133,7 @@ namespace Dofusdude.Api.Api
         /// <exception cref="Dofusdude.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="language">a valid language code</param>
         /// <param name="ankamaId">identifier</param>
-        /// <param name="game">dofus3 | dofus3beta</param>
+        /// <param name="game">game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39;</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Mount</returns>
         Mount GetMountsSingle(string language, int ankamaId, string game, int operationIndex = 0);
@@ -147,7 +147,7 @@ namespace Dofusdude.Api.Api
         /// <exception cref="Dofusdude.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="language">a valid language code</param>
         /// <param name="ankamaId">identifier</param>
-        /// <param name="game">dofus3 | dofus3beta</param>
+        /// <param name="game">game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39;</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Mount</returns>
         ApiResponse<Mount> GetMountsSingleWithHttpInfo(string language, int ankamaId, string game, int operationIndex = 0);
@@ -168,7 +168,7 @@ namespace Dofusdude.Api.Api
         /// </remarks>
         /// <exception cref="Dofusdude.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="language">a valid language code</param>
-        /// <param name="game">dofus3 | dofus3beta</param>
+        /// <param name="game">game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39;</param>
         /// <param name="filterFamilyName">only results with the translated family name (optional)</param>
         /// <param name="acceptEncoding">optional compression for saving bandwidth (optional)</param>
         /// <param name="filterFamilyId">only results with the unique family id (optional)</param>
@@ -185,7 +185,7 @@ namespace Dofusdude.Api.Api
         /// </remarks>
         /// <exception cref="Dofusdude.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="language">a valid language code</param>
-        /// <param name="game">dofus3 | dofus3beta</param>
+        /// <param name="game">game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39;</param>
         /// <param name="filterFamilyName">only results with the translated family name (optional)</param>
         /// <param name="acceptEncoding">optional compression for saving bandwidth (optional)</param>
         /// <param name="filterFamilyId">only results with the unique family id (optional)</param>
@@ -201,7 +201,7 @@ namespace Dofusdude.Api.Api
         /// </remarks>
         /// <exception cref="Dofusdude.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="language">a valid language code</param>
-        /// <param name="game">dofus3 | dofus3beta</param>
+        /// <param name="game">game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39;</param>
         /// <param name="filterFamilyName">only results with the translated family name (optional)</param>
         /// <param name="pageSize">size of the results from the list. -1 disables pagination and gets all in one response. (optional)</param>
         /// <param name="pageNumber">page number based on the current page[size]. So you could get page 1 with 8 entrys and page 2 would have entries 8 to 16. (optional)</param>
@@ -220,7 +220,7 @@ namespace Dofusdude.Api.Api
         /// </remarks>
         /// <exception cref="Dofusdude.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="language">a valid language code</param>
-        /// <param name="game">dofus3 | dofus3beta</param>
+        /// <param name="game">game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39;</param>
         /// <param name="filterFamilyName">only results with the translated family name (optional)</param>
         /// <param name="pageSize">size of the results from the list. -1 disables pagination and gets all in one response. (optional)</param>
         /// <param name="pageNumber">page number based on the current page[size]. So you could get page 1 with 8 entrys and page 2 would have entries 8 to 16. (optional)</param>
@@ -238,7 +238,7 @@ namespace Dofusdude.Api.Api
         /// </remarks>
         /// <exception cref="Dofusdude.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="language">a valid language code</param>
-        /// <param name="game">dofus3 | dofus3beta</param>
+        /// <param name="game">game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39;</param>
         /// <param name="query">case sensitive search query</param>
         /// <param name="filterFamilyName">only results with the translated family name (optional)</param>
         /// <param name="limit">maximum number of returned results (optional, default to 8)</param>
@@ -255,7 +255,7 @@ namespace Dofusdude.Api.Api
         /// </remarks>
         /// <exception cref="Dofusdude.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="language">a valid language code</param>
-        /// <param name="game">dofus3 | dofus3beta</param>
+        /// <param name="game">game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39;</param>
         /// <param name="query">case sensitive search query</param>
         /// <param name="filterFamilyName">only results with the translated family name (optional)</param>
         /// <param name="limit">maximum number of returned results (optional, default to 8)</param>
@@ -272,7 +272,7 @@ namespace Dofusdude.Api.Api
         /// <exception cref="Dofusdude.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="language">a valid language code</param>
         /// <param name="ankamaId">identifier</param>
-        /// <param name="game">dofus3 | dofus3beta</param>
+        /// <param name="game">game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39;</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Mount</returns>
@@ -287,7 +287,7 @@ namespace Dofusdude.Api.Api
         /// <exception cref="Dofusdude.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="language">a valid language code</param>
         /// <param name="ankamaId">identifier</param>
-        /// <param name="game">dofus3 | dofus3beta</param>
+        /// <param name="game">game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39;</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Mount)</returns>
@@ -417,7 +417,7 @@ namespace Dofusdude.Api.Api
         /// </summary>
         /// <exception cref="Dofusdude.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="language">a valid language code</param>
-        /// <param name="game">dofus3 | dofus3beta</param>
+        /// <param name="game">game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39;</param>
         /// <param name="filterFamilyName">only results with the translated family name (optional)</param>
         /// <param name="acceptEncoding">optional compression for saving bandwidth (optional)</param>
         /// <param name="filterFamilyId">only results with the unique family id (optional)</param>
@@ -434,7 +434,7 @@ namespace Dofusdude.Api.Api
         /// </summary>
         /// <exception cref="Dofusdude.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="language">a valid language code</param>
-        /// <param name="game">dofus3 | dofus3beta</param>
+        /// <param name="game">game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39;</param>
         /// <param name="filterFamilyName">only results with the translated family name (optional)</param>
         /// <param name="acceptEncoding">optional compression for saving bandwidth (optional)</param>
         /// <param name="filterFamilyId">only results with the unique family id (optional)</param>
@@ -514,7 +514,7 @@ namespace Dofusdude.Api.Api
         /// </summary>
         /// <exception cref="Dofusdude.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="language">a valid language code</param>
-        /// <param name="game">dofus3 | dofus3beta</param>
+        /// <param name="game">game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39;</param>
         /// <param name="filterFamilyName">only results with the translated family name (optional)</param>
         /// <param name="acceptEncoding">optional compression for saving bandwidth (optional)</param>
         /// <param name="filterFamilyId">only results with the unique family id (optional)</param>
@@ -532,7 +532,7 @@ namespace Dofusdude.Api.Api
         /// </summary>
         /// <exception cref="Dofusdude.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="language">a valid language code</param>
-        /// <param name="game">dofus3 | dofus3beta</param>
+        /// <param name="game">game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39;</param>
         /// <param name="filterFamilyName">only results with the translated family name (optional)</param>
         /// <param name="acceptEncoding">optional compression for saving bandwidth (optional)</param>
         /// <param name="filterFamilyId">only results with the unique family id (optional)</param>
@@ -615,7 +615,7 @@ namespace Dofusdude.Api.Api
         /// </summary>
         /// <exception cref="Dofusdude.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="language">a valid language code</param>
-        /// <param name="game">dofus3 | dofus3beta</param>
+        /// <param name="game">game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39;</param>
         /// <param name="filterFamilyName">only results with the translated family name (optional)</param>
         /// <param name="pageSize">size of the results from the list. -1 disables pagination and gets all in one response. (optional)</param>
         /// <param name="pageNumber">page number based on the current page[size]. So you could get page 1 with 8 entrys and page 2 would have entries 8 to 16. (optional)</param>
@@ -634,7 +634,7 @@ namespace Dofusdude.Api.Api
         /// </summary>
         /// <exception cref="Dofusdude.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="language">a valid language code</param>
-        /// <param name="game">dofus3 | dofus3beta</param>
+        /// <param name="game">game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39;</param>
         /// <param name="filterFamilyName">only results with the translated family name (optional)</param>
         /// <param name="pageSize">size of the results from the list. -1 disables pagination and gets all in one response. (optional)</param>
         /// <param name="pageNumber">page number based on the current page[size]. So you could get page 1 with 8 entrys and page 2 would have entries 8 to 16. (optional)</param>
@@ -724,7 +724,7 @@ namespace Dofusdude.Api.Api
         /// </summary>
         /// <exception cref="Dofusdude.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="language">a valid language code</param>
-        /// <param name="game">dofus3 | dofus3beta</param>
+        /// <param name="game">game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39;</param>
         /// <param name="filterFamilyName">only results with the translated family name (optional)</param>
         /// <param name="pageSize">size of the results from the list. -1 disables pagination and gets all in one response. (optional)</param>
         /// <param name="pageNumber">page number based on the current page[size]. So you could get page 1 with 8 entrys and page 2 would have entries 8 to 16. (optional)</param>
@@ -744,7 +744,7 @@ namespace Dofusdude.Api.Api
         /// </summary>
         /// <exception cref="Dofusdude.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="language">a valid language code</param>
-        /// <param name="game">dofus3 | dofus3beta</param>
+        /// <param name="game">game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39;</param>
         /// <param name="filterFamilyName">only results with the translated family name (optional)</param>
         /// <param name="pageSize">size of the results from the list. -1 disables pagination and gets all in one response. (optional)</param>
         /// <param name="pageNumber">page number based on the current page[size]. So you could get page 1 with 8 entrys and page 2 would have entries 8 to 16. (optional)</param>
@@ -837,7 +837,7 @@ namespace Dofusdude.Api.Api
         /// </summary>
         /// <exception cref="Dofusdude.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="language">a valid language code</param>
-        /// <param name="game">dofus3 | dofus3beta</param>
+        /// <param name="game">game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39;</param>
         /// <param name="query">case sensitive search query</param>
         /// <param name="filterFamilyName">only results with the translated family name (optional)</param>
         /// <param name="limit">maximum number of returned results (optional, default to 8)</param>
@@ -854,7 +854,7 @@ namespace Dofusdude.Api.Api
         /// </summary>
         /// <exception cref="Dofusdude.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="language">a valid language code</param>
-        /// <param name="game">dofus3 | dofus3beta</param>
+        /// <param name="game">game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39;</param>
         /// <param name="query">case sensitive search query</param>
         /// <param name="filterFamilyName">only results with the translated family name (optional)</param>
         /// <param name="limit">maximum number of returned results (optional, default to 8)</param>
@@ -937,7 +937,7 @@ namespace Dofusdude.Api.Api
         /// </summary>
         /// <exception cref="Dofusdude.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="language">a valid language code</param>
-        /// <param name="game">dofus3 | dofus3beta</param>
+        /// <param name="game">game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39;</param>
         /// <param name="query">case sensitive search query</param>
         /// <param name="filterFamilyName">only results with the translated family name (optional)</param>
         /// <param name="limit">maximum number of returned results (optional, default to 8)</param>
@@ -955,7 +955,7 @@ namespace Dofusdude.Api.Api
         /// </summary>
         /// <exception cref="Dofusdude.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="language">a valid language code</param>
-        /// <param name="game">dofus3 | dofus3beta</param>
+        /// <param name="game">game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39;</param>
         /// <param name="query">case sensitive search query</param>
         /// <param name="filterFamilyName">only results with the translated family name (optional)</param>
         /// <param name="limit">maximum number of returned results (optional, default to 8)</param>
@@ -1042,7 +1042,7 @@ namespace Dofusdude.Api.Api
         /// <exception cref="Dofusdude.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="language">a valid language code</param>
         /// <param name="ankamaId">identifier</param>
-        /// <param name="game">dofus3 | dofus3beta</param>
+        /// <param name="game">game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39;</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>Mount</returns>
         public Mount GetMountsSingle(string language, int ankamaId, string game, int operationIndex = 0)
@@ -1057,7 +1057,7 @@ namespace Dofusdude.Api.Api
         /// <exception cref="Dofusdude.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="language">a valid language code</param>
         /// <param name="ankamaId">identifier</param>
-        /// <param name="game">dofus3 | dofus3beta</param>
+        /// <param name="game">game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39;</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of Mount</returns>
         public Dofusdude.Api.Client.ApiResponse<Mount> GetMountsSingleWithHttpInfo(string language, int ankamaId, string game, int operationIndex = 0)
@@ -1124,7 +1124,7 @@ namespace Dofusdude.Api.Api
         /// <exception cref="Dofusdude.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="language">a valid language code</param>
         /// <param name="ankamaId">identifier</param>
-        /// <param name="game">dofus3 | dofus3beta</param>
+        /// <param name="game">game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39;</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of Mount</returns>
@@ -1140,7 +1140,7 @@ namespace Dofusdude.Api.Api
         /// <exception cref="Dofusdude.Api.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="language">a valid language code</param>
         /// <param name="ankamaId">identifier</param>
-        /// <param name="game">dofus3 | dofus3beta</param>
+        /// <param name="game">game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39;</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (Mount)</returns>

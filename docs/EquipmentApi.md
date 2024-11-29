@@ -35,7 +35,7 @@ namespace Example
             config.BasePath = "https://api.dofusdu.de";
             var apiInstance = new EquipmentApi(config);
             var language = en;  // string | a valid language code
-            var game = dofus3;  // string | dofus3 | dofus3beta
+            var game = dofus3;  // string | game main 'dofus3' or beta channel 'dofus3beta'
             var sortLevel = desc;  // string? | sort the resulting list by level, default unsorted (optional) 
             var filterMinLevel = 10;  // int? | only results which level is equal or above this value (optional) 
             var filterMaxLevel = 60;  // int? | only results which level is equal or below this value (optional) 
@@ -84,7 +84,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **language** | **string** | a valid language code |  |
-| **game** | **string** | dofus3 | dofus3beta |  |
+| **game** | **string** | game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; |  |
 | **sortLevel** | **string?** | sort the resulting list by level, default unsorted | [optional]  |
 | **filterMinLevel** | **int?** | only results which level is equal or above this value | [optional]  |
 | **filterMaxLevel** | **int?** | only results which level is equal or below this value | [optional]  |
@@ -140,7 +140,7 @@ namespace Example
             config.BasePath = "https://api.dofusdu.de";
             var apiInstance = new EquipmentApi(config);
             var language = en;  // string | a valid language code
-            var game = dofus3;  // string | dofus3 | dofus3beta
+            var game = dofus3;  // string | game main 'dofus3' or beta channel 'dofus3beta'
             var sortLevel = desc;  // string? | sort the resulting list by level, default unsorted (optional) 
             var filterMinLevel = 10;  // int? | only results which level is equal or above this value (optional) 
             var filterMaxLevel = 60;  // int? | only results which level is equal or below this value (optional) 
@@ -191,7 +191,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **language** | **string** | a valid language code |  |
-| **game** | **string** | dofus3 | dofus3beta |  |
+| **game** | **string** | game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; |  |
 | **sortLevel** | **string?** | sort the resulting list by level, default unsorted | [optional]  |
 | **filterMinLevel** | **int?** | only results which level is equal or above this value | [optional]  |
 | **filterMaxLevel** | **int?** | only results which level is equal or below this value | [optional]  |
@@ -249,7 +249,7 @@ namespace Example
             config.BasePath = "https://api.dofusdu.de";
             var apiInstance = new EquipmentApi(config);
             var language = "en";  // string | a valid language code
-            var game = dofus3;  // string | dofus3 | dofus3beta
+            var game = dofus3;  // string | game main 'dofus3' or beta channel 'dofus3beta'
             var query = nidas;  // string | case sensitive search query
             var filterMinLevel = 150;  // int? | only results which level is equal or above this value (optional) 
             var filterMaxLevel = 200;  // int? | only results which level is equal or below this value (optional) 
@@ -298,7 +298,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **language** | **string** | a valid language code |  |
-| **game** | **string** | dofus3 | dofus3beta |  |
+| **game** | **string** | game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; |  |
 | **query** | **string** | case sensitive search query |  |
 | **filterMinLevel** | **int?** | only results which level is equal or above this value | [optional]  |
 | **filterMaxLevel** | **int?** | only results which level is equal or below this value | [optional]  |
@@ -355,7 +355,7 @@ namespace Example
             var apiInstance = new EquipmentApi(config);
             var language = "en";  // string | a valid language code
             var ankamaId = 26009;  // int | identifier
-            var game = dofus3;  // string | dofus3 | dofus3beta
+            var game = dofus3;  // string | game main 'dofus3' or beta channel 'dofus3beta'
 
             try
             {
@@ -400,7 +400,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **language** | **string** | a valid language code |  |
 | **ankamaId** | **int** | identifier |  |
-| **game** | **string** | dofus3 | dofus3beta |  |
+| **game** | **string** | game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; |  |
 
 ### Return type
 
