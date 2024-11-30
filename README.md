@@ -151,8 +151,8 @@ All URIs are relative to *https://api.dofusdu.de*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*AlmanaxApi* | [**GetAlmanaxDate**](docs/AlmanaxApi.md#getalmanaxdate) | **GET** /dofus3/{language}/almanax/{date} | Single Almanax Date
-*AlmanaxApi* | [**GetAlmanaxRange**](docs/AlmanaxApi.md#getalmanaxrange) | **GET** /dofus3/{language}/almanax | Almanax Range
+*AlmanaxApi* | [**GetAlmanaxDate**](docs/AlmanaxApi.md#getalmanaxdate) | **GET** /dofus2/{language}/almanax/{date} | Single Almanax Date
+*AlmanaxApi* | [**GetAlmanaxRange**](docs/AlmanaxApi.md#getalmanaxrange) | **GET** /dofus2/{language}/almanax | Almanax Range
 *ConsumablesApi* | [**GetAllItemsConsumablesList**](docs/ConsumablesApi.md#getallitemsconsumableslist) | **GET** /{game}/v1/{language}/items/consumables/all | List All Consumables
 *ConsumablesApi* | [**GetItemsConsumablesList**](docs/ConsumablesApi.md#getitemsconsumableslist) | **GET** /{game}/v1/{language}/items/consumables | List Consumables
 *ConsumablesApi* | [**GetItemsConsumablesSearch**](docs/ConsumablesApi.md#getitemsconsumablessearch) | **GET** /{game}/v1/{language}/items/consumables/search | Search Consumables
@@ -167,12 +167,12 @@ Class | Method | HTTP request | Description
 *EquipmentApi* | [**GetItemsEquipmentSingle**](docs/EquipmentApi.md#getitemsequipmentsingle) | **GET** /{game}/v1/{language}/items/equipment/{ankama_id} | Single Equipment
 *GameApi* | [**GetGameSearch**](docs/GameApi.md#getgamesearch) | **GET** /{game}/v1/{language}/search | Game Search
 *GameApi* | [**GetItemsAllSearch**](docs/GameApi.md#getitemsallsearch) | **GET** /{game}/v1/{language}/items/search | Search All Items
-*MetaApi* | [**GetGameSearchTypes**](docs/MetaApi.md#getgamesearchtypes) | **GET** /dofus3/meta/search/types | Available Game Search Types
-*MetaApi* | [**GetItemTypes**](docs/MetaApi.md#getitemtypes) | **GET** /dofus3/meta/items/types | Available Item Types
-*MetaApi* | [**GetMetaAlmanaxBonuses**](docs/MetaApi.md#getmetaalmanaxbonuses) | **GET** /dofus3/meta/{language}/almanax/bonuses | Available Almanax Bonuses
-*MetaApi* | [**GetMetaAlmanaxBonusesSearch**](docs/MetaApi.md#getmetaalmanaxbonusessearch) | **GET** /dofus3/meta/{language}/almanax/bonuses/search | Search Available Almanax Bonuses
-*MetaApi* | [**GetMetaElements**](docs/MetaApi.md#getmetaelements) | **GET** /dofus3/meta/elements | Effects and Condition Elements
-*MetaApi* | [**GetMetaVersion**](docs/MetaApi.md#getmetaversion) | **GET** /dofus3/meta/version | Game Version
+*MetaApi* | [**GetGameSearchTypes**](docs/MetaApi.md#getgamesearchtypes) | **GET** /dofus3beta/v1/meta/search/types | Available Game Search Types
+*MetaApi* | [**GetItemTypes**](docs/MetaApi.md#getitemtypes) | **GET** /dofus3beta/v1/meta/items/types | Available Item Types
+*MetaApi* | [**GetMetaAlmanaxBonuses**](docs/MetaApi.md#getmetaalmanaxbonuses) | **GET** /dofus2/meta/{language}/almanax/bonuses | Available Almanax Bonuses
+*MetaApi* | [**GetMetaAlmanaxBonusesSearch**](docs/MetaApi.md#getmetaalmanaxbonusessearch) | **GET** /dofus2/meta/{language}/almanax/bonuses/search | Search Available Almanax Bonuses
+*MetaApi* | [**GetMetaElements**](docs/MetaApi.md#getmetaelements) | **GET** /dofus3beta/v1/meta/elements | Effects and Condition Elements
+*MetaApi* | [**GetMetaVersion**](docs/MetaApi.md#getmetaversion) | **GET** /dofus3beta/v1/meta/version | Game Version
 *MountsApi* | [**GetAllMountsList**](docs/MountsApi.md#getallmountslist) | **GET** /{game}/v1/{language}/mounts/all | List All Mounts
 *MountsApi* | [**GetMountsList**](docs/MountsApi.md#getmountslist) | **GET** /{game}/v1/{language}/mounts | List Mounts
 *MountsApi* | [**GetMountsSearch**](docs/MountsApi.md#getmountssearch) | **GET** /{game}/v1/{language}/mounts/search | Search Mounts

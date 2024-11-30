@@ -484,7 +484,7 @@ namespace Dofusdude.Api.Api
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<List<string>>("/dofus3/meta/search/types", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<List<string>>("/dofus3beta/v1/meta/search/types", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("GetGameSearchTypes", localVarResponse);
@@ -548,7 +548,7 @@ namespace Dofusdude.Api.Api
 
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<List<string>>("/dofus3/meta/search/types", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<string>>("/dofus3beta/v1/meta/search/types", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -610,7 +610,7 @@ namespace Dofusdude.Api.Api
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<List<string>>("/dofus3/meta/items/types", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<List<string>>("/dofus3beta/v1/meta/items/types", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("GetItemTypes", localVarResponse);
@@ -674,7 +674,7 @@ namespace Dofusdude.Api.Api
 
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<List<string>>("/dofus3/meta/items/types", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<string>>("/dofus3beta/v1/meta/items/types", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -745,7 +745,7 @@ namespace Dofusdude.Api.Api
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<List<GetMetaAlmanaxBonuses200ResponseInner>>("/dofus3/meta/{language}/almanax/bonuses", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<List<GetMetaAlmanaxBonuses200ResponseInner>>("/dofus2/meta/{language}/almanax/bonuses", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("GetMetaAlmanaxBonuses", localVarResponse);
@@ -818,7 +818,7 @@ namespace Dofusdude.Api.Api
 
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<List<GetMetaAlmanaxBonuses200ResponseInner>>("/dofus3/meta/{language}/almanax/bonuses", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<GetMetaAlmanaxBonuses200ResponseInner>>("/dofus2/meta/{language}/almanax/bonuses", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -904,7 +904,7 @@ namespace Dofusdude.Api.Api
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<List<GetMetaAlmanaxBonuses200ResponseInner>>("/dofus3/meta/{language}/almanax/bonuses/search", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<List<GetMetaAlmanaxBonuses200ResponseInner>>("/dofus2/meta/{language}/almanax/bonuses/search", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("GetMetaAlmanaxBonusesSearch", localVarResponse);
@@ -992,7 +992,7 @@ namespace Dofusdude.Api.Api
 
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<List<GetMetaAlmanaxBonuses200ResponseInner>>("/dofus3/meta/{language}/almanax/bonuses/search", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<GetMetaAlmanaxBonuses200ResponseInner>>("/dofus2/meta/{language}/almanax/bonuses/search", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -1054,7 +1054,7 @@ namespace Dofusdude.Api.Api
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<List<string>>("/dofus3/meta/elements", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<List<string>>("/dofus3beta/v1/meta/elements", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("GetMetaElements", localVarResponse);
@@ -1118,7 +1118,7 @@ namespace Dofusdude.Api.Api
 
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<List<string>>("/dofus3/meta/elements", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<string>>("/dofus3beta/v1/meta/elements", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -1180,7 +1180,7 @@ namespace Dofusdude.Api.Api
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<ModelVersion>("/dofus3/meta/version", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<ModelVersion>("/dofus3beta/v1/meta/version", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("GetMetaVersion", localVarResponse);
@@ -1244,7 +1244,7 @@ namespace Dofusdude.Api.Api
 
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<ModelVersion>("/dofus3/meta/version", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<ModelVersion>("/dofus3beta/v1/meta/version", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {

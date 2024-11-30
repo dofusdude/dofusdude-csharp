@@ -35,7 +35,7 @@ namespace Example
             config.BasePath = "https://api.dofusdu.de";
             var apiInstance = new QuestItemsApi(config);
             var language = fr;  // string | a valid language code
-            var game = dofus3;  // string | game main 'dofus3' or beta channel 'dofus3beta'
+            var game = dofus3beta;  // string | game main 'dofus3' or beta channel 'dofus3beta'
             var sortLevel = desc;  // string? | sort the resulting list by level, default unsorted (optional) 
             var filterMinLevel = 1;  // int? | only results which level is equal or above this value (optional) 
             var filterMaxLevel = 50;  // int? | only results which level is equal or below this value (optional) 
@@ -141,7 +141,7 @@ namespace Example
             var apiInstance = new QuestItemsApi(config);
             var language = "en";  // string | a valid language code
             var ankamaId = 25256;  // int | identifier
-            var game = dofus3;  // string | game main 'dofus3' or beta channel 'dofus3beta'
+            var game = dofus3beta;  // string | game main 'dofus3' or beta channel 'dofus3beta'
 
             try
             {
@@ -237,7 +237,7 @@ namespace Example
             config.BasePath = "https://api.dofusdu.de";
             var apiInstance = new QuestItemsApi(config);
             var language = fr;  // string | a valid language code
-            var game = dofus3;  // string | game main 'dofus3' or beta channel 'dofus3beta'
+            var game = dofus3beta;  // string | game main 'dofus3' or beta channel 'dofus3beta'
             var sortLevel = desc;  // string? | sort the resulting list by level, default unsorted (optional) 
             var filterMinLevel = 1;  // int? | only results which level is equal or above this value (optional) 
             var filterMaxLevel = 50;  // int? | only results which level is equal or below this value (optional) 
@@ -346,7 +346,7 @@ namespace Example
             config.BasePath = "https://api.dofusdu.de";
             var apiInstance = new QuestItemsApi(config);
             var language = es;  // string | a valid language code
-            var game = dofus3;  // string | game main 'dofus3' or beta channel 'dofus3beta'
+            var game = dofus3beta;  // string | game main 'dofus3' or beta channel 'dofus3beta'
             var query = Ficha;  // string | case sensitive search query
             var filterTypeName = Justicieros;  // string? | only results with the translated type name (optional) 
             var filterMinLevel = 60;  // int? | only results which level is equal or above this value (optional) 

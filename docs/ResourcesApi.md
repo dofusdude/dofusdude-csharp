@@ -35,7 +35,7 @@ namespace Example
             config.BasePath = "https://api.dofusdu.de";
             var apiInstance = new ResourcesApi(config);
             var language = "en";  // string | a valid language code
-            var game = dofus3;  // string | game main 'dofus3' or beta channel 'dofus3beta'
+            var game = dofus3beta;  // string | game main 'dofus3' or beta channel 'dofus3beta'
             var sortLevel = desc;  // string? | sort the resulting list by level, default unsorted (optional) 
             var filterMinLevel = 160;  // int? | only results which level is equal or above this value (optional) 
             var filterMaxLevel = 190;  // int? | only results which level is equal or below this value (optional) 
@@ -140,7 +140,7 @@ namespace Example
             config.BasePath = "https://api.dofusdu.de";
             var apiInstance = new ResourcesApi(config);
             var language = "en";  // string | a valid language code
-            var game = dofus3;  // string | game main 'dofus3' or beta channel 'dofus3beta'
+            var game = dofus3beta;  // string | game main 'dofus3' or beta channel 'dofus3beta'
             var query = snowdew;  // string | case sensitive search query
             var filterMinLevel = 150;  // int? | only results which level is equal or above this value (optional) 
             var filterMaxLevel = 200;  // int? | only results which level is equal or below this value (optional) 
@@ -245,7 +245,7 @@ namespace Example
             config.BasePath = "https://api.dofusdu.de";
             var apiInstance = new ResourcesApi(config);
             var language = "en";  // string | a valid language code
-            var game = dofus3;  // string | game main 'dofus3' or beta channel 'dofus3beta'
+            var game = dofus3beta;  // string | game main 'dofus3' or beta channel 'dofus3beta'
             var sortLevel = desc;  // string? | sort the resulting list by level, default unsorted (optional) 
             var filterMinLevel = 160;  // int? | only results which level is equal or above this value (optional) 
             var filterMaxLevel = 190;  // int? | only results which level is equal or below this value (optional) 
@@ -355,7 +355,7 @@ namespace Example
             var apiInstance = new ResourcesApi(config);
             var language = "en";  // string | a valid language code
             var ankamaId = 7295;  // int | identifier
-            var game = dofus3;  // string | game main 'dofus3' or beta channel 'dofus3beta'
+            var game = dofus3beta;  // string | game main 'dofus3' or beta channel 'dofus3beta'
 
             try
             {

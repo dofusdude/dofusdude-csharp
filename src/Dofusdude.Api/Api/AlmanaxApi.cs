@@ -336,7 +336,7 @@ namespace Dofusdude.Api.Api
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<Almanax>("/dofus3/{language}/almanax/{date}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<Almanax>("/dofus2/{language}/almanax/{date}", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("GetAlmanaxDate", localVarResponse);
@@ -412,7 +412,7 @@ namespace Dofusdude.Api.Api
 
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<Almanax>("/dofus3/{language}/almanax/{date}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<Almanax>("/dofus2/{language}/almanax/{date}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -513,7 +513,7 @@ namespace Dofusdude.Api.Api
 
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<List<Almanax>>("/dofus3/{language}/almanax", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<List<Almanax>>("/dofus2/{language}/almanax", localVarRequestOptions, this.Configuration);
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("GetAlmanaxRange", localVarResponse);
@@ -616,7 +616,7 @@ namespace Dofusdude.Api.Api
 
 
             // make the HTTP request
-            var localVarResponse = await this.AsynchronousClient.GetAsync<List<Almanax>>("/dofus3/{language}/almanax", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<Almanax>>("/dofus2/{language}/almanax", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
