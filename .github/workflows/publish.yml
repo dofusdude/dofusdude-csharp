@@ -18,4 +18,4 @@ jobs:
     - name: Publish
       env:
         NUGET_AUTH_TOKEN: ${{secrets.NUGET_TOKEN}}
-      run: dotnet nuget push --api-key "$NUGET_AUTH_TOKEN" --source https://api.nuget.org/v3/index.json src/Dofusdude.Api/bin/Release/Dofusdude.Api.1.0.0-rc.3.nupkg
+      run: dotnet nuget push --api-key "$NUGET_AUTH_TOKEN" --source https://api.nuget.org/v3/index.json src/Dofusdude.Api/bin/Release/Dofusdude.Api.1.0.0-rc.4.nupkg
