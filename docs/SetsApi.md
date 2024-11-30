@@ -229,7 +229,7 @@ No authorization required
 
 <a id="getsetssearch"></a>
 # **GetSetsSearch**
-> List&lt;ListEquipmentSet&gt; GetSetsSearch (string language, string game, string query, int? filterMinHighestEquipmentLevel = null, int? filterMaxHighestEquipmentLevel = null, int? limit = null, bool? filterIsCosmetic = null)
+> List&lt;ListEquipmentSet&gt; GetSetsSearch (string language, string game, string query, int? filterMinHighestEquipmentLevel = null, int? filterMaxHighestEquipmentLevel = null, int? limit = null, bool? filterContainsCosmeticsOnly = null, bool? filterContainsCosmetics = null)
 
 Search Sets
 
@@ -258,12 +258,13 @@ namespace Example
             var filterMinHighestEquipmentLevel = 195;  // int? | only results where the equipment with the highest level is above or equal to this value (optional) 
             var filterMaxHighestEquipmentLevel = 200;  // int? | only results where the equipment with the highest level is below or equal to this value (optional) 
             var limit = 8;  // int? | maximum number of returned results (optional)  (default to 8)
-            var filterIsCosmetic = true;  // bool? | filter sets based on if they only got cosmetic items in it. If true, the item ids are for the cosmetic endpoints instead of equipment. (optional) 
+            var filterContainsCosmeticsOnly = true;  // bool? | filter sets based on if they only got cosmetic items in it. If true, the item ids are for the cosmetic endpoints instead of equipment. (optional) 
+            var filterContainsCosmetics = true;  // bool? | filter sets based on if they got any cosmetic items in it (optional) 
 
             try
             {
                 // Search Sets
-                List<ListEquipmentSet> result = apiInstance.GetSetsSearch(language, game, query, filterMinHighestEquipmentLevel, filterMaxHighestEquipmentLevel, limit, filterIsCosmetic);
+                List<ListEquipmentSet> result = apiInstance.GetSetsSearch(language, game, query, filterMinHighestEquipmentLevel, filterMaxHighestEquipmentLevel, limit, filterContainsCosmeticsOnly, filterContainsCosmetics);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -284,7 +285,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Search Sets
-    ApiResponse<List<ListEquipmentSet>> response = apiInstance.GetSetsSearchWithHttpInfo(language, game, query, filterMinHighestEquipmentLevel, filterMaxHighestEquipmentLevel, limit, filterIsCosmetic);
+    ApiResponse<List<ListEquipmentSet>> response = apiInstance.GetSetsSearchWithHttpInfo(language, game, query, filterMinHighestEquipmentLevel, filterMaxHighestEquipmentLevel, limit, filterContainsCosmeticsOnly, filterContainsCosmetics);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -307,7 +308,8 @@ catch (ApiException e)
 | **filterMinHighestEquipmentLevel** | **int?** | only results where the equipment with the highest level is above or equal to this value | [optional]  |
 | **filterMaxHighestEquipmentLevel** | **int?** | only results where the equipment with the highest level is below or equal to this value | [optional]  |
 | **limit** | **int?** | maximum number of returned results | [optional] [default to 8] |
-| **filterIsCosmetic** | **bool?** | filter sets based on if they only got cosmetic items in it. If true, the item ids are for the cosmetic endpoints instead of equipment. | [optional]  |
+| **filterContainsCosmeticsOnly** | **bool?** | filter sets based on if they only got cosmetic items in it. If true, the item ids are for the cosmetic endpoints instead of equipment. | [optional]  |
+| **filterContainsCosmetics** | **bool?** | filter sets based on if they got any cosmetic items in it | [optional]  |
 
 ### Return type
 
