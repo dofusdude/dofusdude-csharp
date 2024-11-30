@@ -9,7 +9,7 @@ All URIs are relative to *https://api.dofusdu.de*
 | [**GetMetaAlmanaxBonuses**](MetaApi.md#getmetaalmanaxbonuses) | **GET** /dofus2/meta/{language}/almanax/bonuses | Available Almanax Bonuses |
 | [**GetMetaAlmanaxBonusesSearch**](MetaApi.md#getmetaalmanaxbonusessearch) | **GET** /dofus2/meta/{language}/almanax/bonuses/search | Search Available Almanax Bonuses |
 | [**GetMetaElements**](MetaApi.md#getmetaelements) | **GET** /dofus3beta/v1/meta/elements | Effects and Condition Elements |
-| [**GetMetaVersion**](MetaApi.md#getmetaversion) | **GET** /dofus3beta/v1/meta/version | Game Version |
+| [**GetMetaVersion**](MetaApi.md#getmetaversion) | **GET** /{game}/v1/meta/version | Game Version |
 
 <a id="getgamesearchtypes"></a>
 # **GetGameSearchTypes**
@@ -457,7 +457,7 @@ No authorization required
 
 <a id="getmetaversion"></a>
 # **GetMetaVersion**
-> ModelVersion GetMetaVersion ()
+> ModelVersion GetMetaVersion (string game)
 
 Game Version
 
@@ -480,11 +480,12 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://api.dofusdu.de";
             var apiInstance = new MetaApi(config);
+            var game = dofus3beta;  // string | game main 'dofus3' or beta channel 'dofus3beta'
 
             try
             {
                 // Game Version
-                ModelVersion result = apiInstance.GetMetaVersion();
+                ModelVersion result = apiInstance.GetMetaVersion(game);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -505,7 +506,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Game Version
-    ApiResponse<ModelVersion> response = apiInstance.GetMetaVersionWithHttpInfo();
+    ApiResponse<ModelVersion> response = apiInstance.GetMetaVersionWithHttpInfo(game);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -519,7 +520,11 @@ catch (ApiException e)
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **game** | **string** | game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; |  |
+
 ### Return type
 
 [**ModelVersion**](ModelVersion.md)
