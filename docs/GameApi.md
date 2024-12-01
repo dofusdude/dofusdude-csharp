@@ -37,8 +37,8 @@ namespace Example
             var query = paztek;  // string | search query
             var filterSearchIndex = new List<string>?(); // List<string>? | only results with all specific type (optional) 
             var limit = 8;  // int? | maximum number of returned results (optional)  (default to 8)
-            var fieldsItem = new List<string>?(); // List<string>? | adds fields from the item search to the list entries if the hit is a item. Multiple comma separated values allowed. (optional) 
-            var filterTypeNameId = new List<string>?(); // List<string>? | multi-filter results with the english item type name, including \"mount\" and \"set\" from filter[type]. Add with \"wood\" or \"+wood\" and exclude with \"-wood\". (optional) 
+            var fieldsItem = new List<string>?(); // List<string>? | adds fields from the item search to the list entries if the hit is an item. Multiple comma separated values allowed. (optional) 
+            var filterTypeNameId = new List<string>?(); // List<string>? | multi-filter results with the english item type name, including \"mount\" and \"set\" from filter[search_index]. Add with \"wood\" or \"+wood\" and exclude with \"-wood\". (optional) 
 
             try
             {
@@ -86,8 +86,8 @@ catch (ApiException e)
 | **query** | **string** | search query |  |
 | **filterSearchIndex** | [**List&lt;string&gt;?**](string.md) | only results with all specific type | [optional]  |
 | **limit** | **int?** | maximum number of returned results | [optional] [default to 8] |
-| **fieldsItem** | [**List&lt;string&gt;?**](string.md) | adds fields from the item search to the list entries if the hit is a item. Multiple comma separated values allowed. | [optional]  |
-| **filterTypeNameId** | [**List&lt;string&gt;?**](string.md) | multi-filter results with the english item type name, including \&quot;mount\&quot; and \&quot;set\&quot; from filter[type]. Add with \&quot;wood\&quot; or \&quot;+wood\&quot; and exclude with \&quot;-wood\&quot;. | [optional]  |
+| **fieldsItem** | [**List&lt;string&gt;?**](string.md) | adds fields from the item search to the list entries if the hit is an item. Multiple comma separated values allowed. | [optional]  |
+| **filterTypeNameId** | [**List&lt;string&gt;?**](string.md) | multi-filter results with the english item type name, including \&quot;mount\&quot; and \&quot;set\&quot; from filter[search_index]. Add with \&quot;wood\&quot; or \&quot;+wood\&quot; and exclude with \&quot;-wood\&quot;. | [optional]  |
 
 ### Return type
 
