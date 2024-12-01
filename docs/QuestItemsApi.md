@@ -322,7 +322,7 @@ No authorization required
 
 <a id="getitemsquestsearch"></a>
 # **GetItemsQuestSearch**
-> List&lt;ListItem&gt; GetItemsQuestSearch (string language, string game, string query, string? filterTypeName = null, int? filterMinLevel = null, int? filterMaxLevel = null, int? limit = null, List<string>? filterTypeEnum = null)
+> List&lt;ListItem&gt; GetItemsQuestSearch (string language, string game, string query, int? filterMinLevel = null, int? filterMaxLevel = null, int? limit = null, List<string>? filterTypeNameId = null)
 
 Search Quest Items
 
@@ -348,16 +348,15 @@ namespace Example
             var language = es;  // string | a valid language code
             var game = dofus3beta;  // string | game main 'dofus3' or beta channel 'dofus3beta'
             var query = Ficha;  // string | case sensitive search query
-            var filterTypeName = Justicieros;  // string? | only results with the translated type name (optional) 
             var filterMinLevel = 60;  // int? | only results which level is equal or above this value (optional) 
             var filterMaxLevel = 70;  // int? | only results which level is equal or below this value (optional) 
             var limit = 8;  // int? | maximum number of returned results (optional)  (default to 8)
-            var filterTypeEnum = new List<string>?(); // List<string>? | multi-filter results with the english type name. Add with \"wood\" or \"+wood\" and exclude with \"-wood\". (optional) 
+            var filterTypeNameId = new List<string>?(); // List<string>? | multi-filter results with the english type name. Add with \"wood\" or \"+wood\" and exclude with \"-wood\". (optional) 
 
             try
             {
                 // Search Quest Items
-                List<ListItem> result = apiInstance.GetItemsQuestSearch(language, game, query, filterTypeName, filterMinLevel, filterMaxLevel, limit, filterTypeEnum);
+                List<ListItem> result = apiInstance.GetItemsQuestSearch(language, game, query, filterMinLevel, filterMaxLevel, limit, filterTypeNameId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -378,7 +377,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Search Quest Items
-    ApiResponse<List<ListItem>> response = apiInstance.GetItemsQuestSearchWithHttpInfo(language, game, query, filterTypeName, filterMinLevel, filterMaxLevel, limit, filterTypeEnum);
+    ApiResponse<List<ListItem>> response = apiInstance.GetItemsQuestSearchWithHttpInfo(language, game, query, filterMinLevel, filterMaxLevel, limit, filterTypeNameId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -398,11 +397,10 @@ catch (ApiException e)
 | **language** | **string** | a valid language code |  |
 | **game** | **string** | game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; |  |
 | **query** | **string** | case sensitive search query |  |
-| **filterTypeName** | **string?** | only results with the translated type name | [optional]  |
 | **filterMinLevel** | **int?** | only results which level is equal or above this value | [optional]  |
 | **filterMaxLevel** | **int?** | only results which level is equal or below this value | [optional]  |
 | **limit** | **int?** | maximum number of returned results | [optional] [default to 8] |
-| **filterTypeEnum** | [**List&lt;string&gt;?**](string.md) | multi-filter results with the english type name. Add with \&quot;wood\&quot; or \&quot;+wood\&quot; and exclude with \&quot;-wood\&quot;. | [optional]  |
+| **filterTypeNameId** | [**List&lt;string&gt;?**](string.md) | multi-filter results with the english type name. Add with \&quot;wood\&quot; or \&quot;+wood\&quot; and exclude with \&quot;-wood\&quot;. | [optional]  |
 
 ### Return type
 

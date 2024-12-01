@@ -217,7 +217,7 @@ No authorization required
 
 <a id="getmountssearch"></a>
 # **GetMountsSearch**
-> List&lt;Mount&gt; GetMountsSearch (string language, string game, string query, string? filterFamilyName = null, int? limit = null)
+> List&lt;Mount&gt; GetMountsSearch (string language, string game, string query, string? filterFamilyName = null, int? limit = null, int? filterFamilyId = null)
 
 Search Mounts
 
@@ -245,11 +245,12 @@ namespace Example
             var query = Dorée;  // string | case sensitive search query
             var filterFamilyName = Dragodinde;  // string? | only results with the translated family name (optional) 
             var limit = 8;  // int? | maximum number of returned results (optional)  (default to 8)
+            var filterFamilyId = 56;  // int? | only results with the unique family id (optional) 
 
             try
             {
                 // Search Mounts
-                List<Mount> result = apiInstance.GetMountsSearch(language, game, query, filterFamilyName, limit);
+                List<Mount> result = apiInstance.GetMountsSearch(language, game, query, filterFamilyName, limit, filterFamilyId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -270,7 +271,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Search Mounts
-    ApiResponse<List<Mount>> response = apiInstance.GetMountsSearchWithHttpInfo(language, game, query, filterFamilyName, limit);
+    ApiResponse<List<Mount>> response = apiInstance.GetMountsSearchWithHttpInfo(language, game, query, filterFamilyName, limit, filterFamilyId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -292,6 +293,7 @@ catch (ApiException e)
 | **query** | **string** | case sensitive search query |  |
 | **filterFamilyName** | **string?** | only results with the translated family name | [optional]  |
 | **limit** | **int?** | maximum number of returned results | [optional] [default to 8] |
+| **filterFamilyId** | **int?** | only results with the unique family id | [optional]  |
 
 ### Return type
 
