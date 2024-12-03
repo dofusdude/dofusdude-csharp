@@ -4,16 +4,16 @@ All URIs are relative to *https://api.dofusdu.de*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**GetGameSearchTypes**](MetaApi.md#getgamesearchtypes) | **GET** /dofus3beta/v1/meta/search/types | Available Game Search Types |
-| [**GetItemTypes**](MetaApi.md#getitemtypes) | **GET** /dofus3beta/v1/meta/items/types | Available Item Types |
-| [**GetMetaAlmanaxBonuses**](MetaApi.md#getmetaalmanaxbonuses) | **GET** /dofus2/meta/{language}/almanax/bonuses | Available Almanax Bonuses |
-| [**GetMetaAlmanaxBonusesSearch**](MetaApi.md#getmetaalmanaxbonusessearch) | **GET** /dofus2/meta/{language}/almanax/bonuses/search | Search Available Almanax Bonuses |
-| [**GetMetaElements**](MetaApi.md#getmetaelements) | **GET** /dofus3beta/v1/meta/elements | Effects and Condition Elements |
+| [**GetGameSearchTypes**](MetaApi.md#getgamesearchtypes) | **GET** /{game}/v1/meta/search/types | Available Game Search Types |
+| [**GetItemTypes**](MetaApi.md#getitemtypes) | **GET** /{game}/v1/meta/items/types | Available Item Types |
+| [**GetMetaAlmanaxBonuses**](MetaApi.md#getmetaalmanaxbonuses) | **GET** /dofus3/v1/meta/{language}/almanax/bonuses | Available Almanax Bonuses |
+| [**GetMetaAlmanaxBonusesSearch**](MetaApi.md#getmetaalmanaxbonusessearch) | **GET** /dofus3/v1/meta/{language}/almanax/bonuses/search | Search Available Almanax Bonuses |
+| [**GetMetaElements**](MetaApi.md#getmetaelements) | **GET** /{game}/v1/meta/elements | Effects and Condition Elements |
 | [**GetMetaVersion**](MetaApi.md#getmetaversion) | **GET** /{game}/v1/meta/version | Game Version |
 
 <a id="getgamesearchtypes"></a>
 # **GetGameSearchTypes**
-> List&lt;string&gt; GetGameSearchTypes ()
+> List&lt;string&gt; GetGameSearchTypes (string game)
 
 Available Game Search Types
 
@@ -36,11 +36,12 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://api.dofusdu.de";
             var apiInstance = new MetaApi(config);
+            var game = "game_example";  // string | game main 'dofus3' or beta channel 'dofus3beta'
 
             try
             {
                 // Available Game Search Types
-                List<string> result = apiInstance.GetGameSearchTypes();
+                List<string> result = apiInstance.GetGameSearchTypes(game);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -61,7 +62,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Available Game Search Types
-    ApiResponse<List<string>> response = apiInstance.GetGameSearchTypesWithHttpInfo();
+    ApiResponse<List<string>> response = apiInstance.GetGameSearchTypesWithHttpInfo(game);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -75,7 +76,11 @@ catch (ApiException e)
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **game** | **string** | game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; |  |
+
 ### Return type
 
 **List<string>**
@@ -99,7 +104,7 @@ No authorization required
 
 <a id="getitemtypes"></a>
 # **GetItemTypes**
-> List&lt;string&gt; GetItemTypes ()
+> List&lt;string&gt; GetItemTypes (string game)
 
 Available Item Types
 
@@ -122,11 +127,12 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://api.dofusdu.de";
             var apiInstance = new MetaApi(config);
+            var game = "game_example";  // string | game main 'dofus3' or beta channel 'dofus3beta'
 
             try
             {
                 // Available Item Types
-                List<string> result = apiInstance.GetItemTypes();
+                List<string> result = apiInstance.GetItemTypes(game);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -147,7 +153,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Available Item Types
-    ApiResponse<List<string>> response = apiInstance.GetItemTypesWithHttpInfo();
+    ApiResponse<List<string>> response = apiInstance.GetItemTypesWithHttpInfo(game);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -161,7 +167,11 @@ catch (ApiException e)
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **game** | **string** | game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; |  |
+
 ### Return type
 
 **List<string>**
@@ -371,7 +381,7 @@ No authorization required
 
 <a id="getmetaelements"></a>
 # **GetMetaElements**
-> List&lt;string&gt; GetMetaElements ()
+> List&lt;string&gt; GetMetaElements (string game)
 
 Effects and Condition Elements
 
@@ -394,11 +404,12 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://api.dofusdu.de";
             var apiInstance = new MetaApi(config);
+            var game = "game_example";  // string | game main 'dofus3' or beta channel 'dofus3beta'
 
             try
             {
                 // Effects and Condition Elements
-                List<string> result = apiInstance.GetMetaElements();
+                List<string> result = apiInstance.GetMetaElements(game);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -419,7 +430,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Effects and Condition Elements
-    ApiResponse<List<string>> response = apiInstance.GetMetaElementsWithHttpInfo();
+    ApiResponse<List<string>> response = apiInstance.GetMetaElementsWithHttpInfo(game);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -433,7 +444,11 @@ catch (ApiException e)
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **game** | **string** | game main &#39;dofus3&#39; or beta channel &#39;dofus3beta&#39; |  |
+
 ### Return type
 
 **List<string>**
