@@ -127,8 +127,8 @@ namespace Example
             var apiInstance = new AlmanaxApi(config);
             var language = fr;  // string | code
             var filterBonusType = experience-points;  // string? | ids from meta/{language}/almanax/bonuses (optional) 
-            var rangeFrom = Thu Sep 15 00:00:00 UTC 2016;  // DateOnly? | yyyy-mm-dd (optional) 
-            var rangeTo = Wed Sep 28 00:00:00 UTC 2016;  // DateOnly? | yyyy-mm-dd (optional) 
+            var rangeFrom = DateOnly.Parse("2013-10-20");  // DateOnly? | yyyy-mm-dd (optional) 
+            var rangeTo = DateOnly.Parse("2013-10-20");  // DateOnly? | yyyy-mm-dd (optional) 
             var rangeSize = -1;  // int? | size of the returned range (optional) 
             var timezone = Europe/Paris;  // string? | determine what the current time is. If you live in Brazil, \"today\" will be hours apart from Paris. Use your timezone to get results relative to your location. (optional)  (default to "Europe/Paris")
 
