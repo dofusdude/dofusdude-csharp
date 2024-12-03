@@ -36,7 +36,7 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://api.dofusdu.de";
             var apiInstance = new MetaApi(config);
-            var game = "game_example";  // string | game main 'dofus3' or beta channel 'dofus3beta'
+            var game = dofus3;  // string | game main 'dofus3' or beta channel 'dofus3beta'
 
             try
             {
@@ -127,7 +127,7 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://api.dofusdu.de";
             var apiInstance = new MetaApi(config);
-            var game = "game_example";  // string | game main 'dofus3' or beta channel 'dofus3beta'
+            var game = dofus3;  // string | game main 'dofus3' or beta channel 'dofus3beta'
 
             try
             {
@@ -404,7 +404,7 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://api.dofusdu.de";
             var apiInstance = new MetaApi(config);
-            var game = "game_example";  // string | game main 'dofus3' or beta channel 'dofus3beta'
+            var game = dofus3;  // string | game main 'dofus3' or beta channel 'dofus3beta'
 
             try
             {
@@ -495,7 +495,7 @@ namespace Example
             Configuration config = new Configuration();
             config.BasePath = "https://api.dofusdu.de";
             var apiInstance = new MetaApi(config);
-            var game = dofus3beta;  // string | game main 'dofus3' or beta channel 'dofus3beta'
+            var game = dofus3;  // string | game main 'dofus3' or beta channel 'dofus3beta'
 
             try
             {

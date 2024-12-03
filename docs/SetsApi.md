@@ -35,7 +35,7 @@ namespace Example
             config.BasePath = "https://api.dofusdu.de";
             var apiInstance = new SetsApi(config);
             var language = "en";  // string | a valid language code
-            var game = dofus3beta;  // string | game main 'dofus3' or beta channel 'dofus3beta'
+            var game = dofus3;  // string | game main 'dofus3' or beta channel 'dofus3beta'
             var sortLevel = asc;  // string? | sort the resulting list by level, default unsorted (optional) 
             var filterMinHighestEquipmentLevel = 190;  // int? | only results where the equipment with the highest level is above or equal to this value (optional) 
             var filterMaxHighestEquipmentLevel = 200;  // int? | only results where the equipment with the highest level is below or equal to this value (optional) 
@@ -142,7 +142,7 @@ namespace Example
             config.BasePath = "https://api.dofusdu.de";
             var apiInstance = new SetsApi(config);
             var language = "en";  // string | a valid language code
-            var game = dofus3beta;  // string | game main 'dofus3' or beta channel 'dofus3beta'
+            var game = dofus3;  // string | game main 'dofus3' or beta channel 'dofus3beta'
             var sortLevel = asc;  // string? | sort the resulting list by level, default unsorted (optional) 
             var filterMinHighestEquipmentLevel = 190;  // int? | only results where the equipment with the highest level is above or equal to this value (optional) 
             var filterMaxHighestEquipmentLevel = 200;  // int? | only results where the equipment with the highest level is below or equal to this value (optional) 
@@ -253,7 +253,7 @@ namespace Example
             config.BasePath = "https://api.dofusdu.de";
             var apiInstance = new SetsApi(config);
             var language = "en";  // string | a valid language code
-            var game = dofus3beta;  // string | game main 'dofus3' or beta channel 'dofus3beta'
+            var game = dofus3;  // string | game main 'dofus3' or beta channel 'dofus3beta'
             var query = Des;  // string | case sensitive search query
             var filterMinHighestEquipmentLevel = 195;  // int? | only results where the equipment with the highest level is above or equal to this value (optional) 
             var filterMaxHighestEquipmentLevel = 200;  // int? | only results where the equipment with the highest level is below or equal to this value (optional) 
@@ -361,7 +361,7 @@ namespace Example
             var apiInstance = new SetsApi(config);
             var language = "en";  // string | a valid language code
             var ankamaId = 499;  // int | identifier
-            var game = dofus3beta;  // string | game main 'dofus3' or beta channel 'dofus3beta'
+            var game = dofus3;  // string | game main 'dofus3' or beta channel 'dofus3beta'
 
             try
             {
