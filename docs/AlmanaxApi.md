@@ -129,7 +129,7 @@ namespace Example
             var filterBonusType = experience-points;  // string? | ids from meta/{language}/almanax/bonuses (optional) 
             var rangeFrom = DateOnly.Parse("2013-10-20");  // DateOnly? | yyyy-mm-dd (optional) 
             var rangeTo = DateOnly.Parse("2013-10-20");  // DateOnly? | yyyy-mm-dd (optional) 
-            var rangeSize = -1;  // int? | size of the returned range (optional) 
+            var rangeSize = -1;  // int? | Size of the returned range. Disable to fully use the range by setting size to -1. (optional) 
             var timezone = Europe/Paris;  // string? | determine what the current time is. If you live in Brazil, \"today\" will be hours apart from Paris. Use your timezone to get results relative to your location. (optional)  (default to "Europe/Paris")
 
             try
@@ -177,7 +177,7 @@ catch (ApiException e)
 | **filterBonusType** | **string?** | ids from meta/{language}/almanax/bonuses | [optional]  |
 | **rangeFrom** | **DateOnly?** | yyyy-mm-dd | [optional]  |
 | **rangeTo** | **DateOnly?** | yyyy-mm-dd | [optional]  |
-| **rangeSize** | **int?** | size of the returned range | [optional]  |
+| **rangeSize** | **int?** | Size of the returned range. Disable to fully use the range by setting size to -1. | [optional]  |
 | **timezone** | **string?** | determine what the current time is. If you live in Brazil, \&quot;today\&quot; will be hours apart from Paris. Use your timezone to get results relative to your location. | [optional] [default to &quot;Europe/Paris&quot;] |
 
 ### Return type

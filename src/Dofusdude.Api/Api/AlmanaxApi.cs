@@ -63,7 +63,7 @@ namespace Dofusdude.Api.Api
         /// <param name="filterBonusType">ids from meta/{language}/almanax/bonuses (optional)</param>
         /// <param name="rangeFrom">yyyy-mm-dd (optional)</param>
         /// <param name="rangeTo">yyyy-mm-dd (optional)</param>
-        /// <param name="rangeSize">size of the returned range (optional)</param>
+        /// <param name="rangeSize">Size of the returned range. Disable to fully use the range by setting size to -1. (optional)</param>
         /// <param name="timezone">determine what the current time is. If you live in Brazil, \&quot;today\&quot; will be hours apart from Paris. Use your timezone to get results relative to your location. (optional, default to &quot;Europe/Paris&quot;)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;Almanax&gt;</returns>
@@ -80,7 +80,7 @@ namespace Dofusdude.Api.Api
         /// <param name="filterBonusType">ids from meta/{language}/almanax/bonuses (optional)</param>
         /// <param name="rangeFrom">yyyy-mm-dd (optional)</param>
         /// <param name="rangeTo">yyyy-mm-dd (optional)</param>
-        /// <param name="rangeSize">size of the returned range (optional)</param>
+        /// <param name="rangeSize">Size of the returned range. Disable to fully use the range by setting size to -1. (optional)</param>
         /// <param name="timezone">determine what the current time is. If you live in Brazil, \&quot;today\&quot; will be hours apart from Paris. Use your timezone to get results relative to your location. (optional, default to &quot;Europe/Paris&quot;)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;Almanax&gt;</returns>
@@ -132,7 +132,7 @@ namespace Dofusdude.Api.Api
         /// <param name="filterBonusType">ids from meta/{language}/almanax/bonuses (optional)</param>
         /// <param name="rangeFrom">yyyy-mm-dd (optional)</param>
         /// <param name="rangeTo">yyyy-mm-dd (optional)</param>
-        /// <param name="rangeSize">size of the returned range (optional)</param>
+        /// <param name="rangeSize">Size of the returned range. Disable to fully use the range by setting size to -1. (optional)</param>
         /// <param name="timezone">determine what the current time is. If you live in Brazil, \&quot;today\&quot; will be hours apart from Paris. Use your timezone to get results relative to your location. (optional, default to &quot;Europe/Paris&quot;)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -150,7 +150,7 @@ namespace Dofusdude.Api.Api
         /// <param name="filterBonusType">ids from meta/{language}/almanax/bonuses (optional)</param>
         /// <param name="rangeFrom">yyyy-mm-dd (optional)</param>
         /// <param name="rangeTo">yyyy-mm-dd (optional)</param>
-        /// <param name="rangeSize">size of the returned range (optional)</param>
+        /// <param name="rangeSize">Size of the returned range. Disable to fully use the range by setting size to -1. (optional)</param>
         /// <param name="timezone">determine what the current time is. If you live in Brazil, \&quot;today\&quot; will be hours apart from Paris. Use your timezone to get results relative to your location. (optional, default to &quot;Europe/Paris&quot;)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -434,7 +434,7 @@ namespace Dofusdude.Api.Api
         /// <param name="filterBonusType">ids from meta/{language}/almanax/bonuses (optional)</param>
         /// <param name="rangeFrom">yyyy-mm-dd (optional)</param>
         /// <param name="rangeTo">yyyy-mm-dd (optional)</param>
-        /// <param name="rangeSize">size of the returned range (optional)</param>
+        /// <param name="rangeSize">Size of the returned range. Disable to fully use the range by setting size to -1. (optional)</param>
         /// <param name="timezone">determine what the current time is. If you live in Brazil, \&quot;today\&quot; will be hours apart from Paris. Use your timezone to get results relative to your location. (optional, default to &quot;Europe/Paris&quot;)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>List&lt;Almanax&gt;</returns>
@@ -452,7 +452,7 @@ namespace Dofusdude.Api.Api
         /// <param name="filterBonusType">ids from meta/{language}/almanax/bonuses (optional)</param>
         /// <param name="rangeFrom">yyyy-mm-dd (optional)</param>
         /// <param name="rangeTo">yyyy-mm-dd (optional)</param>
-        /// <param name="rangeSize">size of the returned range (optional)</param>
+        /// <param name="rangeSize">Size of the returned range. Disable to fully use the range by setting size to -1. (optional)</param>
         /// <param name="timezone">determine what the current time is. If you live in Brazil, \&quot;today\&quot; will be hours apart from Paris. Use your timezone to get results relative to your location. (optional, default to &quot;Europe/Paris&quot;)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of List&lt;Almanax&gt;</returns>
@@ -534,7 +534,7 @@ namespace Dofusdude.Api.Api
         /// <param name="filterBonusType">ids from meta/{language}/almanax/bonuses (optional)</param>
         /// <param name="rangeFrom">yyyy-mm-dd (optional)</param>
         /// <param name="rangeTo">yyyy-mm-dd (optional)</param>
-        /// <param name="rangeSize">size of the returned range (optional)</param>
+        /// <param name="rangeSize">Size of the returned range. Disable to fully use the range by setting size to -1. (optional)</param>
         /// <param name="timezone">determine what the current time is. If you live in Brazil, \&quot;today\&quot; will be hours apart from Paris. Use your timezone to get results relative to your location. (optional, default to &quot;Europe/Paris&quot;)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -553,7 +553,7 @@ namespace Dofusdude.Api.Api
         /// <param name="filterBonusType">ids from meta/{language}/almanax/bonuses (optional)</param>
         /// <param name="rangeFrom">yyyy-mm-dd (optional)</param>
         /// <param name="rangeTo">yyyy-mm-dd (optional)</param>
-        /// <param name="rangeSize">size of the returned range (optional)</param>
+        /// <param name="rangeSize">Size of the returned range. Disable to fully use the range by setting size to -1. (optional)</param>
         /// <param name="timezone">determine what the current time is. If you live in Brazil, \&quot;today\&quot; will be hours apart from Paris. Use your timezone to get results relative to your location. (optional, default to &quot;Europe/Paris&quot;)</param>
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
