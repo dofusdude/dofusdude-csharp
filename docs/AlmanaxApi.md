@@ -9,7 +9,7 @@ All URIs are relative to *https://api.dofusdu.de*
 
 <a id="getalmanaxdate"></a>
 # **GetAlmanaxDate**
-> Almanax GetAlmanaxDate (string language, DateOnly date)
+> Almanax GetAlmanaxDate (string language, DateOnly date, int? level = null)
 
 Single Almanax Date
 
@@ -34,11 +34,12 @@ namespace Example
             var apiInstance = new AlmanaxApi(config);
             var language = fr;  // string | code
             var date = Tue Jul 14 00:00:00 UTC 2020;  // DateOnly | yyyy-mm-dd
+            var level = 56;  // int? | character level for the reward_xp field (optional) 
 
             try
             {
                 // Single Almanax Date
-                Almanax result = apiInstance.GetAlmanaxDate(language, date);
+                Almanax result = apiInstance.GetAlmanaxDate(language, date, level);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -59,7 +60,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Single Almanax Date
-    ApiResponse<Almanax> response = apiInstance.GetAlmanaxDateWithHttpInfo(language, date);
+    ApiResponse<Almanax> response = apiInstance.GetAlmanaxDateWithHttpInfo(language, date, level);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -78,6 +79,7 @@ catch (ApiException e)
 |------|------|-------------|-------|
 | **language** | **string** | code |  |
 | **date** | **DateOnly** | yyyy-mm-dd |  |
+| **level** | **int?** | character level for the reward_xp field | [optional]  |
 
 ### Return type
 
@@ -102,7 +104,7 @@ No authorization required
 
 <a id="getalmanaxrange"></a>
 # **GetAlmanaxRange**
-> List&lt;Almanax&gt; GetAlmanaxRange (string language, string? filterBonusType = null, DateOnly? rangeFrom = null, DateOnly? rangeTo = null, int? rangeSize = null, string? timezone = null)
+> List&lt;Almanax&gt; GetAlmanaxRange (string language, string? filterBonusType = null, DateOnly? rangeFrom = null, DateOnly? rangeTo = null, int? rangeSize = null, string? timezone = null, int? level = null)
 
 Almanax Range
 
@@ -131,11 +133,12 @@ namespace Example
             var rangeTo = DateOnly.Parse("2013-10-20");  // DateOnly? | yyyy-mm-dd (optional) 
             var rangeSize = -1;  // int? | Size of the returned range. Disable to fully use the range by setting size to -1. (optional) 
             var timezone = Europe/Paris;  // string? | determine what the current time is. If you live in Brazil, \"today\" will be hours apart from Paris. Use your timezone to get results relative to your location. (optional)  (default to "Europe/Paris")
+            var level = 56;  // int? | character level for the reward_xp field (optional) 
 
             try
             {
                 // Almanax Range
-                List<Almanax> result = apiInstance.GetAlmanaxRange(language, filterBonusType, rangeFrom, rangeTo, rangeSize, timezone);
+                List<Almanax> result = apiInstance.GetAlmanaxRange(language, filterBonusType, rangeFrom, rangeTo, rangeSize, timezone, level);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -156,7 +159,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Almanax Range
-    ApiResponse<List<Almanax>> response = apiInstance.GetAlmanaxRangeWithHttpInfo(language, filterBonusType, rangeFrom, rangeTo, rangeSize, timezone);
+    ApiResponse<List<Almanax>> response = apiInstance.GetAlmanaxRangeWithHttpInfo(language, filterBonusType, rangeFrom, rangeTo, rangeSize, timezone, level);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -179,6 +182,7 @@ catch (ApiException e)
 | **rangeTo** | **DateOnly?** | yyyy-mm-dd | [optional]  |
 | **rangeSize** | **int?** | Size of the returned range. Disable to fully use the range by setting size to -1. | [optional]  |
 | **timezone** | **string?** | determine what the current time is. If you live in Brazil, \&quot;today\&quot; will be hours apart from Paris. Use your timezone to get results relative to your location. | [optional] [default to &quot;Europe/Paris&quot;] |
+| **level** | **int?** | character level for the reward_xp field | [optional]  |
 
 ### Return type
 
