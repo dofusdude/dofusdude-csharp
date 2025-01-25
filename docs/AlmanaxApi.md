@@ -33,7 +33,7 @@ namespace Example
             config.BasePath = "https://api.dofusdu.de";
             var apiInstance = new AlmanaxApi(config);
             var language = fr;  // string | code
-            var date = Tue Jul 14 00:00:00 UTC 2020;  // DateOnly | yyyy-mm-dd
+            var date = Sat Jan 25 00:00:00 UTC 2025;  // DateOnly | yyyy-mm-dd
             var level = 56;  // int? | character level for the reward_xp field (optional) 
 
             try
