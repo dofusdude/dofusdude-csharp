@@ -12,7 +12,7 @@
     <Description>A project for you - the developer.</Description>
     <Copyright>No Copyright</Copyright>
     <RootNamespace>Dofusdude.Api</RootNamespace>
-    <Version>1.0.0-rc.9</Version>
+    <Version>1.0.0-rc.10</Version>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\Dofusdude.Api.xml</DocumentationFile>
     <RepositoryUrl>https://github.com/dofusdude/dofusdude-csharp.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
