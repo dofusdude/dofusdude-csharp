@@ -18,7 +18,6 @@ using System.Collections.Generic;
 using Dofusdude.Api.Model;
 using Dofusdude.Api.Client;
 using System.Reflection;
-using Newtonsoft.Json;
 
 namespace Dofusdude.Api.Test.Model
 {
@@ -56,24 +55,6 @@ namespace Dofusdude.Api.Test.Model
         }
 
         /// <summary>
-        /// Test the property 'Whitelist'
-        /// </summary>
-        [Fact]
-        public void WhitelistTest()
-        {
-            // TODO unit test for the property 'Whitelist'
-        }
-
-        /// <summary>
-        /// Test the property 'Blacklist'
-        /// </summary>
-        [Fact]
-        public void BlacklistTest()
-        {
-            // TODO unit test for the property 'Blacklist'
-        }
-
-        /// <summary>
         /// Test the property 'Subscriptions'
         /// </summary>
         [Fact]
@@ -92,21 +73,39 @@ namespace Dofusdude.Api.Test.Model
         }
 
         /// <summary>
-        /// Test the property 'PreviewLength'
-        /// </summary>
-        [Fact]
-        public void PreviewLengthTest()
-        {
-            // TODO unit test for the property 'PreviewLength'
-        }
-
-        /// <summary>
         /// Test the property 'Callback'
         /// </summary>
         [Fact]
         public void CallbackTest()
         {
             // TODO unit test for the property 'Callback'
+        }
+
+        /// <summary>
+        /// Test the property 'Whitelist'
+        /// </summary>
+        [Fact]
+        public void WhitelistTest()
+        {
+            // TODO unit test for the property 'Whitelist'
+        }
+
+        /// <summary>
+        /// Test the property 'Blacklist'
+        /// </summary>
+        [Fact]
+        public void BlacklistTest()
+        {
+            // TODO unit test for the property 'Blacklist'
+        }
+
+        /// <summary>
+        /// Test the property 'PreviewLength'
+        /// </summary>
+        [Fact]
+        public void PreviewLengthTest()
+        {
+            // TODO unit test for the property 'PreviewLength'
         }
     }
 }

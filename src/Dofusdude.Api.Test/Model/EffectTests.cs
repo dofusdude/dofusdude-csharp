@@ -18,7 +18,6 @@ using System.Collections.Generic;
 using Dofusdude.Api.Model;
 using Dofusdude.Api.Client;
 using System.Reflection;
-using Newtonsoft.Json;
 
 namespace Dofusdude.Api.Test.Model
 {

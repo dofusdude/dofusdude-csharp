@@ -18,7 +18,6 @@ using System.Collections.Generic;
 using Dofusdude.Api.Model;
 using Dofusdude.Api.Client;
 using System.Reflection;
-using Newtonsoft.Json;
 
 namespace Dofusdude.Api.Test.Model
 {
@@ -53,42 +52,6 @@ namespace Dofusdude.Api.Test.Model
         {
             // TODO uncomment below to test "IsType" ConditionNode
             //Assert.IsType<ConditionNode>(instance);
-        }
-
-        /// <summary>
-        /// Test the property 'IsOperand'
-        /// </summary>
-        [Fact]
-        public void IsOperandTest()
-        {
-            // TODO unit test for the property 'IsOperand'
-        }
-
-        /// <summary>
-        /// Test the property 'Relation'
-        /// </summary>
-        [Fact]
-        public void RelationTest()
-        {
-            // TODO unit test for the property 'Relation'
-        }
-
-        /// <summary>
-        /// Test the property 'Children'
-        /// </summary>
-        [Fact]
-        public void ChildrenTest()
-        {
-            // TODO unit test for the property 'Children'
-        }
-
-        /// <summary>
-        /// Test the property 'Condition'
-        /// </summary>
-        [Fact]
-        public void ConditionTest()
-        {
-            // TODO unit test for the property 'Condition'
         }
     }
 }

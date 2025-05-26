@@ -18,7 +18,6 @@ using System.Collections.Generic;
 using Dofusdude.Api.Model;
 using Dofusdude.Api.Client;
 using System.Reflection;
-using Newtonsoft.Json;
 
 namespace Dofusdude.Api.Test.Model
 {
@@ -56,24 +55,6 @@ namespace Dofusdude.Api.Test.Model
         }
 
         /// <summary>
-        /// Test the property 'BonusWhitelist'
-        /// </summary>
-        [Fact]
-        public void BonusWhitelistTest()
-        {
-            // TODO unit test for the property 'BonusWhitelist'
-        }
-
-        /// <summary>
-        /// Test the property 'BonusBlacklist'
-        /// </summary>
-        [Fact]
-        public void BonusBlacklistTest()
-        {
-            // TODO unit test for the property 'BonusBlacklist'
-        }
-
-        /// <summary>
         /// Test the property 'Subscriptions'
         /// </summary>
         [Fact]
@@ -101,6 +82,33 @@ namespace Dofusdude.Api.Test.Model
         }
 
         /// <summary>
+        /// Test the property 'Intervals'
+        /// </summary>
+        [Fact]
+        public void IntervalsTest()
+        {
+            // TODO unit test for the property 'Intervals'
+        }
+
+        /// <summary>
+        /// Test the property 'BonusWhitelist'
+        /// </summary>
+        [Fact]
+        public void BonusWhitelistTest()
+        {
+            // TODO unit test for the property 'BonusWhitelist'
+        }
+
+        /// <summary>
+        /// Test the property 'BonusBlacklist'
+        /// </summary>
+        [Fact]
+        public void BonusBlacklistTest()
+        {
+            // TODO unit test for the property 'BonusBlacklist'
+        }
+
+        /// <summary>
         /// Test the property 'DailySettings'
         /// </summary>
         [Fact]
@@ -125,15 +133,6 @@ namespace Dofusdude.Api.Test.Model
         public void MentionsTest()
         {
             // TODO unit test for the property 'Mentions'
-        }
-
-        /// <summary>
-        /// Test the property 'Intervals'
-        /// </summary>
-        [Fact]
-        public void IntervalsTest()
-        {
-            // TODO unit test for the property 'Intervals'
         }
 
         /// <summary>
