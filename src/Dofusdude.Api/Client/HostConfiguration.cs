@@ -95,27 +95,16 @@ namespace Dofusdude.Api.Client
             _services.AddSingleton(jsonSerializerOptionsProvider);
             _services.AddSingleton<IApiFactory, ApiFactory>();
             _services.AddSingleton<AlmanaxApiEvents>();
-            _services.AddTransient<IAlmanaxApi, AlmanaxApi>();
             _services.AddSingleton<ConsumablesApiEvents>();
-            _services.AddTransient<IConsumablesApi, ConsumablesApi>();
             _services.AddSingleton<CosmeticsApiEvents>();
-            _services.AddTransient<ICosmeticsApi, CosmeticsApi>();
             _services.AddSingleton<EquipmentApiEvents>();
-            _services.AddTransient<IEquipmentApi, EquipmentApi>();
             _services.AddSingleton<GameApiEvents>();
-            _services.AddTransient<IGameApi, GameApi>();
             _services.AddSingleton<MetaApiEvents>();
-            _services.AddTransient<IMetaApi, MetaApi>();
             _services.AddSingleton<MountsApiEvents>();
-            _services.AddTransient<IMountsApi, MountsApi>();
             _services.AddSingleton<QuestItemsApiEvents>();
-            _services.AddTransient<IQuestItemsApi, QuestItemsApi>();
             _services.AddSingleton<ResourcesApiEvents>();
-            _services.AddTransient<IResourcesApi, ResourcesApi>();
             _services.AddSingleton<SetsApiEvents>();
-            _services.AddTransient<ISetsApi, SetsApi>();
             _services.AddSingleton<WebhooksApiEvents>();
-            _services.AddTransient<IWebhooksApi, WebhooksApi>();
         }
 
         /// <summary>

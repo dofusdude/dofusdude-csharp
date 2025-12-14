@@ -17,68 +17,6 @@ List All Sets
 
 Retrieve all sets with one request. This endpoint is just an alias for the a list with disabled pagination (page[size]=-1) and all fields[type] set.  If you want everything unfiltered, delete the other query parameters.  Be careful with testing or (god forbid) using /all in your browser, the returned json is huge and will slow down the browser!  Tip: set the HTTP Header 'Accept-Encoding: gzip' for saving bandwidth. You will need to uncompress it on your end. Example with cURL: ``` curl -sH 'Accept-Encoding: gzip' <api-endpoint> | gunzip - ```
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Dofusdude.Api.Api;
-using Dofusdude.Api.Client;
-using Dofusdude.Api.Model;
-
-namespace Example
-{
-    public class GetAllSetsListExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://api.dofusdu.de";
-            var apiInstance = new SetsApi(config);
-            var language = "en";  // string | a valid language code
-            var game = dofus3;  // string | game main 'dofus3' or beta channel 'dofus3beta'
-            var sortLevel = asc;  // string | sort the resulting list by level, default unsorted (optional) 
-            var filterMinHighestEquipmentLevel = 190;  // int | only results where the equipment with the highest level is above or equal to this value (optional) 
-            var filterMaxHighestEquipmentLevel = 200;  // int | only results where the equipment with the highest level is below or equal to this value (optional) 
-            var acceptEncoding = "gzip";  // string | optional compression for saving bandwidth (optional) 
-            var filterContainsCosmeticsOnly = true;  // bool | filter sets based on if they only got cosmetic items in it. If true, the item ids are for the cosmetic endpoints instead of equipment. (optional) 
-            var filterContainsCosmetics = true;  // bool | filter sets based on if they got cosmetic items in it. (optional) 
-
-            try
-            {
-                // List All Sets
-                ListEquipmentSets result = apiInstance.GetAllSetsList(language, game, sortLevel, filterMinHighestEquipmentLevel, filterMaxHighestEquipmentLevel, acceptEncoding, filterContainsCosmeticsOnly, filterContainsCosmetics);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling SetsApi.GetAllSetsList: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the GetAllSetsListWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // List All Sets
-    ApiResponse<ListEquipmentSets> response = apiInstance.GetAllSetsListWithHttpInfo(language, game, sortLevel, filterMinHighestEquipmentLevel, filterMaxHighestEquipmentLevel, acceptEncoding, filterContainsCosmeticsOnly, filterContainsCosmetics);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling SetsApi.GetAllSetsListWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 
@@ -124,70 +62,6 @@ List Sets
 
 Retrieve a list of sets.
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Dofusdude.Api.Api;
-using Dofusdude.Api.Client;
-using Dofusdude.Api.Model;
-
-namespace Example
-{
-    public class GetSetsListExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://api.dofusdu.de";
-            var apiInstance = new SetsApi(config);
-            var language = "en";  // string | a valid language code
-            var game = dofus3;  // string | game main 'dofus3' or beta channel 'dofus3beta'
-            var sortLevel = asc;  // string | sort the resulting list by level, default unsorted (optional) 
-            var filterMinHighestEquipmentLevel = 190;  // int | only results where the equipment with the highest level is above or equal to this value (optional) 
-            var filterMaxHighestEquipmentLevel = 200;  // int | only results where the equipment with the highest level is below or equal to this value (optional) 
-            var pageSize = 20;  // int | size of the results from the list. -1 disables pagination and gets all in one response. (optional) 
-            var pageNumber = 1;  // int | page number based on the current page[size]. So you could get page 1 with 8 entrys and page 2 would have entries 8 to 16. (optional) 
-            var fieldsSet = new List<string>(); // List<string> | adds fields from their detail endpoint to the item list entries. Multiple comma separated values allowed. (optional) 
-            var filterContainsCosmeticsOnly = true;  // bool | filter sets based on if they only got cosmetic items in it. If true, the item ids are for the cosmetic endpoints instead of equipment. (optional) 
-            var filterContainsCosmetics = true;  // bool | filter sets based on if they got cosmetic items in it. (optional) 
-
-            try
-            {
-                // List Sets
-                ListEquipmentSets result = apiInstance.GetSetsList(language, game, sortLevel, filterMinHighestEquipmentLevel, filterMaxHighestEquipmentLevel, pageSize, pageNumber, fieldsSet, filterContainsCosmeticsOnly, filterContainsCosmetics);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling SetsApi.GetSetsList: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the GetSetsListWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // List Sets
-    ApiResponse<ListEquipmentSets> response = apiInstance.GetSetsListWithHttpInfo(language, game, sortLevel, filterMinHighestEquipmentLevel, filterMaxHighestEquipmentLevel, pageSize, pageNumber, fieldsSet, filterContainsCosmeticsOnly, filterContainsCosmetics);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling SetsApi.GetSetsListWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 
@@ -235,68 +109,6 @@ Search Sets
 
 Search in all names and descriptions of sets with a query.
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Dofusdude.Api.Api;
-using Dofusdude.Api.Client;
-using Dofusdude.Api.Model;
-
-namespace Example
-{
-    public class GetSetsSearchExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://api.dofusdu.de";
-            var apiInstance = new SetsApi(config);
-            var language = "en";  // string | a valid language code
-            var game = dofus3;  // string | game main 'dofus3' or beta channel 'dofus3beta'
-            var query = Des;  // string | case sensitive search query
-            var filterMinHighestEquipmentLevel = 195;  // int | only results where the equipment with the highest level is above or equal to this value (optional) 
-            var filterMaxHighestEquipmentLevel = 200;  // int | only results where the equipment with the highest level is below or equal to this value (optional) 
-            var limit = 8;  // int | maximum number of returned results (optional)  (default to 8)
-            var filterContainsCosmeticsOnly = true;  // bool | filter sets based on if they only got cosmetic items in it. If true, the item ids are for the cosmetic endpoints instead of equipment. (optional) 
-            var filterContainsCosmetics = true;  // bool | filter sets based on if they got any cosmetic items in it (optional) 
-
-            try
-            {
-                // Search Sets
-                List<ListEquipmentSet> result = apiInstance.GetSetsSearch(language, game, query, filterMinHighestEquipmentLevel, filterMaxHighestEquipmentLevel, limit, filterContainsCosmeticsOnly, filterContainsCosmetics);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling SetsApi.GetSetsSearch: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the GetSetsSearchWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Search Sets
-    ApiResponse<List<ListEquipmentSet>> response = apiInstance.GetSetsSearchWithHttpInfo(language, game, query, filterMinHighestEquipmentLevel, filterMaxHighestEquipmentLevel, limit, filterContainsCosmeticsOnly, filterContainsCosmetics);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling SetsApi.GetSetsSearchWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 
@@ -342,63 +154,6 @@ Single Sets
 
 Retrieve a specific set with id.
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Dofusdude.Api.Api;
-using Dofusdude.Api.Client;
-using Dofusdude.Api.Model;
-
-namespace Example
-{
-    public class GetSetsSingleExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://api.dofusdu.de";
-            var apiInstance = new SetsApi(config);
-            var language = "en";  // string | a valid language code
-            var ankamaId = 499;  // int | identifier
-            var game = dofus3;  // string | game main 'dofus3' or beta channel 'dofus3beta'
-
-            try
-            {
-                // Single Sets
-                EquipmentSet result = apiInstance.GetSetsSingle(language, ankamaId, game);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling SetsApi.GetSetsSingle: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the GetSetsSingleWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Single Sets
-    ApiResponse<EquipmentSet> response = apiInstance.GetSetsSingleWithHttpInfo(language, ankamaId, game);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling SetsApi.GetSetsSingleWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 

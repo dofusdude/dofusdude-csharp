@@ -19,61 +19,6 @@ Available Game Search Types
 
 Get all types for /{game}/v1/{lang}/search available for filtering. All names are english for comparing them inside applications. Order is fixed so you can compare indices instead of strings.
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Dofusdude.Api.Api;
-using Dofusdude.Api.Client;
-using Dofusdude.Api.Model;
-
-namespace Example
-{
-    public class GetGameSearchTypesExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://api.dofusdu.de";
-            var apiInstance = new MetaApi(config);
-            var game = dofus3;  // string | game main 'dofus3' or beta channel 'dofus3beta'
-
-            try
-            {
-                // Available Game Search Types
-                List<string> result = apiInstance.GetGameSearchTypes(game);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling MetaApi.GetGameSearchTypes: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the GetGameSearchTypesWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Available Game Search Types
-    ApiResponse<List<string>> response = apiInstance.GetGameSearchTypesWithHttpInfo(game);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling MetaApi.GetGameSearchTypesWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 
@@ -110,61 +55,6 @@ Available Item Types
 
 Get all types of all items. Primarily used for filtering more detailed types in listings or search endpoints. All names are english for comparing them inside applications. Ordering is not guaranteed to persist with game updates.
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Dofusdude.Api.Api;
-using Dofusdude.Api.Client;
-using Dofusdude.Api.Model;
-
-namespace Example
-{
-    public class GetItemTypesExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://api.dofusdu.de";
-            var apiInstance = new MetaApi(config);
-            var game = dofus3;  // string | game main 'dofus3' or beta channel 'dofus3beta'
-
-            try
-            {
-                // Available Item Types
-                List<string> result = apiInstance.GetItemTypes(game);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling MetaApi.GetItemTypes: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the GetItemTypesWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Available Item Types
-    ApiResponse<List<string>> response = apiInstance.GetItemTypesWithHttpInfo(game);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling MetaApi.GetItemTypesWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 
@@ -201,61 +91,6 @@ Available Almanax Bonuses
 
 Get all the available bonuses and their id for filtering them in the range endpoint.
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Dofusdude.Api.Api;
-using Dofusdude.Api.Client;
-using Dofusdude.Api.Model;
-
-namespace Example
-{
-    public class GetMetaAlmanaxBonusesExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://api.dofusdu.de";
-            var apiInstance = new MetaApi(config);
-            var language = fr;  // string | a valid language code
-
-            try
-            {
-                // Available Almanax Bonuses
-                List<GetMetaAlmanaxBonuses200ResponseInner> result = apiInstance.GetMetaAlmanaxBonuses(language);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling MetaApi.GetMetaAlmanaxBonuses: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the GetMetaAlmanaxBonusesWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Available Almanax Bonuses
-    ApiResponse<List<GetMetaAlmanaxBonuses200ResponseInner>> response = apiInstance.GetMetaAlmanaxBonusesWithHttpInfo(language);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling MetaApi.GetMetaAlmanaxBonusesWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 
@@ -292,63 +127,6 @@ Search Available Almanax Bonuses
 
 Search all the available bonuses and their id for filtering them in the range endpoint.
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Dofusdude.Api.Api;
-using Dofusdude.Api.Client;
-using Dofusdude.Api.Model;
-
-namespace Example
-{
-    public class GetMetaAlmanaxBonusesSearchExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://api.dofusdu.de";
-            var apiInstance = new MetaApi(config);
-            var language = fr;  // string | a valid language code
-            var query = abond;  // string | case sensitive search query
-            var limit = 56;  // int | maximum number of returned results (optional) 
-
-            try
-            {
-                // Search Available Almanax Bonuses
-                List<GetMetaAlmanaxBonuses200ResponseInner> result = apiInstance.GetMetaAlmanaxBonusesSearch(language, query, limit);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling MetaApi.GetMetaAlmanaxBonusesSearch: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the GetMetaAlmanaxBonusesSearchWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Search Available Almanax Bonuses
-    ApiResponse<List<GetMetaAlmanaxBonuses200ResponseInner>> response = apiInstance.GetMetaAlmanaxBonusesSearchWithHttpInfo(language, query, limit);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling MetaApi.GetMetaAlmanaxBonusesSearchWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 
@@ -387,61 +165,6 @@ Effects and Condition Elements
 
 Get the mappings for all specific elements that are linked in the dataset. All names are english. Translations are not needed because of a global unique id which is the index inside the array. Future elements will get a higher id.
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Dofusdude.Api.Api;
-using Dofusdude.Api.Client;
-using Dofusdude.Api.Model;
-
-namespace Example
-{
-    public class GetMetaElementsExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://api.dofusdu.de";
-            var apiInstance = new MetaApi(config);
-            var game = dofus3;  // string | game main 'dofus3' or beta channel 'dofus3beta'
-
-            try
-            {
-                // Effects and Condition Elements
-                List<string> result = apiInstance.GetMetaElements(game);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling MetaApi.GetMetaElements: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the GetMetaElementsWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Effects and Condition Elements
-    ApiResponse<List<string>> response = apiInstance.GetMetaElementsWithHttpInfo(game);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling MetaApi.GetMetaElementsWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 
@@ -478,61 +201,6 @@ Game Version
 
 The current game version of the hosted data.
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Dofusdude.Api.Api;
-using Dofusdude.Api.Client;
-using Dofusdude.Api.Model;
-
-namespace Example
-{
-    public class GetMetaVersionExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://api.dofusdu.de";
-            var apiInstance = new MetaApi(config);
-            var game = dofus3;  // string | game main 'dofus3' or beta channel 'dofus3beta'
-
-            try
-            {
-                // Game Version
-                ModelVersion result = apiInstance.GetMetaVersion(game);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling MetaApi.GetMetaVersion: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the GetMetaVersionWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Game Version
-    ApiResponse<ModelVersion> response = apiInstance.GetMetaVersionWithHttpInfo(game);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling MetaApi.GetMetaVersionWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 

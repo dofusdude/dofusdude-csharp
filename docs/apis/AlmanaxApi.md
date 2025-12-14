@@ -15,63 +15,6 @@ Single Almanax Date
 
 Get a single date. There are not more details in the returned object than the normal range endpoint.
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Dofusdude.Api.Api;
-using Dofusdude.Api.Client;
-using Dofusdude.Api.Model;
-
-namespace Example
-{
-    public class GetAlmanaxDateExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://api.dofusdu.de";
-            var apiInstance = new AlmanaxApi(config);
-            var language = fr;  // string | code
-            var date = Sat Jan 25 00:00:00 UTC 2025;  // DateOnly | yyyy-mm-dd
-            var level = 56;  // int | character level for the reward_xp field (optional) 
-
-            try
-            {
-                // Single Almanax Date
-                Almanax result = apiInstance.GetAlmanaxDate(language, date, level);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling AlmanaxApi.GetAlmanaxDate: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the GetAlmanaxDateWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Single Almanax Date
-    ApiResponse<Almanax> response = apiInstance.GetAlmanaxDateWithHttpInfo(language, date, level);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling AlmanaxApi.GetAlmanaxDateWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 
@@ -110,67 +53,6 @@ Almanax Range
 
 Get a range of dates, defaults to today + 6 following days but can specified by the query parameters.   filter[bonus_type] can be used seperately and does not have an effect on the other parameters.  range[from] changes the start date, everything else defaults to 6 following dates from this start date.  range[to] when used without anything else, it will use today as start date and this parameter as end. All ranges are inclusive.  range[from] + range[to] = inclusive range over the specified dates, should never be farther apart than 35 days.  range[from|to] + range[size] no need to specify the date, just following days with [from] (0 is today) or go backwards in time with only [to] and [size].  Not all combinations are listed but this should give you an idea how to they could work.
 
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using Dofusdude.Api.Api;
-using Dofusdude.Api.Client;
-using Dofusdude.Api.Model;
-
-namespace Example
-{
-    public class GetAlmanaxRangeExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "https://api.dofusdu.de";
-            var apiInstance = new AlmanaxApi(config);
-            var language = fr;  // string | code
-            var filterBonusType = experience-points;  // string | ids from meta/{language}/almanax/bonuses (optional) 
-            var rangeFrom = DateOnly.Parse("2013-10-20");  // DateOnly | yyyy-mm-dd (optional) 
-            var rangeTo = DateOnly.Parse("2013-10-20");  // DateOnly | yyyy-mm-dd (optional) 
-            var rangeSize = -1;  // int | Size of the returned range. Disable to fully use the range by setting size to -1. (optional) 
-            var timezone = Europe/Paris;  // string | determine what the current time is. If you live in Brazil, \"today\" will be hours apart from Paris. Use your timezone to get results relative to your location. (optional)  (default to "Europe/Paris")
-            var level = 56;  // int | character level for the reward_xp field (optional) 
-
-            try
-            {
-                // Almanax Range
-                List<Almanax> result = apiInstance.GetAlmanaxRange(language, filterBonusType, rangeFrom, rangeTo, rangeSize, timezone, level);
-                Debug.WriteLine(result);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling AlmanaxApi.GetAlmanaxRange: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the GetAlmanaxRangeWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Almanax Range
-    ApiResponse<List<Almanax>> response = apiInstance.GetAlmanaxRangeWithHttpInfo(language, filterBonusType, rangeFrom, rangeTo, rangeSize, timezone, level);
-    Debug.Write("Status Code: " + response.StatusCode);
-    Debug.Write("Response Headers: " + response.Headers);
-    Debug.Write("Response Body: " + response.Data);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling AlmanaxApi.GetAlmanaxRangeWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
 
 ### Parameters
 
