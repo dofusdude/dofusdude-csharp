@@ -122,17 +122,17 @@ namespace Dofusdude.Api.Client
 
             List<IHttpClientBuilder> builders = new List<IHttpClientBuilder>();
 
-            builders.Add(_services.AddHttpClient<IAlmanaxApi, AlmanaxApi>(client));
-            builders.Add(_services.AddHttpClient<IConsumablesApi, ConsumablesApi>(client));
-            builders.Add(_services.AddHttpClient<ICosmeticsApi, CosmeticsApi>(client));
-            builders.Add(_services.AddHttpClient<IEquipmentApi, EquipmentApi>(client));
-            builders.Add(_services.AddHttpClient<IGameApi, GameApi>(client));
-            builders.Add(_services.AddHttpClient<IMetaApi, MetaApi>(client));
-            builders.Add(_services.AddHttpClient<IMountsApi, MountsApi>(client));
-            builders.Add(_services.AddHttpClient<IQuestItemsApi, QuestItemsApi>(client));
-            builders.Add(_services.AddHttpClient<IResourcesApi, ResourcesApi>(client));
-            builders.Add(_services.AddHttpClient<ISetsApi, SetsApi>(client));
-            builders.Add(_services.AddHttpClient<IWebhooksApi, WebhooksApi>(client));
+            builders.Add(_services.AddHttpClient<IAlmanaxApi, AlmanaxApi>("Dofusdude.Api.Api.IAlmanaxApi", client));
+            builders.Add(_services.AddHttpClient<IConsumablesApi, ConsumablesApi>("Dofusdude.Api.Api.IConsumablesApi", client));
+            builders.Add(_services.AddHttpClient<ICosmeticsApi, CosmeticsApi>("Dofusdude.Api.Api.ICosmeticsApi", client));
+            builders.Add(_services.AddHttpClient<IEquipmentApi, EquipmentApi>("Dofusdude.Api.Api.IEquipmentApi", client));
+            builders.Add(_services.AddHttpClient<IGameApi, GameApi>("Dofusdude.Api.Api.IGameApi", client));
+            builders.Add(_services.AddHttpClient<IMetaApi, MetaApi>("Dofusdude.Api.Api.IMetaApi", client));
+            builders.Add(_services.AddHttpClient<IMountsApi, MountsApi>("Dofusdude.Api.Api.IMountsApi", client));
+            builders.Add(_services.AddHttpClient<IQuestItemsApi, QuestItemsApi>("Dofusdude.Api.Api.IQuestItemsApi", client));
+            builders.Add(_services.AddHttpClient<IResourcesApi, ResourcesApi>("Dofusdude.Api.Api.IResourcesApi", client));
+            builders.Add(_services.AddHttpClient<ISetsApi, SetsApi>("Dofusdude.Api.Api.ISetsApi", client));
+            builders.Add(_services.AddHttpClient<IWebhooksApi, WebhooksApi>("Dofusdude.Api.Api.IWebhooksApi", client));
             
             if (builder != null)
                 foreach (IHttpClientBuilder instance in builders)
