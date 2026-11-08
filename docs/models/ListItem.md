@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 **MaxCastPerTurn** | **int** |  | [optional] 
 **ApCost** | **int** |  | [optional] 
 **Range** | [**Range**](Range.md) |  | [optional] 
+**Combat** | [**WeaponCombat**](WeaponCombat.md) |  | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

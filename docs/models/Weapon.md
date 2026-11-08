@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 **Range** | [**Range**](Range.md) |  | [optional] 
 **Recipe** | [**List&lt;Recipe&gt;**](Recipe.md) |  | [optional] 
 **ParentSet** | [**TranslatedId**](TranslatedId.md) |  | [optional] 
+**Combat** | [**WeaponCombat**](WeaponCombat.md) |  | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 
