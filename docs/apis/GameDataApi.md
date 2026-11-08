@@ -112,7 +112,7 @@ Get all monsters
 |------|------|-------------|-------|
 | **game** | **string** |  |  |
 | **language** | **string** |  |  |
-| **include** | **string** | Controls monster spell relationships. By default each monster grade contains a compact relationship whose URL selects the assigned spell grade. &#x60;spells.grade&#x60; inlines that grade only; &#x60;spells&#x60; inlines the complete spell with every available grade. | [optional]  |
+| **include** | **string** | Optional spell expansion for monster responses. Leave include unset to return spell URLs. Use &#x60;spells.grade&#x60; to embed the assigned spell grade. Use &#x60;spells&#x60; to embed every available grade of each assigned spell. | [optional]  |
 
 ### Return type
 
@@ -406,7 +406,7 @@ Get one monster
 | **game** | **string** |  |  |
 | **language** | **string** |  |  |
 | **ankamaId** | **int** |  |  |
-| **include** | **string** | Controls monster spell relationships. By default each monster grade contains a compact relationship whose URL selects the assigned spell grade. &#x60;spells.grade&#x60; inlines that grade only; &#x60;spells&#x60; inlines the complete spell with every available grade. | [optional]  |
+| **include** | **string** | Optional spell expansion for monster responses. Leave include unset to return spell URLs. Use &#x60;spells.grade&#x60; to embed the assigned spell grade. Use &#x60;spells&#x60; to embed every available grade of each assigned spell. | [optional]  |
 
 ### Return type
 
@@ -446,7 +446,7 @@ List monsters
 | **pageNumber** | **int** |  | [optional] [default to 1] |
 | **pageSize** | **int** |  | [optional] [default to 20] |
 | **fieldsMonsters** | **string** |  | [optional]  |
-| **include** | **string** | Controls monster spell relationships. By default each monster grade contains a compact relationship whose URL selects the assigned spell grade. &#x60;spells.grade&#x60; inlines that grade only; &#x60;spells&#x60; inlines the complete spell with every available grade. | [optional]  |
+| **include** | **string** | Optional spell expansion for monster responses. Leave include unset to return spell URLs. Use &#x60;spells.grade&#x60; to embed the assigned spell grade. Use &#x60;spells&#x60; to embed every available grade of each assigned spell. | [optional]  |
 
 ### Return type
 

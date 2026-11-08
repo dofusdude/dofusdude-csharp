@@ -1,4 +1,5 @@
 # Dofusdude.Api.Model.Class
+A playable class with its characteristics, appearance and class spell assignments.
 
 ## Properties
 

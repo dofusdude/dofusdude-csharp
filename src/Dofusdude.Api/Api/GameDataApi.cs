@@ -98,7 +98,7 @@ namespace Dofusdude.Api.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="game"></param>
         /// <param name="language"></param>
-        /// <param name="include">Controls monster spell relationships. By default each monster grade contains a compact relationship whose URL selects the assigned spell grade. &#x60;spells.grade&#x60; inlines that grade only; &#x60;spells&#x60; inlines the complete spell with every available grade. (optional)</param>
+        /// <param name="include">Optional spell expansion for monster responses. Leave include unset to return spell URLs. Use &#x60;spells.grade&#x60; to embed the assigned spell grade. Use &#x60;spells&#x60; to embed every available grade of each assigned spell. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IGetAllMonstersApiResponse"/>&gt;</returns>
         Task<IGetAllMonstersApiResponse> GetAllMonstersAsync(string game, string language, Option<string> include = default, System.Threading.CancellationToken cancellationToken = default);
@@ -111,7 +111,7 @@ namespace Dofusdude.Api.Api
         /// </remarks>
         /// <param name="game"></param>
         /// <param name="language"></param>
-        /// <param name="include">Controls monster spell relationships. By default each monster grade contains a compact relationship whose URL selects the assigned spell grade. &#x60;spells.grade&#x60; inlines that grade only; &#x60;spells&#x60; inlines the complete spell with every available grade. (optional)</param>
+        /// <param name="include">Optional spell expansion for monster responses. Leave include unset to return spell URLs. Use &#x60;spells.grade&#x60; to embed the assigned spell grade. Use &#x60;spells&#x60; to embed every available grade of each assigned spell. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IGetAllMonstersApiResponse"/>?&gt;</returns>
         Task<IGetAllMonstersApiResponse?> GetAllMonstersOrDefaultAsync(string game, string language, Option<string> include = default, System.Threading.CancellationToken cancellationToken = default);
@@ -317,7 +317,7 @@ namespace Dofusdude.Api.Api
         /// <param name="game"></param>
         /// <param name="language"></param>
         /// <param name="ankamaId"></param>
-        /// <param name="include">Controls monster spell relationships. By default each monster grade contains a compact relationship whose URL selects the assigned spell grade. &#x60;spells.grade&#x60; inlines that grade only; &#x60;spells&#x60; inlines the complete spell with every available grade. (optional)</param>
+        /// <param name="include">Optional spell expansion for monster responses. Leave include unset to return spell URLs. Use &#x60;spells.grade&#x60; to embed the assigned spell grade. Use &#x60;spells&#x60; to embed every available grade of each assigned spell. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IGetMonsterByIdApiResponse"/>&gt;</returns>
         Task<IGetMonsterByIdApiResponse> GetMonsterByIdAsync(string game, string language, int ankamaId, Option<string> include = default, System.Threading.CancellationToken cancellationToken = default);
@@ -331,7 +331,7 @@ namespace Dofusdude.Api.Api
         /// <param name="game"></param>
         /// <param name="language"></param>
         /// <param name="ankamaId"></param>
-        /// <param name="include">Controls monster spell relationships. By default each monster grade contains a compact relationship whose URL selects the assigned spell grade. &#x60;spells.grade&#x60; inlines that grade only; &#x60;spells&#x60; inlines the complete spell with every available grade. (optional)</param>
+        /// <param name="include">Optional spell expansion for monster responses. Leave include unset to return spell URLs. Use &#x60;spells.grade&#x60; to embed the assigned spell grade. Use &#x60;spells&#x60; to embed every available grade of each assigned spell. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IGetMonsterByIdApiResponse"/>?&gt;</returns>
         Task<IGetMonsterByIdApiResponse?> GetMonsterByIdOrDefaultAsync(string game, string language, int ankamaId, Option<string> include = default, System.Threading.CancellationToken cancellationToken = default);
@@ -348,7 +348,7 @@ namespace Dofusdude.Api.Api
         /// <param name="pageNumber"> (optional, default to 1)</param>
         /// <param name="pageSize"> (optional, default to 20)</param>
         /// <param name="fieldsMonsters"> (optional)</param>
-        /// <param name="include">Controls monster spell relationships. By default each monster grade contains a compact relationship whose URL selects the assigned spell grade. &#x60;spells.grade&#x60; inlines that grade only; &#x60;spells&#x60; inlines the complete spell with every available grade. (optional)</param>
+        /// <param name="include">Optional spell expansion for monster responses. Leave include unset to return spell URLs. Use &#x60;spells.grade&#x60; to embed the assigned spell grade. Use &#x60;spells&#x60; to embed every available grade of each assigned spell. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IGetMonstersApiResponse"/>&gt;</returns>
         Task<IGetMonstersApiResponse> GetMonstersAsync(string game, string language, Option<int> pageNumber = default, Option<int> pageSize = default, Option<string> fieldsMonsters = default, Option<string> include = default, System.Threading.CancellationToken cancellationToken = default);
@@ -364,7 +364,7 @@ namespace Dofusdude.Api.Api
         /// <param name="pageNumber"> (optional, default to 1)</param>
         /// <param name="pageSize"> (optional, default to 20)</param>
         /// <param name="fieldsMonsters"> (optional)</param>
-        /// <param name="include">Controls monster spell relationships. By default each monster grade contains a compact relationship whose URL selects the assigned spell grade. &#x60;spells.grade&#x60; inlines that grade only; &#x60;spells&#x60; inlines the complete spell with every available grade. (optional)</param>
+        /// <param name="include">Optional spell expansion for monster responses. Leave include unset to return spell URLs. Use &#x60;spells.grade&#x60; to embed the assigned spell grade. Use &#x60;spells&#x60; to embed every available grade of each assigned spell. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IGetMonstersApiResponse"/>?&gt;</returns>
         Task<IGetMonstersApiResponse?> GetMonstersOrDefaultAsync(string game, string language, Option<int> pageNumber = default, Option<int> pageSize = default, Option<string> fieldsMonsters = default, Option<string> include = default, System.Threading.CancellationToken cancellationToken = default);
@@ -2244,7 +2244,7 @@ namespace Dofusdude.Api.Api
         /// </summary>
         /// <param name="game"></param>
         /// <param name="language"></param>
-        /// <param name="include">Controls monster spell relationships. By default each monster grade contains a compact relationship whose URL selects the assigned spell grade. &#x60;spells.grade&#x60; inlines that grade only; &#x60;spells&#x60; inlines the complete spell with every available grade. (optional)</param>
+        /// <param name="include">Optional spell expansion for monster responses. Leave include unset to return spell URLs. Use &#x60;spells.grade&#x60; to embed the assigned spell grade. Use &#x60;spells&#x60; to embed every available grade of each assigned spell. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IGetAllMonstersApiResponse"/>&gt;</returns>
         public async Task<IGetAllMonstersApiResponse?> GetAllMonstersOrDefaultAsync(string game, string language, Option<string> include = default, System.Threading.CancellationToken cancellationToken = default)
@@ -2265,7 +2265,7 @@ namespace Dofusdude.Api.Api
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="game"></param>
         /// <param name="language"></param>
-        /// <param name="include">Controls monster spell relationships. By default each monster grade contains a compact relationship whose URL selects the assigned spell grade. &#x60;spells.grade&#x60; inlines that grade only; &#x60;spells&#x60; inlines the complete spell with every available grade. (optional)</param>
+        /// <param name="include">Optional spell expansion for monster responses. Leave include unset to return spell URLs. Use &#x60;spells.grade&#x60; to embed the assigned spell grade. Use &#x60;spells&#x60; to embed every available grade of each assigned spell. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IGetAllMonstersApiResponse"/>&gt;</returns>
         public async Task<IGetAllMonstersApiResponse> GetAllMonstersAsync(string game, string language, Option<string> include = default, System.Threading.CancellationToken cancellationToken = default)
@@ -4662,7 +4662,7 @@ namespace Dofusdude.Api.Api
         /// <param name="game"></param>
         /// <param name="language"></param>
         /// <param name="ankamaId"></param>
-        /// <param name="include">Controls monster spell relationships. By default each monster grade contains a compact relationship whose URL selects the assigned spell grade. &#x60;spells.grade&#x60; inlines that grade only; &#x60;spells&#x60; inlines the complete spell with every available grade. (optional)</param>
+        /// <param name="include">Optional spell expansion for monster responses. Leave include unset to return spell URLs. Use &#x60;spells.grade&#x60; to embed the assigned spell grade. Use &#x60;spells&#x60; to embed every available grade of each assigned spell. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IGetMonsterByIdApiResponse"/>&gt;</returns>
         public async Task<IGetMonsterByIdApiResponse?> GetMonsterByIdOrDefaultAsync(string game, string language, int ankamaId, Option<string> include = default, System.Threading.CancellationToken cancellationToken = default)
@@ -4684,7 +4684,7 @@ namespace Dofusdude.Api.Api
         /// <param name="game"></param>
         /// <param name="language"></param>
         /// <param name="ankamaId"></param>
-        /// <param name="include">Controls monster spell relationships. By default each monster grade contains a compact relationship whose URL selects the assigned spell grade. &#x60;spells.grade&#x60; inlines that grade only; &#x60;spells&#x60; inlines the complete spell with every available grade. (optional)</param>
+        /// <param name="include">Optional spell expansion for monster responses. Leave include unset to return spell URLs. Use &#x60;spells.grade&#x60; to embed the assigned spell grade. Use &#x60;spells&#x60; to embed every available grade of each assigned spell. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IGetMonsterByIdApiResponse"/>&gt;</returns>
         public async Task<IGetMonsterByIdApiResponse> GetMonsterByIdAsync(string game, string language, int ankamaId, Option<string> include = default, System.Threading.CancellationToken cancellationToken = default)
@@ -5014,7 +5014,7 @@ namespace Dofusdude.Api.Api
         /// <param name="pageNumber"> (optional, default to 1)</param>
         /// <param name="pageSize"> (optional, default to 20)</param>
         /// <param name="fieldsMonsters"> (optional)</param>
-        /// <param name="include">Controls monster spell relationships. By default each monster grade contains a compact relationship whose URL selects the assigned spell grade. &#x60;spells.grade&#x60; inlines that grade only; &#x60;spells&#x60; inlines the complete spell with every available grade. (optional)</param>
+        /// <param name="include">Optional spell expansion for monster responses. Leave include unset to return spell URLs. Use &#x60;spells.grade&#x60; to embed the assigned spell grade. Use &#x60;spells&#x60; to embed every available grade of each assigned spell. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IGetMonstersApiResponse"/>&gt;</returns>
         public async Task<IGetMonstersApiResponse?> GetMonstersOrDefaultAsync(string game, string language, Option<int> pageNumber = default, Option<int> pageSize = default, Option<string> fieldsMonsters = default, Option<string> include = default, System.Threading.CancellationToken cancellationToken = default)
@@ -5038,7 +5038,7 @@ namespace Dofusdude.Api.Api
         /// <param name="pageNumber"> (optional, default to 1)</param>
         /// <param name="pageSize"> (optional, default to 20)</param>
         /// <param name="fieldsMonsters"> (optional)</param>
-        /// <param name="include">Controls monster spell relationships. By default each monster grade contains a compact relationship whose URL selects the assigned spell grade. &#x60;spells.grade&#x60; inlines that grade only; &#x60;spells&#x60; inlines the complete spell with every available grade. (optional)</param>
+        /// <param name="include">Optional spell expansion for monster responses. Leave include unset to return spell URLs. Use &#x60;spells.grade&#x60; to embed the assigned spell grade. Use &#x60;spells&#x60; to embed every available grade of each assigned spell. (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns><see cref="Task"/>&lt;<see cref="IGetMonstersApiResponse"/>&gt;</returns>
         public async Task<IGetMonstersApiResponse> GetMonstersAsync(string game, string language, Option<int> pageNumber = default, Option<int> pageSize = default, Option<string> fieldsMonsters = default, Option<string> include = default, System.Threading.CancellationToken cancellationToken = default)

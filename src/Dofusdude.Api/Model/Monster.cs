@@ -27,7 +27,7 @@ using Dofusdude.Api.Client;
 namespace Dofusdude.Api.Model
 {
     /// <summary>
-    /// Monster
+    /// A monster with its grades, family, spawn locations and drops. Spell expansion is optional.
     /// </summary>
     public partial class Monster : IValidatableObject
     {

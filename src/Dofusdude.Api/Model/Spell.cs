@@ -27,7 +27,7 @@ using Dofusdude.Api.Client;
 namespace Dofusdude.Api.Model
 {
     /// <summary>
-    /// Spell
+    /// A spell with its available grades, effects and casting rules.
     /// </summary>
     public partial class Spell : IValidatableObject
     {

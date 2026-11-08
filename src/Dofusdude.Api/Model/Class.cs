@@ -27,7 +27,7 @@ using Dofusdude.Api.Client;
 namespace Dofusdude.Api.Model
 {
     /// <summary>
-    /// Class
+    /// A playable class with its characteristics, appearance and class spell assignments.
     /// </summary>
     public partial class Class : IValidatableObject
     {

@@ -37,7 +37,7 @@ namespace Dofusdude.Api.Model
         /// <param name="shape">shape</param>
         /// <param name="cellIds">cellIds</param>
         /// <param name="raw">Original compact zone encoding when the source provides one.</param>
-        /// <param name="size">Effective outer size of the area. A point has size 0; whole-map and custom-cell shapes omit it.</param>
+        /// <param name="size">Effective outer size of the area. A point has size 0. Whole-map and custom-cell shapes omit it.</param>
         /// <param name="minSize">Effective inner size for hollow or minimum-size shapes. Omitted when the shape has no inner boundary.</param>
         /// <param name="damageDecreaseStepPercent">damageDecreaseStepPercent</param>
         /// <param name="maxDamageDecreaseApplyCount">maxDamageDecreaseApplyCount</param>
@@ -98,9 +98,9 @@ namespace Dofusdude.Api.Model
         public Option<int?> SizeOption { get; private set; }
 
         /// <summary>
-        /// Effective outer size of the area. A point has size 0; whole-map and custom-cell shapes omit it.
+        /// Effective outer size of the area. A point has size 0. Whole-map and custom-cell shapes omit it.
         /// </summary>
-        /// <value>Effective outer size of the area. A point has size 0; whole-map and custom-cell shapes omit it.</value>
+        /// <value>Effective outer size of the area. A point has size 0. Whole-map and custom-cell shapes omit it.</value>
         [JsonPropertyName("size")]
         public int? Size { get { return this.SizeOption.Value; } set { this.SizeOption = new(value); } }
 

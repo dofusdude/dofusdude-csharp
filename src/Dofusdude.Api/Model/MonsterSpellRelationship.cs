@@ -37,7 +37,7 @@ namespace Dofusdude.Api.Model
         /// <param name="ankamaId">ankamaId</param>
         /// <param name="name">name</param>
         /// <param name="grade">The spell grade assigned to this monster grade.</param>
-        /// <param name="url">Grade-specific spell URL; already includes the &#x60;grade&#x60; query parameter.</param>
+        /// <param name="url">URL for the assigned spell grade. Includes the &#x60;grade&#x60; query parameter.</param>
         /// <param name="imageUrls">imageUrls</param>
         [JsonConstructor]
         public MonsterSpellRelationship(int ankamaId, string name, int grade, string url, Option<Images?> imageUrls = default)
@@ -72,9 +72,9 @@ namespace Dofusdude.Api.Model
         public int Grade { get; set; }
 
         /// <summary>
-        /// Grade-specific spell URL; already includes the &#x60;grade&#x60; query parameter.
+        /// URL for the assigned spell grade. Includes the &#x60;grade&#x60; query parameter.
         /// </summary>
-        /// <value>Grade-specific spell URL; already includes the &#x60;grade&#x60; query parameter.</value>
+        /// <value>URL for the assigned spell grade. Includes the &#x60;grade&#x60; query parameter.</value>
         [JsonPropertyName("url")]
         public string Url { get; set; }
 
