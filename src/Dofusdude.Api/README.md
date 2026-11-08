@@ -11,7 +11,7 @@ outputDir: out
 
 # https://openapi-generator.tech/docs/generators/csharp
 additionalProperties:
-  packageGuid: '{B8EE2882-9FA1-40FE-80BA-08EFD7816899}'
+  packageGuid: '{3F4FF556-9300-457B-91E9-EEF4E6DE57FF}'
 
 # https://openapi-generator.tech/docs/integrations/#github-integration
 # gitHost:
@@ -99,7 +99,7 @@ namespace YourProject
   Use the provided On and After partial methods in the api classes.
 
 ## Api Information
-- appName: dofusdude
+- appName: DoduAPI software beta
 - appVersion: 1.1.0-beta.1
 - appDescription: # Open Ankama Developer Community The all-in-one toolbelt for your next Ankama related project.  ## Versions - [Dofus 2](https://docs.dofusdu.de/dofus2/) - [Dofus 3](https://docs.dofusdu.de/dofus3/)   - v1.1.0 beta [preview] (you are here)   ## Client SDKs - [Javascript](https://github.com/dofusdude/dofusdude-js) &#x60;npm i dofusdude-js@beta - -save&#x60; - [Typescript](https://github.com/dofusdude/dofusdude-ts) &#x60;npm i dofusdude-ts@beta - -save&#x60; - [Go](https://github.com/dofusdude/dodugo) &#x60;go get github.com/dofusdude/dodugo@v1.1.0-beta.1&#x60; - [Python](https://github.com/dofusdude/dofusdude-py) &#x60;pip install - -pre dofusdude&#x60; - [Java](https://github.com/dofusdude/dofusdude-java) Maven with GitHub packages setup  Everything, including this site, is generated out of the [Docs Repo](https://github.com/dofusdude/api-docs). Consider it the Single Source of Truth. If there is a problem with the SDKs, create an issue there.  Your favorite language is missing? Please let me know!  # Main Features - 🥷 **Seamless Auto-Update** load data in the background when a new Dofus version is released and serving it within 10 minutes with atomic data source switching. No downtime and no effects for the user, just always up-to-date.  - ⚡ **Blazingly Fast** all data in-memory, aggressive caching over short time spans, HTTP/2 multiplexing, written in Go, optimized for low latency, hosted on bare metal in 🇩🇪.  - 📨 **Almanax Discord Integration** Use the endpoints as a dev or the official [Web Client](https://discord.dofusdude.com) as a user.  - 🩸 **Dofus 3 Beta** from stable to bleeding edge by replacing /dofus3 with /dofus3beta.  - 🗣️ **Multilingual** supporting _en_, _fr_, _es_, _pt_, _de_.  - 🧠 **Search by Relevance** allowing typos in name and description, handled by language specific text analysis and indexing.  - 🕵️ **Official Sources** generated from actual data from the game.  ... and much more on the Roadmap on my [Discord](https://discord.gg/3EtHskZD8h). 
 
