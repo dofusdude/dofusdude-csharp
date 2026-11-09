@@ -21,4 +21,4 @@ jobs:
           NUGET_AUTH_TOKEN: ${{secrets.NUGET_TOKEN}}
         run: dotnet nuget push --api-key "$NUGET_AUTH_TOKEN" --source
           https://api.nuget.org/v3/index.json
-          src/Dofusdude.Api/bin/Release/Dofusdude.Api.1.1.0-beta.1.nupkg
+          src/Dofusdude.Api/bin/Release/Dofusdude.Api.1.1.0-beta.2.nupkg
