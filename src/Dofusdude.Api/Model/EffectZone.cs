@@ -27,7 +27,7 @@ using Dofusdude.Api.Client;
 namespace Dofusdude.Api.Model
 {
     /// <summary>
-    /// EffectZone
+    /// Combat-cell area for this effect or activation context, not a geographic world area. Shape, size and inner size describe geometry. Actual affected cells can depend on position, direction and fight state. Each spell effect can have a different zone.
     /// </summary>
     public partial class EffectZone : IValidatableObject
     {
@@ -35,7 +35,7 @@ namespace Dofusdude.Api.Model
         /// Initializes a new instance of the <see cref="EffectZone" /> class.
         /// </summary>
         /// <param name="shape">shape</param>
-        /// <param name="cellIds">cellIds</param>
+        /// <param name="cellIds">Explicit cells for a custom-cell shape. An empty array is normal for geometric shapes such as circles and does not mean the zone affects no cells.</param>
         /// <param name="raw">Original compact zone encoding when the source provides one.</param>
         /// <param name="size">Effective outer size of the area. A point has size 0. Whole-map and custom-cell shapes omit it.</param>
         /// <param name="minSize">Effective inner size for hollow or minimum-size shapes. Omitted when the shape has no inner boundary.</param>
@@ -71,8 +71,9 @@ namespace Dofusdude.Api.Model
         public ZoneShape Shape { get; set; }
 
         /// <summary>
-        /// Gets or Sets CellIds
+        /// Explicit cells for a custom-cell shape. An empty array is normal for geometric shapes such as circles and does not mean the zone affects no cells.
         /// </summary>
+        /// <value>Explicit cells for a custom-cell shape. An empty array is normal for geometric shapes such as circles and does not mean the zone affects no cells.</value>
         [JsonPropertyName("cell_ids")]
         public List<int> CellIds { get; set; }
 

@@ -37,7 +37,7 @@ namespace Dofusdude.Api.Model
         /// <param name="ankamaId">ankamaId</param>
         /// <param name="name">name</param>
         /// <param name="looks">looks</param>
-        /// <param name="spells">Fully mapped class spells, including levels, effects, targeting, and zones.</param>
+        /// <param name="spells">Full spell definitions assigned to this playable class, including their own grades, effects and targeting. A class has no monster-grade dimension. The same spells are independently available from the spells endpoint.</param>
         /// <param name="description">description</param>
         /// <param name="gameplayDescription">gameplayDescription</param>
         /// <param name="complexity">complexity</param>
@@ -85,9 +85,9 @@ namespace Dofusdude.Api.Model
         public ClassLooks Looks { get; set; }
 
         /// <summary>
-        /// Fully mapped class spells, including levels, effects, targeting, and zones.
+        /// Full spell definitions assigned to this playable class, including their own grades, effects and targeting. A class has no monster-grade dimension. The same spells are independently available from the spells endpoint.
         /// </summary>
-        /// <value>Fully mapped class spells, including levels, effects, targeting, and zones.</value>
+        /// <value>Full spell definitions assigned to this playable class, including their own grades, effects and targeting. A class has no monster-grade dimension. The same spells are independently available from the spells endpoint.</value>
         [JsonPropertyName("spells")]
         public List<Spell> Spells { get; set; }
 

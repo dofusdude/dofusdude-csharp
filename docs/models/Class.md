@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **AnkamaId** | **int** |  | 
 **Name** | **string** |  | 
 **Looks** | [**ClassLooks**](ClassLooks.md) |  | 
-**Spells** | [**List&lt;Spell&gt;**](Spell.md) | Fully mapped class spells, including levels, effects, targeting, and zones. | 
+**Spells** | [**List&lt;Spell&gt;**](Spell.md) | Full spell definitions assigned to this playable class, including their own grades, effects and targeting. A class has no monster-grade dimension. The same spells are independently available from the spells endpoint. | 
 **Description** | **string** |  | [optional] 
 **GameplayDescription** | **string** |  | [optional] 
 **Complexity** | **int** |  | [optional] 

@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **Condition** | **Dictionary&lt;string, Object&gt;** |  | [optional] 
 **TargetsAffectedConcurrently** | **bool** |  | [optional] 
 **TargetTreatedAsCaster** | **bool** |  | [optional] 
-**SpellLevelIds** | **List&lt;int&gt;** |  | [optional] 
+**SpellLevelIds** | **List&lt;int&gt;** | Spell-level definition IDs to which this script binding applies. Match SpellLevel.ankama_id, not Spell.ankama_id or SpellLevel.grade. | [optional] 
 
 [[Back to Model list]](../../README.md#documentation-for-models) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to README]](../../README.md)
 

@@ -48,7 +48,7 @@ namespace Dofusdude.Api.Model
         /// <param name="condition">condition</param>
         /// <param name="targetsAffectedConcurrently">targetsAffectedConcurrently</param>
         /// <param name="targetTreatedAsCaster">targetTreatedAsCaster</param>
-        /// <param name="spellLevelIds">spellLevelIds</param>
+        /// <param name="spellLevelIds">Spell-level definition IDs to which this script binding applies. Match SpellLevel.ankama_id, not Spell.ankama_id or SpellLevel.grade.</param>
         [JsonConstructor]
         public SpellScriptUsage(Option<int?> ankamaId = default, Option<int?> scriptId = default, Option<int?> order = default, Option<int?> random = default, Option<int?> randomGroup = default, Option<int?> sequenceGroup = default, Option<TargetMask?> activationMask = default, Option<TargetMask?> casterMask = default, Option<TargetMask?> targetMask = default, Option<EffectZone?> activationZone = default, Option<EffectZone?> targetZone = default, Option<Dictionary<string, Object>?> condition = default, Option<bool?> targetsAffectedConcurrently = default, Option<bool?> targetTreatedAsCaster = default, Option<List<int>?> spellLevelIds = default)
         {
@@ -262,8 +262,9 @@ namespace Dofusdude.Api.Model
         public Option<List<int>?> SpellLevelIdsOption { get; private set; }
 
         /// <summary>
-        /// Gets or Sets SpellLevelIds
+        /// Spell-level definition IDs to which this script binding applies. Match SpellLevel.ankama_id, not Spell.ankama_id or SpellLevel.grade.
         /// </summary>
+        /// <value>Spell-level definition IDs to which this script binding applies. Match SpellLevel.ankama_id, not Spell.ankama_id or SpellLevel.grade.</value>
         [JsonPropertyName("spell_level_ids")]
         public List<int>? SpellLevelIds { get { return this.SpellLevelIdsOption.Value; } set { this.SpellLevelIdsOption = new(value); } }
 

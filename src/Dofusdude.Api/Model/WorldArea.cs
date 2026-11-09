@@ -27,7 +27,7 @@ using Dofusdude.Api.Client;
 namespace Dofusdude.Api.Model
 {
     /// <summary>
-    /// WorldArea
+    /// Geographic data from a super-area, area or subarea endpoint. The hierarchy is super-area to area to subarea to map. Field availability depends on the selected geographic resource. Unrelated to combat-cell effect zones.
     /// </summary>
     public partial class WorldArea : IValidatableObject
     {
@@ -36,15 +36,25 @@ namespace Dofusdude.Api.Model
         /// </summary>
         /// <param name="ankamaId">ankamaId</param>
         /// <param name="name">name</param>
+        /// <param name="worldMapId">World-map context supplied on super-area records.</param>
+        /// <param name="areas">Child area references supplied on super-area records.</param>
+        /// <param name="level">Suggested geographic difficulty level supplied on subarea records. Not a monster grade or the level of every monster there.</param>
+        /// <param name="dungeonId">Dungeon association when supplied by the subarea data.</param>
+        /// <param name="maps">Map membership supplied on subarea records. Does not imply a spawn on every map.</param>
         /// <param name="superArea">superArea</param>
         /// <param name="area">area</param>
         /// <param name="subareas">subareas</param>
         /// <param name="monsters">monsters</param>
         [JsonConstructor]
-        public WorldArea(int ankamaId, string name, Option<CombatReference?> superArea = default, Option<CombatReference?> area = default, Option<List<CombatReference>?> subareas = default, Option<List<CombatReference>?> monsters = default)
+        public WorldArea(int ankamaId, string name, Option<int?> worldMapId = default, Option<List<CombatReference>?> areas = default, Option<int?> level = default, Option<int?> dungeonId = default, Option<List<WorldMapReference>?> maps = default, Option<CombatReference?> superArea = default, Option<CombatReference?> area = default, Option<List<CombatReference>?> subareas = default, Option<List<CombatReference>?> monsters = default)
         {
             AnkamaId = ankamaId;
             Name = name;
+            WorldMapIdOption = worldMapId;
+            AreasOption = areas;
+            LevelOption = level;
+            DungeonIdOption = dungeonId;
+            MapsOption = maps;
             SuperAreaOption = superArea;
             AreaOption = area;
             SubareasOption = subareas;
@@ -65,6 +75,76 @@ namespace Dofusdude.Api.Model
         /// </summary>
         [JsonPropertyName("name")]
         public string Name { get; set; }
+
+        /// <summary>
+        /// Used to track the state of WorldMapId
+        /// </summary>
+        [JsonIgnore]
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+        public Option<int?> WorldMapIdOption { get; private set; }
+
+        /// <summary>
+        /// World-map context supplied on super-area records.
+        /// </summary>
+        /// <value>World-map context supplied on super-area records.</value>
+        [JsonPropertyName("world_map_id")]
+        public int? WorldMapId { get { return this.WorldMapIdOption.Value; } set { this.WorldMapIdOption = new(value); } }
+
+        /// <summary>
+        /// Used to track the state of Areas
+        /// </summary>
+        [JsonIgnore]
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+        public Option<List<CombatReference>?> AreasOption { get; private set; }
+
+        /// <summary>
+        /// Child area references supplied on super-area records.
+        /// </summary>
+        /// <value>Child area references supplied on super-area records.</value>
+        [JsonPropertyName("areas")]
+        public List<CombatReference>? Areas { get { return this.AreasOption.Value; } set { this.AreasOption = new(value); } }
+
+        /// <summary>
+        /// Used to track the state of Level
+        /// </summary>
+        [JsonIgnore]
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+        public Option<int?> LevelOption { get; private set; }
+
+        /// <summary>
+        /// Suggested geographic difficulty level supplied on subarea records. Not a monster grade or the level of every monster there.
+        /// </summary>
+        /// <value>Suggested geographic difficulty level supplied on subarea records. Not a monster grade or the level of every monster there.</value>
+        [JsonPropertyName("level")]
+        public int? Level { get { return this.LevelOption.Value; } set { this.LevelOption = new(value); } }
+
+        /// <summary>
+        /// Used to track the state of DungeonId
+        /// </summary>
+        [JsonIgnore]
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+        public Option<int?> DungeonIdOption { get; private set; }
+
+        /// <summary>
+        /// Dungeon association when supplied by the subarea data.
+        /// </summary>
+        /// <value>Dungeon association when supplied by the subarea data.</value>
+        [JsonPropertyName("dungeon_id")]
+        public int? DungeonId { get { return this.DungeonIdOption.Value; } set { this.DungeonIdOption = new(value); } }
+
+        /// <summary>
+        /// Used to track the state of Maps
+        /// </summary>
+        [JsonIgnore]
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+        public Option<List<WorldMapReference>?> MapsOption { get; private set; }
+
+        /// <summary>
+        /// Map membership supplied on subarea records. Does not imply a spawn on every map.
+        /// </summary>
+        /// <value>Map membership supplied on subarea records. Does not imply a spawn on every map.</value>
+        [JsonPropertyName("maps")]
+        public List<WorldMapReference>? Maps { get { return this.MapsOption.Value; } set { this.MapsOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of SuperArea
@@ -134,6 +214,11 @@ namespace Dofusdude.Api.Model
             sb.Append("class WorldArea {\n");
             sb.Append("  AnkamaId: ").Append(AnkamaId).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  WorldMapId: ").Append(WorldMapId).Append("\n");
+            sb.Append("  Areas: ").Append(Areas).Append("\n");
+            sb.Append("  Level: ").Append(Level).Append("\n");
+            sb.Append("  DungeonId: ").Append(DungeonId).Append("\n");
+            sb.Append("  Maps: ").Append(Maps).Append("\n");
             sb.Append("  SuperArea: ").Append(SuperArea).Append("\n");
             sb.Append("  Area: ").Append(Area).Append("\n");
             sb.Append("  Subareas: ").Append(Subareas).Append("\n");
@@ -188,6 +273,11 @@ namespace Dofusdude.Api.Model
 
             Option<int?> ankamaId = default;
             Option<string?> name = default;
+            Option<int?> worldMapId = default;
+            Option<List<CombatReference>?> areas = default;
+            Option<int?> level = default;
+            Option<int?> dungeonId = default;
+            Option<List<WorldMapReference>?> maps = default;
             Option<CombatReference?> superArea = default;
             Option<CombatReference?> area = default;
             Option<List<CombatReference>?> subareas = default;
@@ -213,6 +303,21 @@ namespace Dofusdude.Api.Model
                             break;
                         case "name":
                             name = new Option<string?>(utf8JsonReader.GetString()!);
+                            break;
+                        case "world_map_id":
+                            worldMapId = new Option<int?>(utf8JsonReader.TokenType == JsonTokenType.Null ? (int?)null : utf8JsonReader.GetInt32());
+                            break;
+                        case "areas":
+                            areas = new Option<List<CombatReference>?>(JsonSerializer.Deserialize<List<CombatReference>>(ref utf8JsonReader, jsonSerializerOptions)!);
+                            break;
+                        case "level":
+                            level = new Option<int?>(utf8JsonReader.TokenType == JsonTokenType.Null ? (int?)null : utf8JsonReader.GetInt32());
+                            break;
+                        case "dungeon_id":
+                            dungeonId = new Option<int?>(utf8JsonReader.TokenType == JsonTokenType.Null ? (int?)null : utf8JsonReader.GetInt32());
+                            break;
+                        case "maps":
+                            maps = new Option<List<WorldMapReference>?>(JsonSerializer.Deserialize<List<WorldMapReference>>(ref utf8JsonReader, jsonSerializerOptions)!);
                             break;
                         case "super_area":
                             superArea = new Option<CombatReference?>(JsonSerializer.Deserialize<CombatReference>(ref utf8JsonReader, jsonSerializerOptions)!);
@@ -244,6 +349,21 @@ namespace Dofusdude.Api.Model
             if (name.IsSet && name.Value == null)
                 throw new JsonException("Property is not nullable for class WorldArea: name.");
 
+            if (worldMapId.IsSet && worldMapId.Value == null)
+                throw new JsonException("Property is not nullable for class WorldArea: world_map_id.");
+
+            if (areas.IsSet && areas.Value == null)
+                throw new JsonException("Property is not nullable for class WorldArea: areas.");
+
+            if (level.IsSet && level.Value == null)
+                throw new JsonException("Property is not nullable for class WorldArea: level.");
+
+            if (dungeonId.IsSet && dungeonId.Value == null)
+                throw new JsonException("Property is not nullable for class WorldArea: dungeon_id.");
+
+            if (maps.IsSet && maps.Value == null)
+                throw new JsonException("Property is not nullable for class WorldArea: maps.");
+
             if (superArea.IsSet && superArea.Value == null)
                 throw new JsonException("Property is not nullable for class WorldArea: super_area.");
 
@@ -256,7 +376,7 @@ namespace Dofusdude.Api.Model
             if (monsters.IsSet && monsters.Value == null)
                 throw new JsonException("Property is not nullable for class WorldArea: monsters.");
 
-            return new WorldArea(ankamaId.Value!.Value!, name.Value!, superArea, area, subareas, monsters);
+            return new WorldArea(ankamaId.Value!.Value!, name.Value!, worldMapId, areas, level, dungeonId, maps, superArea, area, subareas, monsters);
         }
 
         /// <summary>
@@ -281,6 +401,21 @@ namespace Dofusdude.Api.Model
         /// <param name="jsonSerializerOptions"></param>
         public void WriteProperties(Utf8JsonWriter writer, WorldArea worldArea, JsonSerializerOptions jsonSerializerOptions)
         {
+            if (worldArea.WorldMapIdOption.IsSet && worldArea.WorldMapId == null)
+                throw new JsonException("Cannot write null property WorldArea.WorldMapId to non-nullable JSON property 'world_map_id'.");
+
+            if (worldArea.AreasOption.IsSet && worldArea.Areas == null)
+                throw new JsonException("Cannot write null property WorldArea.Areas to non-nullable JSON property 'areas'.");
+
+            if (worldArea.LevelOption.IsSet && worldArea.Level == null)
+                throw new JsonException("Cannot write null property WorldArea.Level to non-nullable JSON property 'level'.");
+
+            if (worldArea.DungeonIdOption.IsSet && worldArea.DungeonId == null)
+                throw new JsonException("Cannot write null property WorldArea.DungeonId to non-nullable JSON property 'dungeon_id'.");
+
+            if (worldArea.MapsOption.IsSet && worldArea.Maps == null)
+                throw new JsonException("Cannot write null property WorldArea.Maps to non-nullable JSON property 'maps'.");
+
             if (worldArea.SuperAreaOption.IsSet && worldArea.SuperArea == null)
                 throw new JsonException("Cannot write null property WorldArea.SuperArea to non-nullable JSON property 'super_area'.");
 
@@ -297,6 +432,25 @@ namespace Dofusdude.Api.Model
 
             writer.WriteString("name", worldArea.Name);
 
+            if (worldArea.WorldMapIdOption.IsSet)
+                writer.WriteNumber("world_map_id", worldArea.WorldMapIdOption.Value!.Value);
+
+            if (worldArea.AreasOption.IsSet)
+            {
+                writer.WritePropertyName("areas");
+                JsonSerializer.Serialize(writer, worldArea.Areas, jsonSerializerOptions);
+            }
+            if (worldArea.LevelOption.IsSet)
+                writer.WriteNumber("level", worldArea.LevelOption.Value!.Value);
+
+            if (worldArea.DungeonIdOption.IsSet)
+                writer.WriteNumber("dungeon_id", worldArea.DungeonIdOption.Value!.Value);
+
+            if (worldArea.MapsOption.IsSet)
+            {
+                writer.WritePropertyName("maps");
+                JsonSerializer.Serialize(writer, worldArea.Maps, jsonSerializerOptions);
+            }
             if (worldArea.SuperAreaOption.IsSet)
             {
                 writer.WritePropertyName("super_area");

@@ -27,7 +27,7 @@ using Dofusdude.Api.Client;
 namespace Dofusdude.Api.Model
 {
     /// <summary>
-    /// MonsterSpawnLocation
+    /// Known spawn subarea with its parent area, super-area and map membership. Does not assert a spawn on each listed map and does not include spawn probabilities.
     /// </summary>
     public partial class MonsterSpawnLocation : IValidatableObject
     {
@@ -37,8 +37,8 @@ namespace Dofusdude.Api.Model
         /// <param name="subarea">subarea</param>
         /// <param name="area">area</param>
         /// <param name="superArea">superArea</param>
-        /// <param name="subareaMaps">subareaMaps</param>
-        /// <param name="preferred">Whether the game marks this as the monster&#39;s preferred subarea.</param>
+        /// <param name="subareaMaps">Maps belonging to the referenced subarea. Map membership alone is not proof that the monster spawns on a particular map.</param>
+        /// <param name="preferred">Whether the source marks this as a preferred subarea. A preference flag, not a spawn percentage or guarantee of presence.</param>
         [JsonConstructor]
         public MonsterSpawnLocation(CombatReference subarea, CombatReference area, CombatReference superArea, List<MonsterSpawnLocationSubareaMapsInner> subareaMaps, bool preferred)
         {
@@ -71,15 +71,16 @@ namespace Dofusdude.Api.Model
         public CombatReference SuperArea { get; set; }
 
         /// <summary>
-        /// Gets or Sets SubareaMaps
+        /// Maps belonging to the referenced subarea. Map membership alone is not proof that the monster spawns on a particular map.
         /// </summary>
+        /// <value>Maps belonging to the referenced subarea. Map membership alone is not proof that the monster spawns on a particular map.</value>
         [JsonPropertyName("subarea_maps")]
         public List<MonsterSpawnLocationSubareaMapsInner> SubareaMaps { get; set; }
 
         /// <summary>
-        /// Whether the game marks this as the monster&#39;s preferred subarea.
+        /// Whether the source marks this as a preferred subarea. A preference flag, not a spawn percentage or guarantee of presence.
         /// </summary>
-        /// <value>Whether the game marks this as the monster&#39;s preferred subarea.</value>
+        /// <value>Whether the source marks this as a preferred subarea. A preference flag, not a spawn percentage or guarantee of presence.</value>
         [JsonPropertyName("preferred")]
         public bool Preferred { get; set; }
 

@@ -1,4 +1,5 @@
 # Dofusdude.Api.Model.ClassAppearance
+Structured client appearance data for an asset renderer. Bone and skin IDs are not image URLs. Use the parent record's image_urls for ready-to-display artwork.
 
 ## Properties
 

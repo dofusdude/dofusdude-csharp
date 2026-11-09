@@ -27,19 +27,19 @@ using Dofusdude.Api.Client;
 namespace Dofusdude.Api.Model
 {
     /// <summary>
-    /// SpellEffect
+    /// One normal or critical effect of a particular spell grade. Its zone defines where it applies, target_mask defines eligible targets and triggers defines activation events. Templated text is for display, not a formula to parse.
     /// </summary>
     public partial class SpellEffect : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="SpellEffect" /> class.
         /// </summary>
-        /// <param name="type">type</param>
+        /// <param name="type">Localized effect category, such as Air damage. This is not a spell ID or a structured game reference.</param>
         /// <param name="min">min</param>
         /// <param name="max">max</param>
-        /// <param name="duration">duration</param>
-        /// <param name="delay">delay</param>
-        /// <param name="random">random</param>
+        /// <param name="duration">Effect duration in fight turns as represented by the source. Not a real-time duration in seconds.</param>
+        /// <param name="delay">Delay before the effect in fight turns as represented by the source.</param>
+        /// <param name="random">Source random-selection value. Do not interpret it as a percentage without the effect&#39;s selection rules.</param>
         /// <param name="group">group</param>
         /// <param name="dispellable">dispellable</param>
         /// <param name="effectUid">Stable identifier of this concrete effect instance.</param>
@@ -50,9 +50,9 @@ namespace Dofusdude.Api.Model
         /// <param name="zone">zone</param>
         /// <param name="targetMask">targetMask</param>
         /// <param name="triggers">triggers</param>
-        /// <param name="templated">templated</param>
+        /// <param name="templated">Localized effect text suitable for display. Numeric effect properties remain available separately.</param>
         [JsonConstructor]
-        public SpellEffect(Option<CombatReference?> type = default, Option<int?> min = default, Option<int?> max = default, Option<int?> duration = default, Option<int?> delay = default, Option<int?> random = default, Option<int?> group = default, Option<int?> dispellable = default, Option<int?> effectUid = default, Option<int?> targetId = default, Option<int?> triggeredDuration = default, Option<bool?> displayZero = default, Option<int?> modifier = default, Option<EffectZone?> zone = default, Option<TargetMask?> targetMask = default, Option<SpellTriggers?> triggers = default, Option<Dictionary<string, Object>?> templated = default)
+        public SpellEffect(Option<string?> type = default, Option<int?> min = default, Option<int?> max = default, Option<int?> duration = default, Option<int?> delay = default, Option<decimal?> random = default, Option<int?> group = default, Option<int?> dispellable = default, Option<int?> effectUid = default, Option<int?> targetId = default, Option<int?> triggeredDuration = default, Option<bool?> displayZero = default, Option<int?> modifier = default, Option<EffectZone?> zone = default, Option<TargetMask?> targetMask = default, Option<SpellTriggers?> triggers = default, Option<string?> templated = default)
         {
             TypeOption = type;
             MinOption = min;
@@ -81,13 +81,14 @@ namespace Dofusdude.Api.Model
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<CombatReference?> TypeOption { get; private set; }
+        public Option<string?> TypeOption { get; private set; }
 
         /// <summary>
-        /// Gets or Sets Type
+        /// Localized effect category, such as Air damage. This is not a spell ID or a structured game reference.
         /// </summary>
+        /// <value>Localized effect category, such as Air damage. This is not a spell ID or a structured game reference.</value>
         [JsonPropertyName("type")]
-        public CombatReference? Type { get { return this.TypeOption.Value; } set { this.TypeOption = new(value); } }
+        public string? Type { get { return this.TypeOption.Value; } set { this.TypeOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of Min
@@ -123,8 +124,9 @@ namespace Dofusdude.Api.Model
         public Option<int?> DurationOption { get; private set; }
 
         /// <summary>
-        /// Gets or Sets Duration
+        /// Effect duration in fight turns as represented by the source. Not a real-time duration in seconds.
         /// </summary>
+        /// <value>Effect duration in fight turns as represented by the source. Not a real-time duration in seconds.</value>
         [JsonPropertyName("duration")]
         public int? Duration { get { return this.DurationOption.Value; } set { this.DurationOption = new(value); } }
 
@@ -136,8 +138,9 @@ namespace Dofusdude.Api.Model
         public Option<int?> DelayOption { get; private set; }
 
         /// <summary>
-        /// Gets or Sets Delay
+        /// Delay before the effect in fight turns as represented by the source.
         /// </summary>
+        /// <value>Delay before the effect in fight turns as represented by the source.</value>
         [JsonPropertyName("delay")]
         public int? Delay { get { return this.DelayOption.Value; } set { this.DelayOption = new(value); } }
 
@@ -146,13 +149,14 @@ namespace Dofusdude.Api.Model
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<int?> RandomOption { get; private set; }
+        public Option<decimal?> RandomOption { get; private set; }
 
         /// <summary>
-        /// Gets or Sets Random
+        /// Source random-selection value. Do not interpret it as a percentage without the effect&#39;s selection rules.
         /// </summary>
+        /// <value>Source random-selection value. Do not interpret it as a percentage without the effect&#39;s selection rules.</value>
         [JsonPropertyName("random")]
-        public int? Random { get { return this.RandomOption.Value; } set { this.RandomOption = new(value); } }
+        public decimal? Random { get { return this.RandomOption.Value; } set { this.RandomOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of Group
@@ -290,13 +294,14 @@ namespace Dofusdude.Api.Model
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<Dictionary<string, Object>?> TemplatedOption { get; private set; }
+        public Option<string?> TemplatedOption { get; private set; }
 
         /// <summary>
-        /// Gets or Sets Templated
+        /// Localized effect text suitable for display. Numeric effect properties remain available separately.
         /// </summary>
+        /// <value>Localized effect text suitable for display. Numeric effect properties remain available separately.</value>
         [JsonPropertyName("templated")]
-        public Dictionary<string, Object>? Templated { get { return this.TemplatedOption.Value; } set { this.TemplatedOption = new(value); } }
+        public string? Templated { get { return this.TemplatedOption.Value; } set { this.TemplatedOption = new(value); } }
 
         /// <summary>
         /// Gets or Sets additional properties
@@ -377,12 +382,12 @@ namespace Dofusdude.Api.Model
 
             JsonTokenType startingTokenType = utf8JsonReader.TokenType;
 
-            Option<CombatReference?> type = default;
+            Option<string?> type = default;
             Option<int?> min = default;
             Option<int?> max = default;
             Option<int?> duration = default;
             Option<int?> delay = default;
-            Option<int?> random = default;
+            Option<decimal?> random = default;
             Option<int?> group = default;
             Option<int?> dispellable = default;
             Option<int?> effectUid = default;
@@ -393,7 +398,7 @@ namespace Dofusdude.Api.Model
             Option<EffectZone?> zone = default;
             Option<TargetMask?> targetMask = default;
             Option<SpellTriggers?> triggers = default;
-            Option<Dictionary<string, Object>?> templated = default;
+            Option<string?> templated = default;
 
             while (utf8JsonReader.Read())
             {
@@ -411,7 +416,7 @@ namespace Dofusdude.Api.Model
                     switch (localVarJsonPropertyName)
                     {
                         case "type":
-                            type = new Option<CombatReference?>(JsonSerializer.Deserialize<CombatReference>(ref utf8JsonReader, jsonSerializerOptions)!);
+                            type = new Option<string?>(utf8JsonReader.GetString()!);
                             break;
                         case "min":
                             min = new Option<int?>(utf8JsonReader.TokenType == JsonTokenType.Null ? (int?)null : utf8JsonReader.GetInt32());
@@ -426,7 +431,7 @@ namespace Dofusdude.Api.Model
                             delay = new Option<int?>(utf8JsonReader.TokenType == JsonTokenType.Null ? (int?)null : utf8JsonReader.GetInt32());
                             break;
                         case "random":
-                            random = new Option<int?>(utf8JsonReader.TokenType == JsonTokenType.Null ? (int?)null : utf8JsonReader.GetInt32());
+                            random = new Option<decimal?>(utf8JsonReader.TokenType == JsonTokenType.Null ? (decimal?)null : utf8JsonReader.GetDecimal());
                             break;
                         case "group":
                             group = new Option<int?>(utf8JsonReader.TokenType == JsonTokenType.Null ? (int?)null : utf8JsonReader.GetInt32());
@@ -459,7 +464,7 @@ namespace Dofusdude.Api.Model
                             triggers = new Option<SpellTriggers?>(JsonSerializer.Deserialize<SpellTriggers>(ref utf8JsonReader, jsonSerializerOptions)!);
                             break;
                         case "templated":
-                            templated = new Option<Dictionary<string, Object>?>(JsonSerializer.Deserialize<Dictionary<string, Object>>(ref utf8JsonReader, jsonSerializerOptions)!);
+                            templated = new Option<string?>(utf8JsonReader.GetString()!);
                             break;
                         default:
                             break;
@@ -595,10 +600,8 @@ namespace Dofusdude.Api.Model
                 throw new JsonException("Cannot write null property SpellEffect.Templated to non-nullable JSON property 'templated'.");
 
             if (spellEffect.TypeOption.IsSet)
-            {
-                writer.WritePropertyName("type");
-                JsonSerializer.Serialize(writer, spellEffect.Type, jsonSerializerOptions);
-            }
+                writer.WriteString("type", spellEffect.Type);
+
             if (spellEffect.MinOption.IsSet)
                 writer.WriteNumber("min", spellEffect.MinOption.Value!.Value);
 
@@ -651,10 +654,7 @@ namespace Dofusdude.Api.Model
                 JsonSerializer.Serialize(writer, spellEffect.Triggers, jsonSerializerOptions);
             }
             if (spellEffect.TemplatedOption.IsSet)
-            {
-                writer.WritePropertyName("templated");
-                JsonSerializer.Serialize(writer, spellEffect.Templated, jsonSerializerOptions);
-            }
+                writer.WriteString("templated", spellEffect.Templated);
         }
     }
 }

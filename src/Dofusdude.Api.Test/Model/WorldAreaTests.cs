@@ -73,6 +73,51 @@ namespace Dofusdude.Api.Test.Model
         }
 
         /// <summary>
+        /// Test the property 'WorldMapId'
+        /// </summary>
+        [Fact]
+        public void WorldMapIdTest()
+        {
+            // TODO unit test for the property 'WorldMapId'
+        }
+
+        /// <summary>
+        /// Test the property 'Areas'
+        /// </summary>
+        [Fact]
+        public void AreasTest()
+        {
+            // TODO unit test for the property 'Areas'
+        }
+
+        /// <summary>
+        /// Test the property 'Level'
+        /// </summary>
+        [Fact]
+        public void LevelTest()
+        {
+            // TODO unit test for the property 'Level'
+        }
+
+        /// <summary>
+        /// Test the property 'DungeonId'
+        /// </summary>
+        [Fact]
+        public void DungeonIdTest()
+        {
+            // TODO unit test for the property 'DungeonId'
+        }
+
+        /// <summary>
+        /// Test the property 'Maps'
+        /// </summary>
+        [Fact]
+        public void MapsTest()
+        {
+            // TODO unit test for the property 'Maps'
+        }
+
+        /// <summary>
         /// Test the property 'SuperArea'
         /// </summary>
         [Fact]

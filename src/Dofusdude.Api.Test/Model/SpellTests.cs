@@ -136,6 +136,15 @@ namespace Dofusdude.Api.Test.Model
         }
 
         /// <summary>
+        /// Test the property 'BasePreviewZone'
+        /// </summary>
+        [Fact]
+        public void BasePreviewZoneTest()
+        {
+            // TODO unit test for the property 'BasePreviewZone'
+        }
+
+        /// <summary>
         /// Test the property 'Classes'
         /// </summary>
         [Fact]

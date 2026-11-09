@@ -27,35 +27,41 @@ using Dofusdude.Api.Client;
 namespace Dofusdude.Api.Model
 {
     /// <summary>
-    /// SpellLevel
+    /// One grade of a spell. The levels array contains these spell variants, not player levels. Grade numbers are local to the containing spell and are independent of monster grades.
     /// </summary>
     public partial class SpellLevel : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="SpellLevel" /> class.
         /// </summary>
-        /// <param name="ankamaId">ankamaId</param>
-        /// <param name="grade">grade</param>
-        /// <param name="apCost">apCost</param>
-        /// <param name="minRange">minRange</param>
-        /// <param name="maxRange">maxRange</param>
-        /// <param name="maxCastPerTurn">maxCastPerTurn</param>
+        /// <param name="ankamaId">ID of the spell-level definition. Different from the parent spell ID and from the grade number. Used by explicit spell-level references such as script spell_level_ids.</param>
+        /// <param name="grade">Number identifying this variant within its spell. Select by this value, not by the array position. Used by the spell detail endpoint&#39;s grade parameter.</param>
+        /// <param name="apCost">Action points required to cast this spell grade.</param>
+        /// <param name="criticalHitProbability">Base critical-hit percentage recorded for this spell grade, before fighter-specific modifiers.</param>
+        /// <param name="minPlayerLevel">Player-level requirement recorded for this spell grade. This is not its grade number or a monster combat level.</param>
+        /// <param name="minRange">Minimum casting range in combat cells.</param>
+        /// <param name="maxRange">Maximum casting range in combat cells as defined by this grade.</param>
+        /// <param name="maxCastPerTurn">Per-caster cast limit within a turn as recorded by the source.</param>
         /// <param name="maxCastPerTarget">maxCastPerTarget</param>
         /// <param name="maxGlobalCastPerTurn">maxGlobalCastPerTurn</param>
         /// <param name="maxGlobalCastPerTarget">maxGlobalCastPerTarget</param>
-        /// <param name="minCastInterval">minCastInterval</param>
-        /// <param name="initialCooldown">initialCooldown</param>
+        /// <param name="minCastInterval">Minimum interval between casts, measured in fight turns.</param>
+        /// <param name="initialCooldown">Initial wait before casting, measured in fight turns.</param>
         /// <param name="globalCooldown">globalCooldown</param>
         /// <param name="ignorePrisonGlyph">ignorePrisonGlyph</param>
         /// <param name="spellBreed">spellBreed</param>
-        /// <param name="effects">effects</param>
-        /// <param name="criticalEffects">criticalEffects</param>
+        /// <param name="statesCriterion">Available client-side state requirements for this spell grade. Null does not assert that the server imposes no restriction.</param>
+        /// <param name="previewZones">Client preview and activation geometry for this grade. Use each effect&#39;s zone for its actual effect-area definition.</param>
+        /// <param name="effects">Normal-cast effects for this grade. Each entry has independent targeting and area geometry.</param>
+        /// <param name="criticalEffects">Critical-cast effects for this grade. Keep separate from normal effects rather than applying both arrays to every cast.</param>
         [JsonConstructor]
-        public SpellLevel(Option<int?> ankamaId = default, Option<int?> grade = default, Option<int?> apCost = default, Option<int?> minRange = default, Option<int?> maxRange = default, Option<int?> maxCastPerTurn = default, Option<int?> maxCastPerTarget = default, Option<int?> maxGlobalCastPerTurn = default, Option<int?> maxGlobalCastPerTarget = default, Option<int?> minCastInterval = default, Option<int?> initialCooldown = default, Option<int?> globalCooldown = default, Option<bool?> ignorePrisonGlyph = default, Option<int?> spellBreed = default, Option<List<SpellEffect>?> effects = default, Option<List<SpellEffect>?> criticalEffects = default)
+        public SpellLevel(Option<int?> ankamaId = default, Option<int?> grade = default, Option<int?> apCost = default, Option<int?> criticalHitProbability = default, Option<int?> minPlayerLevel = default, Option<int?> minRange = default, Option<int?> maxRange = default, Option<int?> maxCastPerTurn = default, Option<int?> maxCastPerTarget = default, Option<int?> maxGlobalCastPerTurn = default, Option<int?> maxGlobalCastPerTarget = default, Option<int?> minCastInterval = default, Option<int?> initialCooldown = default, Option<int?> globalCooldown = default, Option<bool?> ignorePrisonGlyph = default, Option<int?> spellBreed = default, Option<EligibilityNode?> statesCriterion = default, Option<List<SpellPreviewZone>?> previewZones = default, Option<List<SpellEffect>?> effects = default, Option<List<SpellEffect>?> criticalEffects = default)
         {
             AnkamaIdOption = ankamaId;
             GradeOption = grade;
             ApCostOption = apCost;
+            CriticalHitProbabilityOption = criticalHitProbability;
+            MinPlayerLevelOption = minPlayerLevel;
             MinRangeOption = minRange;
             MaxRangeOption = maxRange;
             MaxCastPerTurnOption = maxCastPerTurn;
@@ -67,6 +73,8 @@ namespace Dofusdude.Api.Model
             GlobalCooldownOption = globalCooldown;
             IgnorePrisonGlyphOption = ignorePrisonGlyph;
             SpellBreedOption = spellBreed;
+            StatesCriterionOption = statesCriterion;
+            PreviewZonesOption = previewZones;
             EffectsOption = effects;
             CriticalEffectsOption = criticalEffects;
             OnCreated();
@@ -82,8 +90,9 @@ namespace Dofusdude.Api.Model
         public Option<int?> AnkamaIdOption { get; private set; }
 
         /// <summary>
-        /// Gets or Sets AnkamaId
+        /// ID of the spell-level definition. Different from the parent spell ID and from the grade number. Used by explicit spell-level references such as script spell_level_ids.
         /// </summary>
+        /// <value>ID of the spell-level definition. Different from the parent spell ID and from the grade number. Used by explicit spell-level references such as script spell_level_ids.</value>
         [JsonPropertyName("ankama_id")]
         public int? AnkamaId { get { return this.AnkamaIdOption.Value; } set { this.AnkamaIdOption = new(value); } }
 
@@ -95,8 +104,9 @@ namespace Dofusdude.Api.Model
         public Option<int?> GradeOption { get; private set; }
 
         /// <summary>
-        /// Gets or Sets Grade
+        /// Number identifying this variant within its spell. Select by this value, not by the array position. Used by the spell detail endpoint&#39;s grade parameter.
         /// </summary>
+        /// <value>Number identifying this variant within its spell. Select by this value, not by the array position. Used by the spell detail endpoint&#39;s grade parameter.</value>
         [JsonPropertyName("grade")]
         public int? Grade { get { return this.GradeOption.Value; } set { this.GradeOption = new(value); } }
 
@@ -108,10 +118,39 @@ namespace Dofusdude.Api.Model
         public Option<int?> ApCostOption { get; private set; }
 
         /// <summary>
-        /// Gets or Sets ApCost
+        /// Action points required to cast this spell grade.
         /// </summary>
+        /// <value>Action points required to cast this spell grade.</value>
         [JsonPropertyName("ap_cost")]
         public int? ApCost { get { return this.ApCostOption.Value; } set { this.ApCostOption = new(value); } }
+
+        /// <summary>
+        /// Used to track the state of CriticalHitProbability
+        /// </summary>
+        [JsonIgnore]
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+        public Option<int?> CriticalHitProbabilityOption { get; private set; }
+
+        /// <summary>
+        /// Base critical-hit percentage recorded for this spell grade, before fighter-specific modifiers.
+        /// </summary>
+        /// <value>Base critical-hit percentage recorded for this spell grade, before fighter-specific modifiers.</value>
+        [JsonPropertyName("critical_hit_probability")]
+        public int? CriticalHitProbability { get { return this.CriticalHitProbabilityOption.Value; } set { this.CriticalHitProbabilityOption = new(value); } }
+
+        /// <summary>
+        /// Used to track the state of MinPlayerLevel
+        /// </summary>
+        [JsonIgnore]
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+        public Option<int?> MinPlayerLevelOption { get; private set; }
+
+        /// <summary>
+        /// Player-level requirement recorded for this spell grade. This is not its grade number or a monster combat level.
+        /// </summary>
+        /// <value>Player-level requirement recorded for this spell grade. This is not its grade number or a monster combat level.</value>
+        [JsonPropertyName("min_player_level")]
+        public int? MinPlayerLevel { get { return this.MinPlayerLevelOption.Value; } set { this.MinPlayerLevelOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of MinRange
@@ -121,8 +160,9 @@ namespace Dofusdude.Api.Model
         public Option<int?> MinRangeOption { get; private set; }
 
         /// <summary>
-        /// Gets or Sets MinRange
+        /// Minimum casting range in combat cells.
         /// </summary>
+        /// <value>Minimum casting range in combat cells.</value>
         [JsonPropertyName("min_range")]
         public int? MinRange { get { return this.MinRangeOption.Value; } set { this.MinRangeOption = new(value); } }
 
@@ -134,8 +174,9 @@ namespace Dofusdude.Api.Model
         public Option<int?> MaxRangeOption { get; private set; }
 
         /// <summary>
-        /// Gets or Sets MaxRange
+        /// Maximum casting range in combat cells as defined by this grade.
         /// </summary>
+        /// <value>Maximum casting range in combat cells as defined by this grade.</value>
         [JsonPropertyName("max_range")]
         public int? MaxRange { get { return this.MaxRangeOption.Value; } set { this.MaxRangeOption = new(value); } }
 
@@ -147,8 +188,9 @@ namespace Dofusdude.Api.Model
         public Option<int?> MaxCastPerTurnOption { get; private set; }
 
         /// <summary>
-        /// Gets or Sets MaxCastPerTurn
+        /// Per-caster cast limit within a turn as recorded by the source.
         /// </summary>
+        /// <value>Per-caster cast limit within a turn as recorded by the source.</value>
         [JsonPropertyName("max_cast_per_turn")]
         public int? MaxCastPerTurn { get { return this.MaxCastPerTurnOption.Value; } set { this.MaxCastPerTurnOption = new(value); } }
 
@@ -199,8 +241,9 @@ namespace Dofusdude.Api.Model
         public Option<int?> MinCastIntervalOption { get; private set; }
 
         /// <summary>
-        /// Gets or Sets MinCastInterval
+        /// Minimum interval between casts, measured in fight turns.
         /// </summary>
+        /// <value>Minimum interval between casts, measured in fight turns.</value>
         [JsonPropertyName("min_cast_interval")]
         public int? MinCastInterval { get { return this.MinCastIntervalOption.Value; } set { this.MinCastIntervalOption = new(value); } }
 
@@ -212,8 +255,9 @@ namespace Dofusdude.Api.Model
         public Option<int?> InitialCooldownOption { get; private set; }
 
         /// <summary>
-        /// Gets or Sets InitialCooldown
+        /// Initial wait before casting, measured in fight turns.
         /// </summary>
+        /// <value>Initial wait before casting, measured in fight turns.</value>
         [JsonPropertyName("initial_cooldown")]
         public int? InitialCooldown { get { return this.InitialCooldownOption.Value; } set { this.InitialCooldownOption = new(value); } }
 
@@ -257,6 +301,34 @@ namespace Dofusdude.Api.Model
         public int? SpellBreed { get { return this.SpellBreedOption.Value; } set { this.SpellBreedOption = new(value); } }
 
         /// <summary>
+        /// Used to track the state of StatesCriterion
+        /// </summary>
+        [JsonIgnore]
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+        public Option<EligibilityNode?> StatesCriterionOption { get; private set; }
+
+        /// <summary>
+        /// Available client-side state requirements for this spell grade. Null does not assert that the server imposes no restriction.
+        /// </summary>
+        /// <value>Available client-side state requirements for this spell grade. Null does not assert that the server imposes no restriction.</value>
+        [JsonPropertyName("states_criterion")]
+        public EligibilityNode? StatesCriterion { get { return this.StatesCriterionOption.Value; } set { this.StatesCriterionOption = new(value); } }
+
+        /// <summary>
+        /// Used to track the state of PreviewZones
+        /// </summary>
+        [JsonIgnore]
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+        public Option<List<SpellPreviewZone>?> PreviewZonesOption { get; private set; }
+
+        /// <summary>
+        /// Client preview and activation geometry for this grade. Use each effect&#39;s zone for its actual effect-area definition.
+        /// </summary>
+        /// <value>Client preview and activation geometry for this grade. Use each effect&#39;s zone for its actual effect-area definition.</value>
+        [JsonPropertyName("preview_zones")]
+        public List<SpellPreviewZone>? PreviewZones { get { return this.PreviewZonesOption.Value; } set { this.PreviewZonesOption = new(value); } }
+
+        /// <summary>
         /// Used to track the state of Effects
         /// </summary>
         [JsonIgnore]
@@ -264,8 +336,9 @@ namespace Dofusdude.Api.Model
         public Option<List<SpellEffect>?> EffectsOption { get; private set; }
 
         /// <summary>
-        /// Gets or Sets Effects
+        /// Normal-cast effects for this grade. Each entry has independent targeting and area geometry.
         /// </summary>
+        /// <value>Normal-cast effects for this grade. Each entry has independent targeting and area geometry.</value>
         [JsonPropertyName("effects")]
         public List<SpellEffect>? Effects { get { return this.EffectsOption.Value; } set { this.EffectsOption = new(value); } }
 
@@ -277,8 +350,9 @@ namespace Dofusdude.Api.Model
         public Option<List<SpellEffect>?> CriticalEffectsOption { get; private set; }
 
         /// <summary>
-        /// Gets or Sets CriticalEffects
+        /// Critical-cast effects for this grade. Keep separate from normal effects rather than applying both arrays to every cast.
         /// </summary>
+        /// <value>Critical-cast effects for this grade. Keep separate from normal effects rather than applying both arrays to every cast.</value>
         [JsonPropertyName("critical_effects")]
         public List<SpellEffect>? CriticalEffects { get { return this.CriticalEffectsOption.Value; } set { this.CriticalEffectsOption = new(value); } }
 
@@ -299,6 +373,8 @@ namespace Dofusdude.Api.Model
             sb.Append("  AnkamaId: ").Append(AnkamaId).Append("\n");
             sb.Append("  Grade: ").Append(Grade).Append("\n");
             sb.Append("  ApCost: ").Append(ApCost).Append("\n");
+            sb.Append("  CriticalHitProbability: ").Append(CriticalHitProbability).Append("\n");
+            sb.Append("  MinPlayerLevel: ").Append(MinPlayerLevel).Append("\n");
             sb.Append("  MinRange: ").Append(MinRange).Append("\n");
             sb.Append("  MaxRange: ").Append(MaxRange).Append("\n");
             sb.Append("  MaxCastPerTurn: ").Append(MaxCastPerTurn).Append("\n");
@@ -310,6 +386,8 @@ namespace Dofusdude.Api.Model
             sb.Append("  GlobalCooldown: ").Append(GlobalCooldown).Append("\n");
             sb.Append("  IgnorePrisonGlyph: ").Append(IgnorePrisonGlyph).Append("\n");
             sb.Append("  SpellBreed: ").Append(SpellBreed).Append("\n");
+            sb.Append("  StatesCriterion: ").Append(StatesCriterion).Append("\n");
+            sb.Append("  PreviewZones: ").Append(PreviewZones).Append("\n");
             sb.Append("  Effects: ").Append(Effects).Append("\n");
             sb.Append("  CriticalEffects: ").Append(CriticalEffects).Append("\n");
             sb.Append("  AdditionalProperties: ").Append(AdditionalProperties).Append("\n");
@@ -363,6 +441,8 @@ namespace Dofusdude.Api.Model
             Option<int?> ankamaId = default;
             Option<int?> grade = default;
             Option<int?> apCost = default;
+            Option<int?> criticalHitProbability = default;
+            Option<int?> minPlayerLevel = default;
             Option<int?> minRange = default;
             Option<int?> maxRange = default;
             Option<int?> maxCastPerTurn = default;
@@ -374,6 +454,8 @@ namespace Dofusdude.Api.Model
             Option<int?> globalCooldown = default;
             Option<bool?> ignorePrisonGlyph = default;
             Option<int?> spellBreed = default;
+            Option<EligibilityNode?> statesCriterion = default;
+            Option<List<SpellPreviewZone>?> previewZones = default;
             Option<List<SpellEffect>?> effects = default;
             Option<List<SpellEffect>?> criticalEffects = default;
 
@@ -400,6 +482,12 @@ namespace Dofusdude.Api.Model
                             break;
                         case "ap_cost":
                             apCost = new Option<int?>(utf8JsonReader.TokenType == JsonTokenType.Null ? (int?)null : utf8JsonReader.GetInt32());
+                            break;
+                        case "critical_hit_probability":
+                            criticalHitProbability = new Option<int?>(utf8JsonReader.TokenType == JsonTokenType.Null ? (int?)null : utf8JsonReader.GetInt32());
+                            break;
+                        case "min_player_level":
+                            minPlayerLevel = new Option<int?>(utf8JsonReader.TokenType == JsonTokenType.Null ? (int?)null : utf8JsonReader.GetInt32());
                             break;
                         case "min_range":
                             minRange = new Option<int?>(utf8JsonReader.TokenType == JsonTokenType.Null ? (int?)null : utf8JsonReader.GetInt32());
@@ -434,6 +522,12 @@ namespace Dofusdude.Api.Model
                         case "spell_breed":
                             spellBreed = new Option<int?>(utf8JsonReader.TokenType == JsonTokenType.Null ? (int?)null : utf8JsonReader.GetInt32());
                             break;
+                        case "states_criterion":
+                            statesCriterion = new Option<EligibilityNode?>(JsonSerializer.Deserialize<EligibilityNode>(ref utf8JsonReader, jsonSerializerOptions));
+                            break;
+                        case "preview_zones":
+                            previewZones = new Option<List<SpellPreviewZone>?>(JsonSerializer.Deserialize<List<SpellPreviewZone>>(ref utf8JsonReader, jsonSerializerOptions)!);
+                            break;
                         case "effects":
                             effects = new Option<List<SpellEffect>?>(JsonSerializer.Deserialize<List<SpellEffect>>(ref utf8JsonReader, jsonSerializerOptions)!);
                             break;
@@ -454,6 +548,12 @@ namespace Dofusdude.Api.Model
 
             if (apCost.IsSet && apCost.Value == null)
                 throw new JsonException("Property is not nullable for class SpellLevel: ap_cost.");
+
+            if (criticalHitProbability.IsSet && criticalHitProbability.Value == null)
+                throw new JsonException("Property is not nullable for class SpellLevel: critical_hit_probability.");
+
+            if (minPlayerLevel.IsSet && minPlayerLevel.Value == null)
+                throw new JsonException("Property is not nullable for class SpellLevel: min_player_level.");
 
             if (minRange.IsSet && minRange.Value == null)
                 throw new JsonException("Property is not nullable for class SpellLevel: min_range.");
@@ -488,13 +588,16 @@ namespace Dofusdude.Api.Model
             if (spellBreed.IsSet && spellBreed.Value == null)
                 throw new JsonException("Property is not nullable for class SpellLevel: spell_breed.");
 
+            if (previewZones.IsSet && previewZones.Value == null)
+                throw new JsonException("Property is not nullable for class SpellLevel: preview_zones.");
+
             if (effects.IsSet && effects.Value == null)
                 throw new JsonException("Property is not nullable for class SpellLevel: effects.");
 
             if (criticalEffects.IsSet && criticalEffects.Value == null)
                 throw new JsonException("Property is not nullable for class SpellLevel: critical_effects.");
 
-            return new SpellLevel(ankamaId, grade, apCost, minRange, maxRange, maxCastPerTurn, maxCastPerTarget, maxGlobalCastPerTurn, maxGlobalCastPerTarget, minCastInterval, initialCooldown, globalCooldown, ignorePrisonGlyph, spellBreed, effects, criticalEffects);
+            return new SpellLevel(ankamaId, grade, apCost, criticalHitProbability, minPlayerLevel, minRange, maxRange, maxCastPerTurn, maxCastPerTarget, maxGlobalCastPerTurn, maxGlobalCastPerTarget, minCastInterval, initialCooldown, globalCooldown, ignorePrisonGlyph, spellBreed, statesCriterion, previewZones, effects, criticalEffects);
         }
 
         /// <summary>
@@ -527,6 +630,12 @@ namespace Dofusdude.Api.Model
 
             if (spellLevel.ApCostOption.IsSet && spellLevel.ApCost == null)
                 throw new JsonException("Cannot write null property SpellLevel.ApCost to non-nullable JSON property 'ap_cost'.");
+
+            if (spellLevel.CriticalHitProbabilityOption.IsSet && spellLevel.CriticalHitProbability == null)
+                throw new JsonException("Cannot write null property SpellLevel.CriticalHitProbability to non-nullable JSON property 'critical_hit_probability'.");
+
+            if (spellLevel.MinPlayerLevelOption.IsSet && spellLevel.MinPlayerLevel == null)
+                throw new JsonException("Cannot write null property SpellLevel.MinPlayerLevel to non-nullable JSON property 'min_player_level'.");
 
             if (spellLevel.MinRangeOption.IsSet && spellLevel.MinRange == null)
                 throw new JsonException("Cannot write null property SpellLevel.MinRange to non-nullable JSON property 'min_range'.");
@@ -561,6 +670,9 @@ namespace Dofusdude.Api.Model
             if (spellLevel.SpellBreedOption.IsSet && spellLevel.SpellBreed == null)
                 throw new JsonException("Cannot write null property SpellLevel.SpellBreed to non-nullable JSON property 'spell_breed'.");
 
+            if (spellLevel.PreviewZonesOption.IsSet && spellLevel.PreviewZones == null)
+                throw new JsonException("Cannot write null property SpellLevel.PreviewZones to non-nullable JSON property 'preview_zones'.");
+
             if (spellLevel.EffectsOption.IsSet && spellLevel.Effects == null)
                 throw new JsonException("Cannot write null property SpellLevel.Effects to non-nullable JSON property 'effects'.");
 
@@ -575,6 +687,12 @@ namespace Dofusdude.Api.Model
 
             if (spellLevel.ApCostOption.IsSet)
                 writer.WriteNumber("ap_cost", spellLevel.ApCostOption.Value!.Value);
+
+            if (spellLevel.CriticalHitProbabilityOption.IsSet)
+                writer.WriteNumber("critical_hit_probability", spellLevel.CriticalHitProbabilityOption.Value!.Value);
+
+            if (spellLevel.MinPlayerLevelOption.IsSet)
+                writer.WriteNumber("min_player_level", spellLevel.MinPlayerLevelOption.Value!.Value);
 
             if (spellLevel.MinRangeOption.IsSet)
                 writer.WriteNumber("min_range", spellLevel.MinRangeOption.Value!.Value);
@@ -609,6 +727,19 @@ namespace Dofusdude.Api.Model
             if (spellLevel.SpellBreedOption.IsSet)
                 writer.WriteNumber("spell_breed", spellLevel.SpellBreedOption.Value!.Value);
 
+            if (spellLevel.StatesCriterionOption.IsSet)
+                if (spellLevel.StatesCriterionOption.Value != null)
+                {
+                    writer.WritePropertyName("states_criterion");
+                    JsonSerializer.Serialize(writer, spellLevel.StatesCriterion, jsonSerializerOptions);
+                }
+                else
+                    writer.WriteNull("states_criterion");
+            if (spellLevel.PreviewZonesOption.IsSet)
+            {
+                writer.WritePropertyName("preview_zones");
+                JsonSerializer.Serialize(writer, spellLevel.PreviewZones, jsonSerializerOptions);
+            }
             if (spellLevel.EffectsOption.IsSet)
             {
                 writer.WritePropertyName("effects");

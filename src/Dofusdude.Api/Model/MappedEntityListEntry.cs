@@ -27,7 +27,7 @@ using Dofusdude.Api.Client;
 namespace Dofusdude.Api.Model
 {
     /// <summary>
-    /// MappedEntityListEntry
+    /// Compact collection summary. A missing detail field here does not mean the resource lacks that data. Request the single-record endpoint or the collection&#39;s full fields to obtain details.
     /// </summary>
     public partial class MappedEntityListEntry : IValidatableObject
     {

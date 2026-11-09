@@ -114,9 +114,11 @@ namespace Dofusdude.Api.Client
             _jsonOptions.Converters.Add(new SpellJsonConverter());
             _jsonOptions.Converters.Add(new SpellEffectJsonConverter());
             _jsonOptions.Converters.Add(new SpellLevelJsonConverter());
+            _jsonOptions.Converters.Add(new SpellPreviewZoneJsonConverter());
             _jsonOptions.Converters.Add(new SpellScriptUsageJsonConverter());
             _jsonOptions.Converters.Add(new SpellTriggerJsonConverter());
             _jsonOptions.Converters.Add(new SpellTriggersJsonConverter());
+            _jsonOptions.Converters.Add(new SpellTypeJsonConverter());
             _jsonOptions.Converters.Add(new TargetMaskJsonConverter());
             _jsonOptions.Converters.Add(new TargetSelectorJsonConverter());
             _jsonOptions.Converters.Add(new TranslatedIdJsonConverter());
@@ -124,6 +126,7 @@ namespace Dofusdude.Api.Client
             _jsonOptions.Converters.Add(new WeaponJsonConverter());
             _jsonOptions.Converters.Add(new WeaponCombatJsonConverter());
             _jsonOptions.Converters.Add(new WorldAreaJsonConverter());
+            _jsonOptions.Converters.Add(new WorldMapReferenceJsonConverter());
             _jsonOptions.Converters.Add(new ZoneShapeJsonConverter());
             JsonSerializerOptionsProvider jsonSerializerOptionsProvider = new(_jsonOptions);
             _services.AddSingleton(jsonSerializerOptionsProvider);

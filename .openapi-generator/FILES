@@ -90,9 +90,11 @@ docs/models/RssWebhook.md
 docs/models/Spell.md
 docs/models/SpellEffect.md
 docs/models/SpellLevel.md
+docs/models/SpellPreviewZone.md
 docs/models/SpellScriptUsage.md
 docs/models/SpellTrigger.md
 docs/models/SpellTriggers.md
+docs/models/SpellType.md
 docs/models/TargetMask.md
 docs/models/TargetSelector.md
 docs/models/TranslatedId.md
@@ -100,6 +102,7 @@ docs/models/TwitterWebhook.md
 docs/models/Weapon.md
 docs/models/WeaponCombat.md
 docs/models/WorldArea.md
+docs/models/WorldMapReference.md
 docs/models/ZoneShape.md
 docs/scripts/git_push.ps1
 docs/scripts/git_push.sh
@@ -191,10 +194,12 @@ src/Dofusdude.Api.Test/Model/ResourceTests.cs
 src/Dofusdude.Api.Test/Model/RssWebhookTests.cs
 src/Dofusdude.Api.Test/Model/SpellEffectTests.cs
 src/Dofusdude.Api.Test/Model/SpellLevelTests.cs
+src/Dofusdude.Api.Test/Model/SpellPreviewZoneTests.cs
 src/Dofusdude.Api.Test/Model/SpellScriptUsageTests.cs
 src/Dofusdude.Api.Test/Model/SpellTests.cs
 src/Dofusdude.Api.Test/Model/SpellTriggerTests.cs
 src/Dofusdude.Api.Test/Model/SpellTriggersTests.cs
+src/Dofusdude.Api.Test/Model/SpellTypeTests.cs
 src/Dofusdude.Api.Test/Model/TargetMaskTests.cs
 src/Dofusdude.Api.Test/Model/TargetSelectorTests.cs
 src/Dofusdude.Api.Test/Model/TranslatedIdTests.cs
@@ -202,6 +207,7 @@ src/Dofusdude.Api.Test/Model/TwitterWebhookTests.cs
 src/Dofusdude.Api.Test/Model/WeaponCombatTests.cs
 src/Dofusdude.Api.Test/Model/WeaponTests.cs
 src/Dofusdude.Api.Test/Model/WorldAreaTests.cs
+src/Dofusdude.Api.Test/Model/WorldMapReferenceTests.cs
 src/Dofusdude.Api.Test/Model/ZoneShapeTests.cs
 src/Dofusdude.Api.Test/README.md
 src/Dofusdude.Api/Api/AlmanaxApi.cs
@@ -313,9 +319,11 @@ src/Dofusdude.Api/Model/RssWebhook.cs
 src/Dofusdude.Api/Model/Spell.cs
 src/Dofusdude.Api/Model/SpellEffect.cs
 src/Dofusdude.Api/Model/SpellLevel.cs
+src/Dofusdude.Api/Model/SpellPreviewZone.cs
 src/Dofusdude.Api/Model/SpellScriptUsage.cs
 src/Dofusdude.Api/Model/SpellTrigger.cs
 src/Dofusdude.Api/Model/SpellTriggers.cs
+src/Dofusdude.Api/Model/SpellType.cs
 src/Dofusdude.Api/Model/TargetMask.cs
 src/Dofusdude.Api/Model/TargetSelector.cs
 src/Dofusdude.Api/Model/TranslatedId.cs
@@ -323,5 +331,6 @@ src/Dofusdude.Api/Model/TwitterWebhook.cs
 src/Dofusdude.Api/Model/Weapon.cs
 src/Dofusdude.Api/Model/WeaponCombat.cs
 src/Dofusdude.Api/Model/WorldArea.cs
+src/Dofusdude.Api/Model/WorldMapReference.cs
 src/Dofusdude.Api/Model/ZoneShape.cs
 src/Dofusdude.Api/README.md

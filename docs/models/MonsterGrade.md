@@ -1,11 +1,12 @@
 # Dofusdude.Api.Model.MonsterGrade
+One variant of this monster, combining combat level, statistics and spell assignments. Match grade-specific drop rates using its grade value. Do not use it to infer a spell grade.
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Grade** | **int** |  | 
-**Level** | **int** |  | 
+**Grade** | **int** | Number identifying this variant within the monster. Not the combat level, array position or grade of an assigned spell. | 
+**Level** | **int** | Combat level of this monster variant. Distinct from its grade number. | 
 **Spells** | [**List&lt;MonsterGradeSpellsInner&gt;**](MonsterGradeSpellsInner.md) | Spells assigned to this exact monster grade. | 
 **LifePoints** | **int** |  | [optional] 
 **ActionPoints** | **int** |  | [optional] 

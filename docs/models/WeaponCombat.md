@@ -1,4 +1,5 @@
 # Dofusdude.Api.Model.WeaponCombat
+Weapon attack targeting and area geometry. Available for weapon equipment. This is separate from spell effect zones.
 
 ## Properties
 

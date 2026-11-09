@@ -59,7 +59,7 @@ Get a range of dates, defaults to today + 6 following days but can specified by 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **language** | **string** | code |  |
-| **filterBonusType** | **string** | ids from meta/{language}/almanax/bonuses | [optional]  |
+| **filterBonusType** | **string** | Optional bonus ID from meta/{language}/almanax/bonuses. Restricts the selected date range and can produce no results when that bonus does not occur in the range. | [optional]  |
 | **rangeFrom** | **DateOnly** | yyyy-mm-dd | [optional]  |
 | **rangeTo** | **DateOnly** | yyyy-mm-dd | [optional]  |
 | **rangeSize** | **int** | Size of the returned range. Disable to fully use the range by setting size to -1. | [optional]  |

@@ -27,15 +27,15 @@ using Dofusdude.Api.Client;
 namespace Dofusdude.Api.Model
 {
     /// <summary>
-    /// MonsterGrade
+    /// One variant of this monster, combining combat level, statistics and spell assignments. Match grade-specific drop rates using its grade value. Do not use it to infer a spell grade.
     /// </summary>
     public partial class MonsterGrade : IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="MonsterGrade" /> class.
         /// </summary>
-        /// <param name="grade">grade</param>
-        /// <param name="level">level</param>
+        /// <param name="grade">Number identifying this variant within the monster. Not the combat level, array position or grade of an assigned spell.</param>
+        /// <param name="level">Combat level of this monster variant. Distinct from its grade number.</param>
         /// <param name="spells">Spells assigned to this exact monster grade.</param>
         /// <param name="lifePoints">lifePoints</param>
         /// <param name="actionPoints">actionPoints</param>
@@ -87,14 +87,16 @@ namespace Dofusdude.Api.Model
         partial void OnCreated();
 
         /// <summary>
-        /// Gets or Sets Grade
+        /// Number identifying this variant within the monster. Not the combat level, array position or grade of an assigned spell.
         /// </summary>
+        /// <value>Number identifying this variant within the monster. Not the combat level, array position or grade of an assigned spell.</value>
         [JsonPropertyName("grade")]
         public int Grade { get; set; }
 
         /// <summary>
-        /// Gets or Sets Level
+        /// Combat level of this monster variant. Distinct from its grade number.
         /// </summary>
+        /// <value>Combat level of this monster variant. Distinct from its grade number.</value>
         [JsonPropertyName("level")]
         public int Level { get; set; }
 

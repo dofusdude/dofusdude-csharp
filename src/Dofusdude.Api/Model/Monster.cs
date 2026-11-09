@@ -37,8 +37,8 @@ namespace Dofusdude.Api.Model
         /// <param name="ankamaId">ankamaId</param>
         /// <param name="name">name</param>
         /// <param name="race">race</param>
-        /// <param name="grades">Monster statistics and spells grouped by the monster grade that uses them.</param>
-        /// <param name="spawnLocations">Spawn subareas taken from the monster&#39;s authoritative subarea list.</param>
+        /// <param name="grades">Variants of this monster. Each has its own combat level, statistics and assigned spells. The monster grade number is not a spell grade number or combat level.</param>
+        /// <param name="spawnLocations">Known spawn subareas and their geographic parents. This is not live population data or a per-map spawn probability. Maps listed within a subarea are not guaranteed individual spawn points.</param>
         /// <param name="drops">drops</param>
         /// <param name="imageUrls">imageUrls</param>
         /// <param name="globalDrops">globalDrops</param>
@@ -95,16 +95,16 @@ namespace Dofusdude.Api.Model
         public MonsterRace Race { get; set; }
 
         /// <summary>
-        /// Monster statistics and spells grouped by the monster grade that uses them.
+        /// Variants of this monster. Each has its own combat level, statistics and assigned spells. The monster grade number is not a spell grade number or combat level.
         /// </summary>
-        /// <value>Monster statistics and spells grouped by the monster grade that uses them.</value>
+        /// <value>Variants of this monster. Each has its own combat level, statistics and assigned spells. The monster grade number is not a spell grade number or combat level.</value>
         [JsonPropertyName("grades")]
         public List<MonsterGrade> Grades { get; set; }
 
         /// <summary>
-        /// Spawn subareas taken from the monster&#39;s authoritative subarea list.
+        /// Known spawn subareas and their geographic parents. This is not live population data or a per-map spawn probability. Maps listed within a subarea are not guaranteed individual spawn points.
         /// </summary>
-        /// <value>Spawn subareas taken from the monster&#39;s authoritative subarea list.</value>
+        /// <value>Known spawn subareas and their geographic parents. This is not live population data or a per-map spawn probability. Maps listed within a subarea are not guaranteed individual spawn points.</value>
         [JsonPropertyName("spawn_locations")]
         public List<MonsterSpawnLocation> SpawnLocations { get; set; }
 

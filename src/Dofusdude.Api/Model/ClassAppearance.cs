@@ -27,7 +27,7 @@ using Dofusdude.Api.Client;
 namespace Dofusdude.Api.Model
 {
     /// <summary>
-    /// ClassAppearance
+    /// Structured client appearance data for an asset renderer. Bone and skin IDs are not image URLs. Use the parent record&#39;s image_urls for ready-to-display artwork.
     /// </summary>
     public partial class ClassAppearance : IValidatableObject
     {

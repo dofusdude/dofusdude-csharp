@@ -27,7 +27,7 @@ using Dofusdude.Api.Client;
 namespace Dofusdude.Api.Model
 {
     /// <summary>
-    /// MonsterSpellRelationship
+    /// Compact spell assignment inside one monster grade. The assignment&#39;s grade identifies the spell variant, not the enclosing monster variant. Follow url unchanged to retrieve it or use an include option to embed it.
     /// </summary>
     public partial class MonsterSpellRelationship : IValidatableObject
     {
@@ -36,7 +36,7 @@ namespace Dofusdude.Api.Model
         /// </summary>
         /// <param name="ankamaId">ankamaId</param>
         /// <param name="name">name</param>
-        /// <param name="grade">The spell grade assigned to this monster grade.</param>
+        /// <param name="grade">Grade of the assigned spell. It does not need to equal the enclosing MonsterGrade.grade.</param>
         /// <param name="url">URL for the assigned spell grade. Includes the &#x60;grade&#x60; query parameter.</param>
         /// <param name="imageUrls">imageUrls</param>
         [JsonConstructor]
@@ -65,9 +65,9 @@ namespace Dofusdude.Api.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// The spell grade assigned to this monster grade.
+        /// Grade of the assigned spell. It does not need to equal the enclosing MonsterGrade.grade.
         /// </summary>
-        /// <value>The spell grade assigned to this monster grade.</value>
+        /// <value>Grade of the assigned spell. It does not need to equal the enclosing MonsterGrade.grade.</value>
         [JsonPropertyName("grade")]
         public int Grade { get; set; }
 

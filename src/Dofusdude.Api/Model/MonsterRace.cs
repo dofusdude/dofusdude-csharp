@@ -27,7 +27,7 @@ using Dofusdude.Api.Client;
 namespace Dofusdude.Api.Model
 {
     /// <summary>
-    /// MonsterRace
+    /// Monster taxonomy. Race is the monster&#39;s family and super_race is the broader grouping. Neither is a playable class or a monster grade.
     /// </summary>
     public partial class MonsterRace : IValidatableObject
     {

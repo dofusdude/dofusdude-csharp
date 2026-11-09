@@ -37,7 +37,7 @@ namespace Dofusdude.Api.Model
         /// <param name="ankamaId">ankamaId</param>
         /// <param name="positionX">positionX</param>
         /// <param name="positionY">positionY</param>
-        /// <param name="worldMapId">worldMapId</param>
+        /// <param name="worldMapId">World-map context for these coordinates. Coordinates alone are not a globally unique map identifier.</param>
         [JsonConstructor]
         public MonsterSpawnLocationSubareaMapsInner(int ankamaId, int positionX, int positionY, int worldMapId)
         {
@@ -69,8 +69,9 @@ namespace Dofusdude.Api.Model
         public int PositionY { get; set; }
 
         /// <summary>
-        /// Gets or Sets WorldMapId
+        /// World-map context for these coordinates. Coordinates alone are not a globally unique map identifier.
         /// </summary>
+        /// <value>World-map context for these coordinates. Coordinates alone are not a globally unique map identifier.</value>
         [JsonPropertyName("world_map_id")]
         public int WorldMapId { get; set; }
 

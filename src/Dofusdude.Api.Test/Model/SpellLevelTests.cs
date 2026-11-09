@@ -82,6 +82,24 @@ namespace Dofusdude.Api.Test.Model
         }
 
         /// <summary>
+        /// Test the property 'CriticalHitProbability'
+        /// </summary>
+        [Fact]
+        public void CriticalHitProbabilityTest()
+        {
+            // TODO unit test for the property 'CriticalHitProbability'
+        }
+
+        /// <summary>
+        /// Test the property 'MinPlayerLevel'
+        /// </summary>
+        [Fact]
+        public void MinPlayerLevelTest()
+        {
+            // TODO unit test for the property 'MinPlayerLevel'
+        }
+
+        /// <summary>
         /// Test the property 'MinRange'
         /// </summary>
         [Fact]
@@ -178,6 +196,24 @@ namespace Dofusdude.Api.Test.Model
         public void SpellBreedTest()
         {
             // TODO unit test for the property 'SpellBreed'
+        }
+
+        /// <summary>
+        /// Test the property 'StatesCriterion'
+        /// </summary>
+        [Fact]
+        public void StatesCriterionTest()
+        {
+            // TODO unit test for the property 'StatesCriterion'
+        }
+
+        /// <summary>
+        /// Test the property 'PreviewZones'
+        /// </summary>
+        [Fact]
+        public void PreviewZonesTest()
+        {
+            // TODO unit test for the property 'PreviewZones'
         }
 
         /// <summary>

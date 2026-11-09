@@ -27,7 +27,7 @@ using Dofusdude.Api.Client;
 namespace Dofusdude.Api.Model
 {
     /// <summary>
-    /// WeaponCombat
+    /// Weapon attack targeting and area geometry. Available for weapon equipment. This is separate from spell effect zones.
     /// </summary>
     public partial class WeaponCombat : IValidatableObject
     {

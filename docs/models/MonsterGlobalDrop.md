@@ -1,4 +1,5 @@
 # Dofusdude.Api.Model.MonsterGlobalDrop
+A separate global-drop entry with a base percentage range. It is not the per-monster-grade rates table and does not by itself define a final player-specific drop chance.
 
 ## Properties
 

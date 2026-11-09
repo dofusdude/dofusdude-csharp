@@ -74,7 +74,7 @@ namespace Dofusdude.Api.Api
         /// </remarks>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="language">code</param>
-        /// <param name="filterBonusType">ids from meta/{language}/almanax/bonuses (optional)</param>
+        /// <param name="filterBonusType">Optional bonus ID from meta/{language}/almanax/bonuses. Restricts the selected date range and can produce no results when that bonus does not occur in the range. (optional)</param>
         /// <param name="rangeFrom">yyyy-mm-dd (optional)</param>
         /// <param name="rangeTo">yyyy-mm-dd (optional)</param>
         /// <param name="rangeSize">Size of the returned range. Disable to fully use the range by setting size to -1. (optional)</param>
@@ -91,7 +91,7 @@ namespace Dofusdude.Api.Api
         /// Get a range of dates, defaults to today + 6 following days but can specified by the query parameters.   filter[bonus_type] can be used seperately and does not have an effect on the other parameters.  range[from] changes the start date, everything else defaults to 6 following dates from this start date.  range[to] when used without anything else, it will use today as start date and this parameter as end. All ranges are inclusive.  range[from] + range[to] &#x3D; inclusive range over the specified dates, should never be farther apart than 35 days.  range[from|to] + range[size] no need to specify the date, just following days with [from] (0 is today) or go backwards in time with only [to] and [size].  Not all combinations are listed but this should give you an idea how to they could work.
         /// </remarks>
         /// <param name="language">code</param>
-        /// <param name="filterBonusType">ids from meta/{language}/almanax/bonuses (optional)</param>
+        /// <param name="filterBonusType">Optional bonus ID from meta/{language}/almanax/bonuses. Restricts the selected date range and can produce no results when that bonus does not occur in the range. (optional)</param>
         /// <param name="rangeFrom">yyyy-mm-dd (optional)</param>
         /// <param name="rangeTo">yyyy-mm-dd (optional)</param>
         /// <param name="rangeSize">Size of the returned range. Disable to fully use the range by setting size to -1. (optional)</param>
@@ -574,7 +574,7 @@ namespace Dofusdude.Api.Api
         /// Almanax Range Get a range of dates, defaults to today + 6 following days but can specified by the query parameters.   filter[bonus_type] can be used seperately and does not have an effect on the other parameters.  range[from] changes the start date, everything else defaults to 6 following dates from this start date.  range[to] when used without anything else, it will use today as start date and this parameter as end. All ranges are inclusive.  range[from] + range[to] &#x3D; inclusive range over the specified dates, should never be farther apart than 35 days.  range[from|to] + range[size] no need to specify the date, just following days with [from] (0 is today) or go backwards in time with only [to] and [size].  Not all combinations are listed but this should give you an idea how to they could work.
         /// </summary>
         /// <param name="language">code</param>
-        /// <param name="filterBonusType">ids from meta/{language}/almanax/bonuses (optional)</param>
+        /// <param name="filterBonusType">Optional bonus ID from meta/{language}/almanax/bonuses. Restricts the selected date range and can produce no results when that bonus does not occur in the range. (optional)</param>
         /// <param name="rangeFrom">yyyy-mm-dd (optional)</param>
         /// <param name="rangeTo">yyyy-mm-dd (optional)</param>
         /// <param name="rangeSize">Size of the returned range. Disable to fully use the range by setting size to -1. (optional)</param>
@@ -599,7 +599,7 @@ namespace Dofusdude.Api.Api
         /// </summary>
         /// <exception cref="ApiException">Thrown when fails to make API call</exception>
         /// <param name="language">code</param>
-        /// <param name="filterBonusType">ids from meta/{language}/almanax/bonuses (optional)</param>
+        /// <param name="filterBonusType">Optional bonus ID from meta/{language}/almanax/bonuses. Restricts the selected date range and can produce no results when that bonus does not occur in the range. (optional)</param>
         /// <param name="rangeFrom">yyyy-mm-dd (optional)</param>
         /// <param name="rangeTo">yyyy-mm-dd (optional)</param>
         /// <param name="rangeSize">Size of the returned range. Disable to fully use the range by setting size to -1. (optional)</param>

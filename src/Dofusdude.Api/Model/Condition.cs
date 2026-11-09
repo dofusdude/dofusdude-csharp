@@ -34,15 +34,29 @@ namespace Dofusdude.Api.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="Condition" /> class.
         /// </summary>
-        /// <param name="operator">operator</param>
+        /// <param name="operator">Comparison to apply to the interpreted requirement value.</param>
         /// <param name="intValue">intValue</param>
         /// <param name="element">element</param>
+        /// <param name="kind">Interpreted requirement category, such as profession_level or item_received_age. Use this with the operator, values and references rather than decoding original condition tokens.</param>
+        /// <param name="unit">Unit associated with the requirement value when the interpreted condition supplies one.</param>
+        /// <param name="quantity">quantity</param>
+        /// <param name="stringValue">stringValue</param>
+        /// <param name="valueLabel">valueLabel</param>
+        /// <param name="reference">reference</param>
+        /// <param name="secondaryReference">secondaryReference</param>
         [JsonConstructor]
-        public Condition(Option<string?> @operator = default, Option<int?> intValue = default, Option<TranslatedId?> element = default)
+        public Condition(Option<string?> @operator = default, Option<int?> intValue = default, Option<TranslatedId?> element = default, Option<string?> kind = default, Option<string?> unit = default, Option<int?> quantity = default, Option<string?> stringValue = default, Option<string?> valueLabel = default, Option<CombatReference?> reference = default, Option<CombatReference?> secondaryReference = default)
         {
             OperatorOption = @operator;
             IntValueOption = intValue;
             ElementOption = element;
+            KindOption = kind;
+            UnitOption = unit;
+            QuantityOption = quantity;
+            StringValueOption = stringValue;
+            ValueLabelOption = valueLabel;
+            ReferenceOption = reference;
+            SecondaryReferenceOption = secondaryReference;
             OnCreated();
         }
 
@@ -56,8 +70,9 @@ namespace Dofusdude.Api.Model
         public Option<string?> OperatorOption { get; private set; }
 
         /// <summary>
-        /// Gets or Sets Operator
+        /// Comparison to apply to the interpreted requirement value.
         /// </summary>
+        /// <value>Comparison to apply to the interpreted requirement value.</value>
         [JsonPropertyName("operator")]
         public string? Operator { get { return this.OperatorOption.Value; } set { this.OperatorOption = new(value); } }
 
@@ -88,6 +103,99 @@ namespace Dofusdude.Api.Model
         public TranslatedId? Element { get { return this.ElementOption.Value; } set { this.ElementOption = new(value); } }
 
         /// <summary>
+        /// Used to track the state of Kind
+        /// </summary>
+        [JsonIgnore]
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+        public Option<string?> KindOption { get; private set; }
+
+        /// <summary>
+        /// Interpreted requirement category, such as profession_level or item_received_age. Use this with the operator, values and references rather than decoding original condition tokens.
+        /// </summary>
+        /// <value>Interpreted requirement category, such as profession_level or item_received_age. Use this with the operator, values and references rather than decoding original condition tokens.</value>
+        [JsonPropertyName("kind")]
+        public string? Kind { get { return this.KindOption.Value; } set { this.KindOption = new(value); } }
+
+        /// <summary>
+        /// Used to track the state of Unit
+        /// </summary>
+        [JsonIgnore]
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+        public Option<string?> UnitOption { get; private set; }
+
+        /// <summary>
+        /// Unit associated with the requirement value when the interpreted condition supplies one.
+        /// </summary>
+        /// <value>Unit associated with the requirement value when the interpreted condition supplies one.</value>
+        [JsonPropertyName("unit")]
+        public string? Unit { get { return this.UnitOption.Value; } set { this.UnitOption = new(value); } }
+
+        /// <summary>
+        /// Used to track the state of Quantity
+        /// </summary>
+        [JsonIgnore]
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+        public Option<int?> QuantityOption { get; private set; }
+
+        /// <summary>
+        /// Gets or Sets Quantity
+        /// </summary>
+        [JsonPropertyName("quantity")]
+        public int? Quantity { get { return this.QuantityOption.Value; } set { this.QuantityOption = new(value); } }
+
+        /// <summary>
+        /// Used to track the state of StringValue
+        /// </summary>
+        [JsonIgnore]
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+        public Option<string?> StringValueOption { get; private set; }
+
+        /// <summary>
+        /// Gets or Sets StringValue
+        /// </summary>
+        [JsonPropertyName("string_value")]
+        public string? StringValue { get { return this.StringValueOption.Value; } set { this.StringValueOption = new(value); } }
+
+        /// <summary>
+        /// Used to track the state of ValueLabel
+        /// </summary>
+        [JsonIgnore]
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+        public Option<string?> ValueLabelOption { get; private set; }
+
+        /// <summary>
+        /// Gets or Sets ValueLabel
+        /// </summary>
+        [JsonPropertyName("value_label")]
+        public string? ValueLabel { get { return this.ValueLabelOption.Value; } set { this.ValueLabelOption = new(value); } }
+
+        /// <summary>
+        /// Used to track the state of Reference
+        /// </summary>
+        [JsonIgnore]
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+        public Option<CombatReference?> ReferenceOption { get; private set; }
+
+        /// <summary>
+        /// Gets or Sets Reference
+        /// </summary>
+        [JsonPropertyName("reference")]
+        public CombatReference? Reference { get { return this.ReferenceOption.Value; } set { this.ReferenceOption = new(value); } }
+
+        /// <summary>
+        /// Used to track the state of SecondaryReference
+        /// </summary>
+        [JsonIgnore]
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+        public Option<CombatReference?> SecondaryReferenceOption { get; private set; }
+
+        /// <summary>
+        /// Gets or Sets SecondaryReference
+        /// </summary>
+        [JsonPropertyName("secondary_reference")]
+        public CombatReference? SecondaryReference { get { return this.SecondaryReferenceOption.Value; } set { this.SecondaryReferenceOption = new(value); } }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -98,6 +206,13 @@ namespace Dofusdude.Api.Model
             sb.Append("  Operator: ").Append(Operator).Append("\n");
             sb.Append("  IntValue: ").Append(IntValue).Append("\n");
             sb.Append("  Element: ").Append(Element).Append("\n");
+            sb.Append("  Kind: ").Append(Kind).Append("\n");
+            sb.Append("  Unit: ").Append(Unit).Append("\n");
+            sb.Append("  Quantity: ").Append(Quantity).Append("\n");
+            sb.Append("  StringValue: ").Append(StringValue).Append("\n");
+            sb.Append("  ValueLabel: ").Append(ValueLabel).Append("\n");
+            sb.Append("  Reference: ").Append(Reference).Append("\n");
+            sb.Append("  SecondaryReference: ").Append(SecondaryReference).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -148,6 +263,13 @@ namespace Dofusdude.Api.Model
             Option<string?> varOperator = default;
             Option<int?> intValue = default;
             Option<TranslatedId?> element = default;
+            Option<string?> kind = default;
+            Option<string?> unit = default;
+            Option<int?> quantity = default;
+            Option<string?> stringValue = default;
+            Option<string?> valueLabel = default;
+            Option<CombatReference?> reference = default;
+            Option<CombatReference?> secondaryReference = default;
 
             while (utf8JsonReader.Read())
             {
@@ -173,6 +295,27 @@ namespace Dofusdude.Api.Model
                         case "element":
                             element = new Option<TranslatedId?>(JsonSerializer.Deserialize<TranslatedId>(ref utf8JsonReader, jsonSerializerOptions)!);
                             break;
+                        case "kind":
+                            kind = new Option<string?>(utf8JsonReader.GetString()!);
+                            break;
+                        case "unit":
+                            unit = new Option<string?>(utf8JsonReader.GetString()!);
+                            break;
+                        case "quantity":
+                            quantity = new Option<int?>(utf8JsonReader.TokenType == JsonTokenType.Null ? (int?)null : utf8JsonReader.GetInt32());
+                            break;
+                        case "string_value":
+                            stringValue = new Option<string?>(utf8JsonReader.GetString()!);
+                            break;
+                        case "value_label":
+                            valueLabel = new Option<string?>(utf8JsonReader.GetString()!);
+                            break;
+                        case "reference":
+                            reference = new Option<CombatReference?>(JsonSerializer.Deserialize<CombatReference>(ref utf8JsonReader, jsonSerializerOptions)!);
+                            break;
+                        case "secondary_reference":
+                            secondaryReference = new Option<CombatReference?>(JsonSerializer.Deserialize<CombatReference>(ref utf8JsonReader, jsonSerializerOptions)!);
+                            break;
                         default:
                             break;
                     }
@@ -188,7 +331,28 @@ namespace Dofusdude.Api.Model
             if (element.IsSet && element.Value == null)
                 throw new JsonException("Property is not nullable for class Condition: element.");
 
-            return new Condition(varOperator, intValue, element);
+            if (kind.IsSet && kind.Value == null)
+                throw new JsonException("Property is not nullable for class Condition: kind.");
+
+            if (unit.IsSet && unit.Value == null)
+                throw new JsonException("Property is not nullable for class Condition: unit.");
+
+            if (quantity.IsSet && quantity.Value == null)
+                throw new JsonException("Property is not nullable for class Condition: quantity.");
+
+            if (stringValue.IsSet && stringValue.Value == null)
+                throw new JsonException("Property is not nullable for class Condition: string_value.");
+
+            if (valueLabel.IsSet && valueLabel.Value == null)
+                throw new JsonException("Property is not nullable for class Condition: value_label.");
+
+            if (reference.IsSet && reference.Value == null)
+                throw new JsonException("Property is not nullable for class Condition: reference.");
+
+            if (secondaryReference.IsSet && secondaryReference.Value == null)
+                throw new JsonException("Property is not nullable for class Condition: secondary_reference.");
+
+            return new Condition(varOperator, intValue, element, kind, unit, quantity, stringValue, valueLabel, reference, secondaryReference);
         }
 
         /// <summary>
@@ -222,6 +386,27 @@ namespace Dofusdude.Api.Model
             if (condition.ElementOption.IsSet && condition.Element == null)
                 throw new JsonException("Cannot write null property Condition.Element to non-nullable JSON property 'element'.");
 
+            if (condition.KindOption.IsSet && condition.Kind == null)
+                throw new JsonException("Cannot write null property Condition.Kind to non-nullable JSON property 'kind'.");
+
+            if (condition.UnitOption.IsSet && condition.Unit == null)
+                throw new JsonException("Cannot write null property Condition.Unit to non-nullable JSON property 'unit'.");
+
+            if (condition.QuantityOption.IsSet && condition.Quantity == null)
+                throw new JsonException("Cannot write null property Condition.Quantity to non-nullable JSON property 'quantity'.");
+
+            if (condition.StringValueOption.IsSet && condition.StringValue == null)
+                throw new JsonException("Cannot write null property Condition.StringValue to non-nullable JSON property 'string_value'.");
+
+            if (condition.ValueLabelOption.IsSet && condition.ValueLabel == null)
+                throw new JsonException("Cannot write null property Condition.ValueLabel to non-nullable JSON property 'value_label'.");
+
+            if (condition.ReferenceOption.IsSet && condition.Reference == null)
+                throw new JsonException("Cannot write null property Condition.Reference to non-nullable JSON property 'reference'.");
+
+            if (condition.SecondaryReferenceOption.IsSet && condition.SecondaryReference == null)
+                throw new JsonException("Cannot write null property Condition.SecondaryReference to non-nullable JSON property 'secondary_reference'.");
+
             if (condition.OperatorOption.IsSet)
                 writer.WriteString("operator", condition.Operator);
 
@@ -232,6 +417,31 @@ namespace Dofusdude.Api.Model
             {
                 writer.WritePropertyName("element");
                 JsonSerializer.Serialize(writer, condition.Element, jsonSerializerOptions);
+            }
+            if (condition.KindOption.IsSet)
+                writer.WriteString("kind", condition.Kind);
+
+            if (condition.UnitOption.IsSet)
+                writer.WriteString("unit", condition.Unit);
+
+            if (condition.QuantityOption.IsSet)
+                writer.WriteNumber("quantity", condition.QuantityOption.Value!.Value);
+
+            if (condition.StringValueOption.IsSet)
+                writer.WriteString("string_value", condition.StringValue);
+
+            if (condition.ValueLabelOption.IsSet)
+                writer.WriteString("value_label", condition.ValueLabel);
+
+            if (condition.ReferenceOption.IsSet)
+            {
+                writer.WritePropertyName("reference");
+                JsonSerializer.Serialize(writer, condition.Reference, jsonSerializerOptions);
+            }
+            if (condition.SecondaryReferenceOption.IsSet)
+            {
+                writer.WritePropertyName("secondary_reference");
+                JsonSerializer.Serialize(writer, condition.SecondaryReference, jsonSerializerOptions);
             }
         }
     }

@@ -27,7 +27,7 @@ using Dofusdude.Api.Client;
 namespace Dofusdude.Api.Model
 {
     /// <summary>
-    /// MonsterDrop
+    /// A possible item drop with base rates indexed by monster grade. Final player-specific chances also depend on conditions and game modifiers.
     /// </summary>
     public partial class MonsterDrop : IValidatableObject
     {
@@ -35,8 +35,8 @@ namespace Dofusdude.Api.Model
         /// Initializes a new instance of the <see cref="MonsterDrop" /> class.
         /// </summary>
         /// <param name="item">item</param>
-        /// <param name="ratesPercent">Base drop percentage for each monster grade.</param>
-        /// <param name="hasConditions">hasConditions</param>
+        /// <param name="ratesPercent">Base drop percentages indexed by MonsterGrade.grade, not spell grade or array position. A value of 5 means 5 percent, not 0.05 percent. These are not spawn percentages.</param>
+        /// <param name="hasConditions">The source reports restrictions. Can be true without a complete client-side condition tree because server-only predicates are not exposed.</param>
         /// <param name="dropId">dropId</param>
         /// <param name="count">count</param>
         /// <param name="condition">condition</param>
@@ -67,15 +67,16 @@ namespace Dofusdude.Api.Model
         public CombatReference Item { get; set; }
 
         /// <summary>
-        /// Base drop percentage for each monster grade.
+        /// Base drop percentages indexed by MonsterGrade.grade, not spell grade or array position. A value of 5 means 5 percent, not 0.05 percent. These are not spawn percentages.
         /// </summary>
-        /// <value>Base drop percentage for each monster grade.</value>
+        /// <value>Base drop percentages indexed by MonsterGrade.grade, not spell grade or array position. A value of 5 means 5 percent, not 0.05 percent. These are not spawn percentages.</value>
         [JsonPropertyName("rates_percent")]
         public List<MonsterDropRatesPercentInner> RatesPercent { get; set; }
 
         /// <summary>
-        /// Gets or Sets HasConditions
+        /// The source reports restrictions. Can be true without a complete client-side condition tree because server-only predicates are not exposed.
         /// </summary>
+        /// <value>The source reports restrictions. Can be true without a complete client-side condition tree because server-only predicates are not exposed.</value>
         [JsonPropertyName("has_conditions")]
         public bool HasConditions { get; set; }
 

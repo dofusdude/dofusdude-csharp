@@ -80,5 +80,68 @@ namespace Dofusdude.Api.Test.Model
         {
             // TODO unit test for the property 'Element'
         }
+
+        /// <summary>
+        /// Test the property 'Kind'
+        /// </summary>
+        [Fact]
+        public void KindTest()
+        {
+            // TODO unit test for the property 'Kind'
+        }
+
+        /// <summary>
+        /// Test the property 'Unit'
+        /// </summary>
+        [Fact]
+        public void UnitTest()
+        {
+            // TODO unit test for the property 'Unit'
+        }
+
+        /// <summary>
+        /// Test the property 'Quantity'
+        /// </summary>
+        [Fact]
+        public void QuantityTest()
+        {
+            // TODO unit test for the property 'Quantity'
+        }
+
+        /// <summary>
+        /// Test the property 'StringValue'
+        /// </summary>
+        [Fact]
+        public void StringValueTest()
+        {
+            // TODO unit test for the property 'StringValue'
+        }
+
+        /// <summary>
+        /// Test the property 'ValueLabel'
+        /// </summary>
+        [Fact]
+        public void ValueLabelTest()
+        {
+            // TODO unit test for the property 'ValueLabel'
+        }
+
+        /// <summary>
+        /// Test the property 'Reference'
+        /// </summary>
+        [Fact]
+        public void ReferenceTest()
+        {
+            // TODO unit test for the property 'Reference'
+        }
+
+        /// <summary>
+        /// Test the property 'SecondaryReference'
+        /// </summary>
+        [Fact]
+        public void SecondaryReferenceTest()
+        {
+            // TODO unit test for the property 'SecondaryReference'
+        }
     }
 }

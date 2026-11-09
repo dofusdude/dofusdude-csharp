@@ -36,19 +36,20 @@ namespace Dofusdude.Api.Model
         /// </summary>
         /// <param name="ankamaId">ankamaId</param>
         /// <param name="name">name</param>
-        /// <param name="levels">levels</param>
+        /// <param name="levels">Available spell grades. Despite the field name, entries are not player levels. A grade-filtered detail response contains only the requested entry while retaining the parent spell object.</param>
         /// <param name="description">description</param>
         /// <param name="iconId">iconId</param>
         /// <param name="adminName">adminName</param>
         /// <param name="order">order</param>
         /// <param name="imageUrls">imageUrls</param>
         /// <param name="type">type</param>
-        /// <param name="classes">classes</param>
-        /// <param name="monsters">monsters</param>
+        /// <param name="basePreviewZone">basePreviewZone</param>
+        /// <param name="classes">Reverse references to playable classes associated with this spell. These are compact references, not complete class documents.</param>
+        /// <param name="monsters">Reverse references to monsters associated with this spell. Use a monster&#39;s grade-specific assignments to determine which spell grade it uses.</param>
         /// <param name="scripts">scripts</param>
         /// <param name="criticalScripts">criticalScripts</param>
         [JsonConstructor]
-        public Spell(int ankamaId, string name, List<SpellLevel> levels, Option<string?> description = default, Option<int?> iconId = default, Option<string?> adminName = default, Option<int?> order = default, Option<Images?> imageUrls = default, Option<CombatReference?> type = default, Option<List<CombatReference>?> classes = default, Option<List<CombatReference>?> monsters = default, Option<List<SpellScriptUsage>?> scripts = default, Option<List<SpellScriptUsage>?> criticalScripts = default)
+        public Spell(int ankamaId, string name, List<SpellLevel> levels, Option<string?> description = default, Option<int?> iconId = default, Option<string?> adminName = default, Option<int?> order = default, Option<Images?> imageUrls = default, Option<SpellType?> type = default, Option<EffectZone?> basePreviewZone = default, Option<List<CombatReference>?> classes = default, Option<List<CombatReference>?> monsters = default, Option<List<SpellScriptUsage>?> scripts = default, Option<List<SpellScriptUsage>?> criticalScripts = default)
         {
             AnkamaId = ankamaId;
             Name = name;
@@ -59,6 +60,7 @@ namespace Dofusdude.Api.Model
             OrderOption = order;
             ImageUrlsOption = imageUrls;
             TypeOption = type;
+            BasePreviewZoneOption = basePreviewZone;
             ClassesOption = classes;
             MonstersOption = monsters;
             ScriptsOption = scripts;
@@ -81,8 +83,9 @@ namespace Dofusdude.Api.Model
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets Levels
+        /// Available spell grades. Despite the field name, entries are not player levels. A grade-filtered detail response contains only the requested entry while retaining the parent spell object.
         /// </summary>
+        /// <value>Available spell grades. Despite the field name, entries are not player levels. A grade-filtered detail response contains only the requested entry while retaining the parent spell object.</value>
         [JsonPropertyName("levels")]
         public List<SpellLevel> Levels { get; set; }
 
@@ -156,13 +159,26 @@ namespace Dofusdude.Api.Model
         /// </summary>
         [JsonIgnore]
         [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
-        public Option<CombatReference?> TypeOption { get; private set; }
+        public Option<SpellType?> TypeOption { get; private set; }
 
         /// <summary>
         /// Gets or Sets Type
         /// </summary>
         [JsonPropertyName("type")]
-        public CombatReference? Type { get { return this.TypeOption.Value; } set { this.TypeOption = new(value); } }
+        public SpellType? Type { get { return this.TypeOption.Value; } set { this.TypeOption = new(value); } }
+
+        /// <summary>
+        /// Used to track the state of BasePreviewZone
+        /// </summary>
+        [JsonIgnore]
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+        public Option<EffectZone?> BasePreviewZoneOption { get; private set; }
+
+        /// <summary>
+        /// Gets or Sets BasePreviewZone
+        /// </summary>
+        [JsonPropertyName("base_preview_zone")]
+        public EffectZone? BasePreviewZone { get { return this.BasePreviewZoneOption.Value; } set { this.BasePreviewZoneOption = new(value); } }
 
         /// <summary>
         /// Used to track the state of Classes
@@ -172,8 +188,9 @@ namespace Dofusdude.Api.Model
         public Option<List<CombatReference>?> ClassesOption { get; private set; }
 
         /// <summary>
-        /// Gets or Sets Classes
+        /// Reverse references to playable classes associated with this spell. These are compact references, not complete class documents.
         /// </summary>
+        /// <value>Reverse references to playable classes associated with this spell. These are compact references, not complete class documents.</value>
         [JsonPropertyName("classes")]
         public List<CombatReference>? Classes { get { return this.ClassesOption.Value; } set { this.ClassesOption = new(value); } }
 
@@ -185,8 +202,9 @@ namespace Dofusdude.Api.Model
         public Option<List<CombatReference>?> MonstersOption { get; private set; }
 
         /// <summary>
-        /// Gets or Sets Monsters
+        /// Reverse references to monsters associated with this spell. Use a monster&#39;s grade-specific assignments to determine which spell grade it uses.
         /// </summary>
+        /// <value>Reverse references to monsters associated with this spell. Use a monster&#39;s grade-specific assignments to determine which spell grade it uses.</value>
         [JsonPropertyName("monsters")]
         public List<CombatReference>? Monsters { get { return this.MonstersOption.Value; } set { this.MonstersOption = new(value); } }
 
@@ -239,6 +257,7 @@ namespace Dofusdude.Api.Model
             sb.Append("  Order: ").Append(Order).Append("\n");
             sb.Append("  ImageUrls: ").Append(ImageUrls).Append("\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
+            sb.Append("  BasePreviewZone: ").Append(BasePreviewZone).Append("\n");
             sb.Append("  Classes: ").Append(Classes).Append("\n");
             sb.Append("  Monsters: ").Append(Monsters).Append("\n");
             sb.Append("  Scripts: ").Append(Scripts).Append("\n");
@@ -299,7 +318,8 @@ namespace Dofusdude.Api.Model
             Option<string?> adminName = default;
             Option<int?> order = default;
             Option<Images?> imageUrls = default;
-            Option<CombatReference?> type = default;
+            Option<SpellType?> type = default;
+            Option<EffectZone?> basePreviewZone = default;
             Option<List<CombatReference>?> classes = default;
             Option<List<CombatReference>?> monsters = default;
             Option<List<SpellScriptUsage>?> scripts = default;
@@ -345,7 +365,10 @@ namespace Dofusdude.Api.Model
                             imageUrls = new Option<Images?>(JsonSerializer.Deserialize<Images>(ref utf8JsonReader, jsonSerializerOptions)!);
                             break;
                         case "type":
-                            type = new Option<CombatReference?>(JsonSerializer.Deserialize<CombatReference>(ref utf8JsonReader, jsonSerializerOptions)!);
+                            type = new Option<SpellType?>(JsonSerializer.Deserialize<SpellType>(ref utf8JsonReader, jsonSerializerOptions)!);
+                            break;
+                        case "base_preview_zone":
+                            basePreviewZone = new Option<EffectZone?>(JsonSerializer.Deserialize<EffectZone>(ref utf8JsonReader, jsonSerializerOptions)!);
                             break;
                         case "classes":
                             classes = new Option<List<CombatReference>?>(JsonSerializer.Deserialize<List<CombatReference>>(ref utf8JsonReader, jsonSerializerOptions)!);
@@ -401,6 +424,9 @@ namespace Dofusdude.Api.Model
             if (type.IsSet && type.Value == null)
                 throw new JsonException("Property is not nullable for class Spell: type.");
 
+            if (basePreviewZone.IsSet && basePreviewZone.Value == null)
+                throw new JsonException("Property is not nullable for class Spell: base_preview_zone.");
+
             if (classes.IsSet && classes.Value == null)
                 throw new JsonException("Property is not nullable for class Spell: classes.");
 
@@ -413,7 +439,7 @@ namespace Dofusdude.Api.Model
             if (criticalScripts.IsSet && criticalScripts.Value == null)
                 throw new JsonException("Property is not nullable for class Spell: critical_scripts.");
 
-            return new Spell(ankamaId.Value!.Value!, name.Value!, levels.Value!, description, iconId, adminName, order, imageUrls, type, classes, monsters, scripts, criticalScripts);
+            return new Spell(ankamaId.Value!.Value!, name.Value!, levels.Value!, description, iconId, adminName, order, imageUrls, type, basePreviewZone, classes, monsters, scripts, criticalScripts);
         }
 
         /// <summary>
@@ -456,6 +482,9 @@ namespace Dofusdude.Api.Model
             if (spell.TypeOption.IsSet && spell.Type == null)
                 throw new JsonException("Cannot write null property Spell.Type to non-nullable JSON property 'type'.");
 
+            if (spell.BasePreviewZoneOption.IsSet && spell.BasePreviewZone == null)
+                throw new JsonException("Cannot write null property Spell.BasePreviewZone to non-nullable JSON property 'base_preview_zone'.");
+
             if (spell.ClassesOption.IsSet && spell.Classes == null)
                 throw new JsonException("Cannot write null property Spell.Classes to non-nullable JSON property 'classes'.");
 
@@ -495,6 +524,11 @@ namespace Dofusdude.Api.Model
             {
                 writer.WritePropertyName("type");
                 JsonSerializer.Serialize(writer, spell.Type, jsonSerializerOptions);
+            }
+            if (spell.BasePreviewZoneOption.IsSet)
+            {
+                writer.WritePropertyName("base_preview_zone");
+                JsonSerializer.Serialize(writer, spell.BasePreviewZone, jsonSerializerOptions);
             }
             if (spell.ClassesOption.IsSet)
             {
